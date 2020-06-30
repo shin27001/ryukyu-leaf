@@ -120,7 +120,6 @@
   font-size: 0.9em;
   position: absolute;
   top: -500px;
-  background: #022558;
   width: 100%;
   text-align: center;
   padding: 10px 0;
@@ -247,6 +246,7 @@
     padding: 0;
   }
   .l-header__nav-list {
+    font-size: 0.9rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -891,7 +891,6 @@ li {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  margin-bottom: 4em;
 }
 
 .l-insta__title {
@@ -1229,6 +1228,7 @@ footer.l-footer {
   padding: 0.8em 0;
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
   z-index: 999;
 }
