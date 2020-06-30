@@ -149,6 +149,7 @@
   <p class="btn-wrap"><a href="#" class="btn btn-m-white"><i class="far fa-newspaper"></i> 記事一覧を見る</a></p>
 </div> -->
     <!-- /l-special -->
+
     <div class="mod_share">
       <h3 class="mod_share__title">この情報を共有する</h3>
       <ul class="mod_share__list">
