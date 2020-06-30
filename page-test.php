@@ -9,7 +9,7 @@
     <input type="text" name="dishes" value="">
 
     <input type="search" class="hidden-search-field" name="s" value="<?php echo get_search_query(); ?>" />
-    　<input type="submit" value="検索するあああ">
+    　<input type="submit" value="検索する">
   </form>
 
   <?php
