@@ -279,7 +279,7 @@
 }
 
 .l-searchBox {
-  margin: 2em 0 4em;
+  margin: 2em 0 3em;
 }
 
 .l-searchBox__title {
@@ -1507,9 +1507,6 @@ Stylesheet: 600px以上のタブレットやモニタで適用
     object-fit: cover;
     height: 100px;
     width: 100%;
-  }
-  .l-searchBox {
-    margin: 3em 0 5em;
   }
   .main-title {
     font-size: 1.8rem;
