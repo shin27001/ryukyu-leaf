@@ -1,0 +1,109 @@
+/******************************************************************
+
+Stylesheet: 960px以上のモニタで適用
+
+******************************************************************/
+
+.content-inner {
+  width: 90%;
+}
+
+.l-shop {
+  &__item {
+    width: 23.5%;
+  }
+}
+
+.l-tel {
+  display: none;
+}
+
+.l-info {
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    position: relative;
+  }
+  &__cate {
+    margin-bottom: 20px;
+  }
+
+  &__name {
+    font-size: 2rem;
+    margin-bottom: 32px;
+  }
+
+  &__top,
+  &__slide {
+    width: 48%;
+    height: auto;
+  }
+
+  &__korona-wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__korona-box {
+    width: 48%;
+    height: auto;
+  }
+
+  &__korona {
+    padding: 1.2em 2em 2em;
+  }
+
+  &__kodawari {
+    margin-bottom: 1em;
+  }
+
+  &__korona-sub {
+    margin: 1em 0;
+  }
+}
+
+.l-tel-pc {
+  display: block;
+  background: #f1f1f1;
+  padding: 1.3em 0;
+  text-align: center;
+  position: absolute;
+  width: 50%;
+  bottom: 20px;
+}
+
+.l-tel-pc .btn {
+  margin-top: 5px;
+  padding: 8px;
+}
+
+.searchBody__btnTop .btn {
+  width: 30%;
+  margin: 0 1em 0 0;
+}
+
+.l-info__slid-thum {
+  .slick-list {
+    height: 280px;
+  }
+}
+
+.l-keyvisual {
+  &__text-btnbox {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  &__link {
+    width: 49%;
+    height: auto;
+  }
+
+  .btn {
+    padding: 10px 20px;
+  }
+}

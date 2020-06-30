@@ -1,0 +1,27 @@
+/******************************************************************
+
+Stylesheet: 1280px以上のモニタで適用
+
+******************************************************************/
+
+.side {
+  display: block;
+}
+
+.swiper-slide {
+  box-shadow: 0 8px 40px -10px rgba(0, 0, 0, 0.8);
+}
+
+.content-inner {
+  max-width: 1160px;
+}
+
+.btn-wrap {
+  width: 40%;
+}
+
+.l-shop {
+  &__info {
+    padding: 0.7em 1.3em 2em;
+  }
+}

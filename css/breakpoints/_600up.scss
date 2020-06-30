@@ -1,0 +1,626 @@
+/******************************************************************
+
+Stylesheet: 600px以上のタブレットやモニタで適用
+
+******************************************************************/
+
+.br-pc {
+  display: block;
+}
+.br-sp {
+  display: none;
+}
+.btn-wrap {
+  width: 55%;
+  margin: 0 auto;
+}
+
+.l-keyvisual {
+  // padding: 64px 0;
+
+  &__text-btnbox {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
+.l-alert {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid $cBorder;
+  padding: 1em 2em 0;
+  margin: 0 auto 2em;
+
+  & h2 {
+    width: 30%;
+  }
+
+  & p {
+    width: 67%;
+  }
+}
+
+.l-shop {
+  &__item {
+    width: 31.5%;
+  }
+
+  &__info {
+    padding: 0.5em 1em 2em;
+  }
+}
+
+.l-special {
+  &__item {
+    width: 23.5%;
+  }
+
+  &__link {
+    display: block;
+    width: 100%;
+    justify-content: normal;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__photo {
+    width: 100%;
+    padding-bottom: 180px;
+  }
+
+  &__text {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+}
+.l-insta {
+  &__inner {
+    padding: 0;
+  }
+}
+.owner {
+  background-position: top;
+  text-align: center;
+}
+
+.mod_share {
+  &__item {
+    font-size: 1rem;
+    padding: 1.8em 0;
+
+    .symbol {
+      padding-bottom: 8px;
+    }
+  }
+}
+
+.l-info__table th {
+  width: 24%;
+  padding: 0.3em 1em;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.l-info__table tr {
+  border-top: 1px solid #ececec;
+  padding: 1em;
+}
+
+.searchBody {
+  padding: 2em;
+
+  &__dl {
+    margin-bottom: 1.5em;
+  }
+
+  &__btnTop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__btnTop .btn {
+    width: 40%;
+    margin: 0 1em 0 0;
+  }
+
+  &__btm-inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__btm-inner .searchBody__dl {
+    width: 49%;
+  }
+}
+
+.submit__btnTop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.l-form__button-back,
+.l-form__button-submit {
+  width: 49%;
+  padding-left: 1%;
+  margin: 0 auto;
+}
+
+.l-info__slid-thum {
+  .slick-list {
+    height: 360px;
+  }
+}
+
+.l-info__slid-nav .slick-slide img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  height: 100px;
+  width: 100%;
+}
+
+.l-header {
+  &__inner {
+    max-width: 1160px;
+    width: 90%;
+    margin: 0 auto;
+    height: 64px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 0.9rem;
+  }
+
+  &.headerNav {
+    width: 70%;
+    display: inline-block;
+    text-align: right;
+  }
+
+  &.headerNav__item {
+    display: inline-block;
+    text-align: right;
+    padding-left: 1em;
+    color: $cSub;
+  }
+
+  .headerNav__item a {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .headerNav__item a::after {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: $cSub;
+    transform: scale(0, 1);
+    transform-origin: left top;
+    transition: transform 0.3s;
+  }
+
+  .headerNav__item a:hover::after {
+    transform: scale(1, 1);
+  }
+}
+
+// .flex {
+//   flex-direction: row;
+//   flex-wrap: wrap;
+// }
+
+// .wrapper {
+//   width: 720px;
+//   margin: 0 auto;
+// }
+
+// .section__inner {
+//   padding: 32px;
+//   margin-bottom: 60px;
+// }
+
+// .section__img {
+//   width: 60%;
+//   margin: 16px auto;
+// }
+
+// .section__logo {
+//   width: 40%;
+//   margin: 40px auto 24px;
+// }
+// .btn-wrap {
+//   width: 60%;
+//   margin: 32px auto 40px;
+// }
+
+// .grid {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-between;
+// }
+
+// .grid-col3 {
+//   width: 32%;
+// }
+
+// .pointList {
+//   &__title {
+//     height: 130px;
+//     padding-top: 80px;
+//     box-sizing: border-box;
+//   }
+
+//   .grid-col3:nth-child(3) {
+//     margin-bottom: auto;
+//   }
+
+//   &__title.line2 {
+//     padding-top: 60px;
+//   }
+//   &__icon img {
+//     width: 40%;
+//     height: 90px;
+//   }
+// }
+
+// .section-line.about {
+//   background: transparent;
+//   background: -webkit-gradient(
+//     linear,
+//     left top,
+//     right top,
+//     from(#4caf50),
+//     to(#2986f6)
+//   );
+//   background: linear-gradient(to right, #4caf50, #2986f6);
+//   padding-top: 1px;
+// }
+
+// .about .title-wrap {
+//   margin-top: 40px;
+// }
+
+// .l-news {
+//   margin: 0;
+//   padding: 0 0 40px;
+
+//   &__category {
+//     width: 48%;
+//     line-height: 1em;
+//     padding: 3px 10px;
+//   }
+
+//   &__day {
+//     width: 48%;
+//     text-align: right;
+//   }
+
+//   &__inner {
+//     padding: 0;
+//     margin-top: 24px;
+//   }
+// }
+// .pineproject-icon li {
+//   width: 22%;
+// }
+// .sdgs-logo {
+//   text-align: center;
+//   margin: 0;
+// }
+
+// .kiseki-arrow {
+//   position: relative;
+//   top: 63px;
+// }
+
+// .kiseki {
+//   &__linkbox_wrap {
+//     display: flex;
+//     width: 100%;
+//     height: auto;
+//     padding: 30px 0 0;
+//   }
+//   &__linkbox_l {
+//     width: 45%;
+//   }
+//   &__linkbox_s {
+//     width: 55%;
+//   }
+//   &__linkbox {
+//     margin-bottom: 30px;
+//   }
+//   &__inner {
+//     padding: 32px;
+//     margin-bottom: 60px;
+//   }
+//   &__jiku {
+//     width: 80%;
+//     margin: 0 auto;
+//   }
+//   & .sdgs-logo {
+//     margin: 30px auto;
+//   }
+// }
+// .business .about .section__inner {
+//   margin-bottom: 0;
+// }
+
+// .pointList__text {
+//   min-height: 200px;
+// }
+
+// .l-footer__logo {
+//   width: 40%;
+//   margin: 0 auto 50px;
+// }
+
+// .page-news .main-v {
+//   &__img > img {
+//     object-position: center;
+//   }
+// }
+
+// .main-v {
+//   margin-bottom: 0;
+
+//   &__img {
+//     width: 720px;
+
+//     & > img {
+//       height: 380px;
+//       width: 100%;
+//       object-fit: cover;
+//       object-position: bottom;
+//     }
+//   }
+
+//   & .cover-slide.inview {
+//     margin-bottom: 0;
+//   }
+// }
+
+// .companyinfo {
+//   overflow: hidden;
+//   dt,
+//   dd {
+//     white-space: nowrap;
+//     float: left;
+//     border-bottom: 1px solid #c8e6c9;
+//   }
+//   dt {
+//     width: 25%;
+//     padding: 20px 10px 15px 10px;
+//     box-sizing: border-box;
+//     float: left;
+//     clear: both;
+//   }
+//   dd {
+//     width: 75%;
+//     padding: 25px 10px 14px 10px;
+//     box-sizing: border-box;
+//   }
+// }
+
+// .member {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-between;
+// }
+
+// .member__list {
+//   width: 46%;
+// }
+
+// .page-sdgs {
+//   .l-section__inner {
+//     padding-top: 30px;
+//   }
+//   .main-v__img {
+//     height: 260px;
+//     background-size: 50%;
+//   }
+//   .pointList__icon {
+//     margin-top: 30px;
+//   }
+//   .pointList__title {
+//     height: 60px;
+//   }
+// }
+
+// .sdgs {
+//   &__img {
+//     margin: 30px 0 60px;
+//   }
+//   &__list figure {
+//     width: 12%;
+//   }
+//   &__icon {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: flex-start;
+//     margin-bottom: 24px;
+//   }
+//   &__icon img {
+//     width: 25%;
+//   }
+//   &__icontext {
+//     width: 72%;
+//   }
+//   &__icontext h4 {
+//     margin: 8px 0;
+//   }
+//   &__content {
+//     line-height: 1.5;
+//   }
+//   &__iconlist {
+//     margin-left: 40px !important;
+//     padding-left: 30px;
+//     padding: 24px 0 10px 24px;
+//   }
+//   &__iconwrap {
+//     width: 25%;
+//   }
+//   &__iconwrap img {
+//     width: 100%;
+//     height: auto;
+//     margin-bottom: 10px;
+//     display: block;
+//   }
+// }
+
+// .articlecard-item-inner {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-between;
+// }
+
+// .media {
+//   width: 40%;
+// }
+
+// .articlecard-text {
+//   width: 60%;
+//   padding: 16px 24px;
+// }
+
+// .articlecard-date {
+//   position: absolute;
+//   bottom: 10px;
+// }
+
+// .page-news .main-v__title {
+//   padding: 130px 10%;
+// }
+
+// .companyinfo {
+//     overflow:hidden;
+//     dt,dd{
+//         white-space: nowrap;
+//         float: left;
+//         border-bottom: 1px solid #C8E6C9;
+//     }
+//     dt{
+//         width:25%;
+//         padding: 20px 10px 15px 10px;
+//         @include box-sizing();
+//         float: left;
+//         clear: both;
+//     }
+//     dd{
+//         width:75%;
+//         padding: 25px 10px 14px 10px;
+//         @include box-sizing();
+//     }
+// }
+
+// .member {
+//     @include flexbox();
+//     @include flex-wrap(wrap);
+//     @include justify-content(space-between);
+// }
+
+// .member__list {
+//     width: 46%;
+// }
+
+// .page-sdgs{
+//     .l-section__inner {
+//         padding-top: 30px;
+//     }
+//     .main-v__img {
+//         height: 260px;
+//         background-size: 50%;
+//     }
+//     .pointList__icon {
+//         margin-top: 30px;
+//     }
+//     .pointList__title {
+//         height: 60px;
+//     }
+// }
+
+// .sdgs{
+//     &__list figure {
+//         width: 12%;
+//     }
+//     &__icon {
+//         @include flexbox();
+//         @include justify-content(space-between);
+//         @include align-items(flex-start);
+//         margin-bottom: 24px;
+//     }
+//     &__icon img {
+//         width: 25%;
+//     }
+//     &__icontext {
+//         width: 72%;
+//     }
+//     &__icontext h4 {
+//         margin: 8px 0;
+//     }
+//     &__content {
+//         line-height: 1.5;
+//     }
+//     &__iconlist {
+//         margin-left: 40px!important;
+//         padding-left: 30px;
+//         padding: 24px 0 10px 24px;
+//     }
+//     &__iconwrap {
+//         width: 25%;
+//     }
+//     &__iconwrap img {
+//         width: 100%;
+//         height: auto;
+//         margin-bottom: 10px;
+//         display: block;
+//     }
+// }
+// .l-mv {
+//     margin-bottom: 40px;
+//     &__inner {
+//         @include flexbox();
+//     }
+//     &__inner .grid-col2 {
+//         width: 50%;
+//         height: 320px;
+//     }
+//     &__hero img {
+//         max-height: 300px;
+//     }
+//     &__maintext {
+//         top: 30%;
+//         width: 40%;
+//     }
+//     &__backtext {
+//         top: 20%;
+//         width: 55%;
+//     }
+// }
+// .slide-img img{
+//     min-height: 320px;
+// }
+
+// .hentry {
+//     padding: 2.5em;
+// }
+
+// .hentry header {
+//     padding: 0 0 1em 0 !important;
+// }
+
+// .entry-title {
+//     text-align: left;
+// }
+// .hentry footer{
+//     padding: 0 !important;
