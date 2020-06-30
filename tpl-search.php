@@ -6,7 +6,7 @@
         <input type="hidden" name="post_type" value="shops">
         <div class="searchBody__top">
           <dl class="searchBody__dl">
-            <dt class="searchBody__dt">キーワードで検索</dt>
+            <dt class="searchBody__dt"><i class="fas fa-search"></i> キーワードで検索</dt>
             <dd class="searchBody__dd">
               <input id="searchInput" name="s" class="searchBody__input" type="search" placeholder="キーワードで検索" value="" autocomplete="off">
               <button class="searchBody__submit" type="submit"></button>
