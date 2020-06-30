@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjp.css);
 .btn {
   position: relative;
   display: inline-block;
@@ -81,184 +82,202 @@
   opacity: 0.8;
 }
 
-.l-header__logo img {
+#top-header,
+.l-header__inner {
+  width: 100%;
+  padding: 0;
+}
+
+#top-header {
+  top: 0;
+  position: fixed;
+  margin-top: 0;
+  z-index: 9999;
+  height: 64px;
+}
+
+#top-header.fixed {
+  padding-top: 0;
+  background: transparent;
+}
+
+.mobile__menu {
+  background: #fff;
+  width: 100%;
+  height: 56px;
+  z-index: 999;
+  position: relative;
+}
+
+#top-header.fixed .l-header__logo,
+#top-header .l-header__logo {
   width: 230px;
+  padding: 10px;
+  font-size: 0.7rem;
 }
 
 .l-header__nav {
+  font-size: 0.9em;
+  position: absolute;
+  top: -500px;
+  background: #022558;
   width: 100%;
-  height: auto;
-  position: relative;
-  background: #f6f6f6;
-}
-
-.l-header__drawer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  position: relative;
-  height: 70px;
-  padding: 0 1em;
-}
-
-/*ナビゲーション部分*/
-.l-header__link {
-  display: block;
-  font-weight: bold;
-  padding: 2em;
-  border-bottom: 1px dashed #ccc;
-  color: #022558;
-  text-decoration: none;
-}
-
-.l-header__link:hover {
-  background-color: #fdeeea;
-  color: #d84315;
-}
-
-.l-header__nav-list {
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.95);
-  -webkit-transition: 0.5s ease;
-  transition: 0.5s ease;
-  -webkit-transform: translateX(100%);
-  position: absolute;
-  z-index: 9999;
+  padding: 10px 0;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+#top-header .l-header__nav-item a,
+#top-header.fixed .l-header__nav-item a {
   width: 100%;
-  height: 100vh;
-}
-
-/*OPEN*/
-.l-header__nav-list.open {
-  -webkit-transform: translateX(0%);
-  transform: translateX(0%);
-}
-
-.l-header__toggle {
   display: block;
-  position: fixed;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  z-index: 3;
-  right: 15px;
-  top: 18px;
+  color: #fff;
+  padding: 18px 0;
 }
 
-.l-header__toggle span {
+/* .mobile__toggle 切り替えアニメーション */
+.open .mobile__toggle span:nth-child(1) {
+  top: 11px;
+  -webkit-transform: rotate(315deg);
+  transform: rotate(315deg);
+}
+
+.open .mobile__toggle span:nth-child(2) {
+  width: 0;
+  left: 50%;
+}
+
+.open .mobile__toggle span:nth-child(3) {
+  top: 11px;
+  -webkit-transform: rotate(-315deg);
+  transform: rotate(-315deg);
+}
+
+/* .l-header__nav スライドアニメーション */
+.open .l-header__nav {
+  /* .l-header__nav top + #mobile-head height */
+  -webkit-transform: translateY(556px);
+  transform: translateY(556px);
+}
+
+/* Toggle Button */
+.mobile__toggle {
+  position: absolute;
+  right: 12px;
+  top: 16px;
+  width: 34px;
+  height: 36px;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.mobile__toggle div {
+  position: relative;
+}
+
+.mobile__toggle span {
   display: block;
   position: absolute;
-  width: 40px;
-  border-bottom: solid 3px #022558;
+  height: 3px;
+  width: 100%;
+  background: #022558;
+  left: 0;
   -webkit-transition: 0.35s ease-in-out;
   transition: 0.35s ease-in-out;
 }
 
-.l-header__toggle span:nth-child(1) {
-  top: 5px;
+.mobile__toggle span:nth-child(1) {
+  top: 0;
 }
 
-.l-header__toggle span:nth-child(2) {
-  top: 16px;
+.mobile__toggle span:nth-child(2) {
+  top: 11px;
+  width: 80%;
 }
 
-.l-header__toggle span:nth-child(3) {
-  top: 27px;
-}
-
-.l-header__toggle.active span:nth-child(1) {
-  top: 16px;
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-
-.l-header__toggle.active span:nth-child(2),
-.l-header__toggle.active span:nth-child(3) {
-  top: 16px;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
+.mobile__toggle span:nth-child(3) {
+  top: 22px;
 }
 
 @media screen and (min-width: 960px) {
-  /*ロゴの大きさを調整*/
-  .l-header__logo img {
-    max-width: 250px;
-  }
   .l-header__inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
-  .l-header__toggle {
+  .l-header__inner:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+  .mobile__toggle {
     display: none;
   }
+  /* header */
+  #top-header {
+    top: -100px;
+    position: absolute;
+    width: 100%;
+    margin: 100px auto 0;
+    line-height: 1;
+    z-index: 999;
+    background: #fff;
+    height: 56px;
+  }
+  .mobile__menu {
+    background: none;
+    width: 28%;
+  }
   .l-header__nav {
+    position: static;
+    top: 0;
+    background: none;
     width: 70%;
-    font-size: 0.9em;
-    background-color: transparent;
+    text-align: left;
+    padding: 0;
   }
   .l-header__nav-list {
-    height: 64px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    position: inherit;
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
   }
-  .l-header__link {
+  #top-header .l-header__nav-item a,
+  #top-header.fixed .l-header__nav-item a {
     padding: 0 1em;
-    border-bottom: none;
-    position: relative;
-    display: inline-block;
-    text-decoration: none;
+    color: #022558;
   }
-  .l-header__link a::after {
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    content: "";
-    width: 100%;
-    height: 2px;
-    background: #333;
-    -webkit-transform: scale(0, 1);
-            transform: scale(0, 1);
-    -webkit-transform-origin: left top;
-            transform-origin: left top;
-    -webkit-transition: -webkit-transform 0.3s;
-    transition: -webkit-transform 0.3s;
-    transition: transform 0.3s;
-    transition: transform 0.3s, -webkit-transform 0.3s;
-  }
-  .l-header__link a:hover::after {
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-  }
-  .l-header__link a:hover {
-    background-color: none;
+  /* Fixed */
+  #top-header.fixed {
+    margin-top: 0;
+    top: 0;
+    position: fixed;
+    height: 55px;
+    background: #fff;
+    background: rgba(255, 255, 255, 0.7);
+    transition: top 0.65s ease-in;
+    -webkit-transition: top 0.65s ease-in;
+    -moz-transition: top 0.65s ease-in;
   }
 }
 
 .l-searchBox {
-  margin: 1em 0 2em;
+  margin: 2em 0 4em;
 }
 
 .l-searchBox__title {
@@ -412,14 +431,23 @@
 }
 
 .form-page__title {
-  background: #f4f3f2;
+  background: #d84315;
   padding: 10px 0;
   text-align: center;
+  color: #fff;
 }
 
-.form-page__title.complete {
+.form-page__title .main-title {
+  margin: 32px 24px 0;
+}
+
+.form-page__title .sub-text {
+  color: #fff;
+}
+
+.complete .content-inner, .complete .l-insta__cont, .complete .l-special, .complete .mod_share, .complete .owner__inner {
+  text-align: center;
   height: 100vh;
-  padding: 2em 1.5em;
 }
 
 .l-form input[type="text"],
@@ -554,7 +582,7 @@ Stylesheet: ベーススタイル
 
 ******************************************************************/
 body {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   color: #3b4043;
   font-size: 16px;
   min-width: 320px;
@@ -589,7 +617,7 @@ h2 {
 }
 
 .main-title {
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   text-align: center;
   font-weight: bold;
   margin: 32px 0 24px;
@@ -628,6 +656,26 @@ h2 {
   padding: 1em;
 }
 
+.font-sm {
+  font-size: 13px;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bg-gray {
+  background: #f4f3f2;
+}
+
+.btn-wrap {
+  width: 80%;
+  margin: 0 auto;
+}
+
 .cat__niku {
   background: #e64a19;
 }
@@ -660,19 +708,11 @@ h2 {
   background: #dd2c00;
 }
 
-.font-sm {
-  font-size: 13px;
-}
-
-ul,
-li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.bg-gray {
-  background: #f4f3f2;
+/**----------------
+ mainここから
+----------------**/
+.main-container {
+  margin-top: 56px;
 }
 
 .content-inner, .l-insta__cont, .l-special, .mod_share, .owner__inner {
@@ -693,21 +733,16 @@ li {
   margin-bottom: 2em;
 }
 
-.l-shop__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+.l-shop__item {
+  padding: 10px;
 }
 
-.l-shop__item {
-  width: 48.5%;
+.l-shop__link {
   background: #fff;
-  margin-bottom: 1.3em;
+  border-radius: 5px;
+  display: block;
+  overflow: hidden;
+  height: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-transition-duration: 0.2s;
@@ -722,14 +757,6 @@ li {
   position: relative;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
-}
-
-.l-shop__link {
-  background: #fff;
-  border-radius: 5px;
-  display: block;
-  overflow: hidden;
-  height: 100%;
 }
 
 .l-shop__img {
@@ -786,11 +813,85 @@ li {
   color: #666666;
 }
 
+.l-shop__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media only screen and (min-width: 50%) {
+  .l-shop__list {
+    max-width: 50%;
+  }
+}
+
+@media only screen and (min-width: 100%) {
+  .l-shop__list {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (min-width: 150%) {
+  .l-shop__list {
+    max-width: 150%;
+  }
+}
+
+@media only screen and (min-width: 200%) {
+  .l-shop__list {
+    max-width: 200%;
+  }
+}
+
+@media only screen and (min-width: 250%) {
+  .l-shop__list {
+    max-width: 250%;
+  }
+}
+
+@media only screen and (min-width: 300%) {
+  .l-shop__list {
+    max-width: 300%;
+  }
+}
+
+@media only screen and (min-width: 350%) {
+  .l-shop__list {
+    max-width: 350%;
+  }
+}
+
+@media only screen and (min-width: 400%) {
+  .l-shop__list {
+    max-width: 400%;
+  }
+}
+
+@media only screen and (min-width: 450%) {
+  .l-shop__list {
+    max-width: 450%;
+  }
+}
+
+@media only screen and (min-width: 500%) {
+  .l-shop__list {
+    max-width: 500%;
+  }
+}
+
+.l-shop__item {
+  width: 50%;
+}
+
 .l-insta {
   background-image: url(../images/insta-bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  margin-bottom: 4em;
 }
 
 .l-insta__title {
@@ -869,12 +970,8 @@ li {
   color: gray;
 }
 
-.btn-wrap {
-  width: 80%;
-  margin: 0 auto;
-}
-
 .mod_share {
+  margin-top: 4em;
   font-size: 0.7rem;
   line-height: 1.3;
   text-align: center;
@@ -963,6 +1060,7 @@ li {
   color: #d84315;
   font-size: 1.8rem;
   margin-bottom: 1em;
+  text-align: center;
 }
 
 .owner__read {
@@ -971,9 +1069,25 @@ li {
 }
 
 .l-mainvisual {
-  background: #999;
-  text-align: center;
-  padding: 10px 0;
+  height: 160px;
+  position: relative;
+}
+
+.l-mainvisual__img img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 160px;
+}
+
+.l-mainvisual__title {
+  position: absolute;
+  width: 80%;
+  max-width: 380px;
+  top: 60%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
 }
 
 footer.l-footer {
@@ -1026,6 +1140,7 @@ footer.l-footer {
 
 .l-info__korona h2 {
   margin-top: 20px;
+  text-align: center;
 }
 
 .l-info__korona-sub {
@@ -1090,12 +1205,12 @@ footer.l-footer {
   border-bottom: none;
   display: block;
   width: 100%;
+  padding: 1.5em;
 }
 
 .l-info__table th {
   background: #f4f3f2;
   border: solid 1px white;
-  padding: 0.3em 1em;
   font-weight: bold;
 }
 
@@ -1105,7 +1220,6 @@ footer.l-footer {
 
 .l-info__table td {
   width: 100%;
-  padding: 10px;
 }
 
 .l-tel {
@@ -1201,6 +1315,33 @@ footer.l-footer {
      object-fit: cover;
 }
 
+.pagetop {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 15px;
+}
+
+.pagetop a {
+  display: block;
+  background-color: #d84315;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 10px 15px;
+  filter: alpha(opacity=50);
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+  border-radius: 50%;
+}
+
+.pagetop a:hover {
+  filter: alpha(opacity=80);
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+}
+
 @media (min-width: 480px) {
   /******************************************************************
 
@@ -1250,7 +1391,7 @@ Stylesheet: 600px以上のタブレットやモニタで適用
     width: 67%;
   }
   .l-shop__item {
-    width: 31.5%;
+    width: 33%;
   }
   .l-shop__info {
     padding: 0.5em 1em 2em;
@@ -1365,57 +1506,12 @@ Stylesheet: 600px以上のタブレットやモニタで適用
     height: 100px;
     width: 100%;
   }
-  .l-header__inner {
-    max-width: 1160px;
-    width: 90%;
-    margin: 0 auto;
-    height: 64px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    font-size: 0.9rem;
+  .l-searchBox {
+    margin: 3em 0 5em;
   }
-  .l-header.headerNav {
-    width: 70%;
-    display: inline-block;
-    text-align: right;
-  }
-  .l-header.headerNav__item {
-    display: inline-block;
-    text-align: right;
-    padding-left: 1em;
-    color: #022558;
-  }
-  .l-header .headerNav__item a {
-    position: relative;
-    display: inline-block;
-    text-decoration: none;
-  }
-  .l-header .headerNav__item a::after {
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    content: "";
-    width: 100%;
-    height: 2px;
-    background: #022558;
-    -webkit-transform: scale(0, 1);
-            transform: scale(0, 1);
-    -webkit-transform-origin: left top;
-            transform-origin: left top;
-    -webkit-transition: -webkit-transform 0.3s;
-    transition: -webkit-transform 0.3s;
-    transition: transform 0.3s;
-    transition: transform 0.3s, -webkit-transform 0.3s;
-  }
-  .l-header .headerNav__item a:hover::after {
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
+  .main-title {
+    font-size: 1.8rem;
+    margin: 40px 0 32px;
   }
 }
 
@@ -1427,9 +1523,10 @@ Stylesheet: 960px以上のモニタで適用
 ******************************************************************/
   .content-inner, .l-insta__cont, .l-special, .mod_share, .owner__inner {
     width: 90%;
+    padding: 2% 2% 7%;
   }
   .l-shop__item {
-    width: 23.5%;
+    width: 25%;
   }
   .l-tel {
     display: none;
