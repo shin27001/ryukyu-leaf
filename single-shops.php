@@ -88,13 +88,13 @@
       <!-- /l-info__korona -->
 
       <div class="l-info__message">
-        <h2 class="l-info__h2title">お店からのメッセージ</h2>
+        <h2 class="l-info__h2title"><i class="fas fa-user c-red"></i> お店からのメッセージ</h2>
         <p class="l-info__message-text"><?php the_field('messages'); ?></p>
       </div>
       <!-- /l-info__message -->
 
       <div class="l-info__basic">
-        <h2 class="l-info__h2title">店舗基本情報</h2>
+        <h2 class="l-info__h2title"><i class="fas fa-store c-red"></i> 店舗基本情報</h2>
         <?php if (get_field('youtube')) : ?>
           <div class="l-info__video"><?php echo wp_oembed_get(get_field('youtube')); ?></div>
         <?php endif; ?>
