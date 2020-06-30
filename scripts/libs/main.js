@@ -22,9 +22,35 @@ $(".l-info__slid-nav").slick({
   arrows: false,
 });
 
-$(function () {
-  $(".l-header__toggle").click(function () {
-    $(this).toggleClass("active");
-    $(".l-header__nav-list").toggleClass("open");
+(function ($) {
+  $(function () {
+    var $header = $("#top-header");
+    // Nav Fixed
+    $(window).scroll(function () {
+      if ($(window).scrollTop() > 350) {
+        $header.addClass("fixed");
+      } else {
+        $header.removeClass("fixed");
+      }
+    });
+    // Nav Toggle Button
+    $(".mobile__toggle").click(function () {
+      $header.toggleClass("open");
+    });
+  });
+})(jQuery);
+
+$(document).ready(function () {
+  var pagetop = $(".pagetop");
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+      pagetop.fadeIn();
+    } else {
+      pagetop.fadeOut();
+    }
+  });
+  pagetop.click(function () {
+    $("body, html").animate({ scrollTop: 0 }, 500);
+    return false;
   });
 });
