@@ -24,7 +24,9 @@
     <header id="top-header" class="l-header">
       <div class="l-header__inner">
         <div class="mobile__menu">
-          <p class="l-header__logo"><a href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="<?php bloginfo('name'); ?>"></p>
+          <p class="l-header__logo"> <a href="<?php echo esc_url(home_url()); ?>" class="header__logoLink">
+              アフターコロナ応援グルメサイト<br><img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="<?php bloginfo('name'); ?>">
+            </a></p>
           <div class="mobile__toggle">
             <div>
               <span></span>
