@@ -158,6 +158,7 @@
   /* .l-header__nav top + #mobile-head height */
   -webkit-transform: translateY(556px);
   transform: translateY(556px);
+  background: #022558;
 }
 
 /* Toggle Button */
