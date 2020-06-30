@@ -10,6 +10,9 @@
     </div>
     <!-- /l-alert -->
 
+    <!-- Search Form -->
+    <?php get_template_part('tpl', 'search'); ?>
+
     <?php
     $args = array(
       'post_type' => 'shops',
