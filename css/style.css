@@ -893,6 +893,10 @@ li {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  max-width: 1087px;
+  margin: 0 auto;
+  border-radius: 10px;
+  width: 90%;
 }
 
 .l-insta__title {
@@ -901,7 +905,6 @@ li {
 }
 
 .l-insta__inner {
-  background: rgba(0, 0, 0, 0.15);
   padding: 60px 0;
   text-align: center;
   color: #fff;
