@@ -102,11 +102,13 @@
 }
 
 .mobile__menu {
-  background: #fff;
+  background: #rgba 255, 255, 255, 0.8;
   width: 100%;
   height: 56px;
   z-index: 999;
   position: relative;
+  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
 }
 
 #top-header.fixed .l-header__logo,
