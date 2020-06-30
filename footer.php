@@ -3,6 +3,7 @@
         <a href="#header"><span class="text">一番上へ</span></a>
       </div> -->
       <footer class="l-footer">
+        <p class="pagetop"><a href="#top-header">▲</a></p>
         <div class="l-footer__bottom">
           <p class="copyright">&copy;琉球LEAF</p>
         </div>

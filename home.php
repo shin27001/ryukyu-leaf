@@ -177,5 +177,4 @@
     <p class="btn-wrap"><a href="<?php echo esc_url(home_url('entry-form')); ?>" class="btn btn-m-white"><i class="fas fa-edit"></i> 新規店舗登録はこちら</a></p>
   </div>
 </div>
-<p class="pagetop"><a href="#top-header">▲</a></p>
 <?php get_footer(); ?>
