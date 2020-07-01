@@ -253,8 +253,8 @@
             </label>
           </dt>
           <dd class="l-form__action">
-            <div class="checkbox-Wrap">
-              <ul class="checkbox-list">
+            <div class="form-checkbox">
+              <ul class="form-checkbox__list">
                 <li>
                   <input class="form-checkbox__button-input" type="checkbox" name="options[]" id="takeout" value="takeout" checked="checked">
                   <label class="form-checkbox__button" for="takeout">テイクアウト可</label>
@@ -309,8 +309,8 @@
           </dt>
           <dd class="l-form__action">
             <!-- <textarea name="credit" id="credit" class="credit" cols="100" rows="4" placeholder="VISA MASTER"></textarea> -->
-            <div class="checkbox-Wrap">
-              <ul class="checkbox-list">
+            <div class="form-checkbox">
+              <ul class="form-checkbox__list">
                 <li>
                   <input class="form-checkbox__button-input" type="checkbox" name="payments[]" id="visa" value="visa" checked="checked">
                   <label class="form-checkbox__button" for="visa">VISA</label>
