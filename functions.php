@@ -3,6 +3,11 @@
 # アイキャッチ画像を有効にする。
 //add_theme_support('post-thumbnails');
 
+//ACFの選択肢を取得する post-id
+function choices_id() { return 29; }
+//画像ファイルの一時保存先を取得する
+function get_tmp_img_dir() { return "wp-content/tmp_imgs/"; }
+
 
 function pr($arg) {
   if (!empty($arg)) {
@@ -11,6 +16,7 @@ function pr($arg) {
     echo "</pre>";
   }
 }
+
 
 # タイトルを取得
 function esd_title( $arg=array('echo'=>true) ) {
@@ -134,9 +140,30 @@ function get_ordered_terms( $id = 0, $taxonomy = 'category', $orderby = 'term_id
     }
 }
 
+function e($field, $array = array()) {
+   if(!empty($_POST) && empty($array)) { $array = $_POST; }
+  return !empty($array[$field]) ? $array[$field] : "" ;
+}
+
 # 入力文字をサニタイズする
-function stz($str) {
+function stz($str, $echo = false) {
+  if ($echo) {
+    echo sanitize_text_field($str);
+    return;
+  }
+
   return sanitize_text_field($str);
+  // return $echo ? echo sanitize_text_field($str) : sanitize_text_field($str);
+  // return sanitize_text_field($str);
+}
+
+function tmp_img($field_key) {
+  $img = $_FILES[$field_key];
+  $tmp = ABSPATH.'wp-content/tmp_imgs';
+  if(!file_exists($tmp)) { mkdir($tmp, 0777); }
+  move_uploaded_file($img['tmp_name'], $tmp.'/'.$img['name']);
+  return $img['name'];
+  // return home_url('wp-content/tmp_imgs').'/'.$img['name'];
 }
 
 function init_custom_post_shops() {
