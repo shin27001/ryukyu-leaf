@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<?php get_header('sub'); ?>
+
 <div class="content-wrap">
   <div class="form-page__title">
     <h1 class="main-title">掲載依頼フォーム</h1>
