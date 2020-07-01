@@ -304,21 +304,31 @@ class wp_post_helper {
 	}
 
 	// バリデーション
-	public function validate_field($field_key, $field_name, $sanitize = true){
-		if(empty($_POST[$field_name]) || $_POST[$field_name] == "") {
-			$args = array(
-			    's'  => $field_name,      // フィールド名は抜粋に入っているため、キーワード検索で良い
-			    'post_type' => 'acf-field',
-			);
-			$acf_field = get_posts( $args )[0];
-			$this->validate_errors[$acf_field->post_excerpt] = "「".$acf_field->post_title."」が入力されていません。";
+	public function validate_field($field_key, $field_name, $required = true, $sanitize = true){
+		if ($required == true) {
+			if(empty($_POST[$field_name]) || $_POST[$field_name] == "") {
+				$args = array(
+				    's'  => $field_name, // フィールド名は抜粋に入っているため、キーワード検索で良い
+						'exact' => true, //タイトル／投稿の全体から正確なキーワードで検索するか デフォルト値はfalse
+				    'post_type' => 'acf-field',
+				);
+				$acf_field = get_posts( $args )[0];
+				$this->validate_errors[$acf_field->post_excerpt] = "「".$acf_field->post_title."」が入力されていません。";
+			} else {
+				$value = $_POST[$field_name];
+				$value = ($sanitize) ? sanitize_text_field($value) : $value;
+				$this->add_field($field_key, $value);
+			}
 		} else {
-			$value = $_POST[$field_name];
-			$value = ($sanitize) ? sanitize_text_field($value) : $value;
-			$this->add_field($field_key, $value);
+			if(!empty($_POST[$field_name]) && $_POST[$field_name] != "") {
+				//if ($field_name == 'coronas_other') { echo "<h1>".$_POST['coronas_other']."</h1>"; }
+				$value = $_POST[$field_name];
+				$value = ($sanitize) ? sanitize_text_field($value) : $value;
+				$this->add_field($field_key, $value);
+			}
 		}
-		// return !empty($validate_error) ? $validate_error : null;
 	}
+
 	// バリデーション
 	public function add_media2($field_name){
 		$filename = $_POST[$field_name];

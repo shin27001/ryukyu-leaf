@@ -8,6 +8,8 @@ function choices_id() { return 29; }
 //画像ファイルの一時保存先を取得する
 function get_tmp_img_dir() { return "wp-content/tmp_imgs/"; }
 
+// バリデーションエラーのグローバル変数
+$validate_errors = array();
 
 function pr($arg) {
   if (!empty($arg)) {
