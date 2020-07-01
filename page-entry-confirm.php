@@ -211,7 +211,7 @@
           </tr>
         </table>
 
-        <?php $_POST = array_merge($_POST, $img); ?>
+        <?php if (!empty($img)) { $_POST = array_merge($_POST, $img); } ?>
         <div class="submit__btn">
           <div class="submit__btnTop">
             <div class="l-form__button-back">
