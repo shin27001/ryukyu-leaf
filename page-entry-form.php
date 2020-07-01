@@ -2,7 +2,7 @@
 <?php get_header('sub'); ?>
 <div class="content-wrap">
   <div class="form-page__title">
-    <h1 class="c-red main-title">掲載依頼フォーム</h1>
+    <h1 class="main-title">掲載依頼フォーム</h1>
     <p class="sub-text mb-2">下記のフォームにて内容をご入力のうえ、<span class="d-inline">「入力内容を確認する」ボタンを押してください。</span></p>
   </div>
   <div class="content-inner">
@@ -340,8 +340,8 @@
             </label>
           </dt>
           <dd class="l-form__action">
-            <div class="f-checkbox">
-              <ul class="f-checkbox__list">
+            <div class="form-checkbox">
+              <ul class="form-checkbox__list">
                 <li>
                   <input class="form-checkbox__button-input" type="checkbox" name="coronas[]" id="手指消毒液の設置" value="手指消毒液の設置" checked="checked">
                   <label class="form-checkbox__button" for="手指消毒液の設置">手指消毒液の設置</label>
