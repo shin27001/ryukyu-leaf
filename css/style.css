@@ -486,6 +486,23 @@
   padding-left: 10px;
 }
 
+.l-form .searchBody__select {
+  border: 1px solid #cecece;
+}
+
+.l-form .selectWrap {
+  position: relative;
+}
+
+.l-form .selectWrap::before {
+  content: "\f078";
+  font-family: FontAwesome;
+  position: absolute;
+  right: 18px;
+  top: 10px;
+  color: #d84315;
+}
+
 .form-require {
   font-size: 13px;
   color: #d84315;
