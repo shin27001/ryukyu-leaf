@@ -85,7 +85,7 @@
 
   // echo "<h1>登録完了</h1>"
 
-  header("Location: " . esc_url( home_url('entry-complete') ));
+  //header("Location: " . esc_url( home_url('entry-complete') ));
 
 
 
