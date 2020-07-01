@@ -383,7 +383,7 @@
               店舗の写真やロゴ画像
             </label>
           </dt>
-          <dd class="l-form__action">
+          <dd class="l-form__action p-1">
             <input type="file" name="shop_main_image" id="shop_main_image" class="shop_image" />
             <!-- <span data-mwform-file-delete="shop_image" class="mwform-file-delete">&times;</span> -->
           </dd>
@@ -394,7 +394,7 @@
             </label>
             <p class="sub-text">外観や座席などその他掲載希望される画像</p>
           </dt>
-          <dd class="l-form__action">
+          <dd class="l-form__action p-1">
             <input type="file" name="shop_image1" id="shop_image1" class="shop_image1" />
             <!-- <span data-mwform-file-delete="shop_image1" class="mwform-file-delete">&times;</span> -->
           </dd>
@@ -405,7 +405,7 @@
             </label>
             <p class="sub-text">外観や座席などその他掲載希望される画像</p>
           </dt>
-          <dd class="l-form__action">
+          <dd class="l-form__action p-1">
             <input type="file" name="shop_image2" id="shop_image2" class="shop_image2" />
             <!-- <span data-mwform-file-delete="shop_image2" class="mwform-file-delete">&times;</span> -->
           </dd>
@@ -416,7 +416,7 @@
             </label>
             <p class="sub-text">料理やドリンクの写真その他掲載希望される画像</p>
           </dt>
-          <dd class="l-form__action">
+          <dd class="l-form__action p-1">
             <input type="file" name="shop_image3" id="shop_image3" class="shop_image3" />
             <!-- <span data-mwform-file-delete="shop_image3" class="mwform-file-delete">&times;</span> -->
           </dd>
@@ -427,7 +427,7 @@
             </label>
             <p class="sub-text">料理やドリンクの写真その他掲載希望される画像</p>
           </dt>
-          <dd class="l-form__action">
+          <dd class="l-form__action p-1">
             <input type="file" name="shop_image4" id="shop_image4" class="shop_image4" />
             <!-- <span data-mwform-file-delete="shop_image4" class="mwform-file-delete">&times;</span> -->
           </dd>
