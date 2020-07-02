@@ -494,7 +494,7 @@ $error = $validate_errors;
       <input type="hidden" name="contact_policy[separator]" value="," />
       <input type="hidden" } />
       <div class="l-form__option-link-area">
-        <a href="#" target="_blank" class="l-form__option-link"><i class="fas fa-external-link-alt"></i>
+        <a href="<?php echo esc_url(home_url('privacy-policy')); ?>" target="_blank" class="l-form__option-link"><i class="fas fa-external-link-alt"></i>
           プライバシーポリシー</a>
       </div>
     </div>
@@ -509,7 +509,7 @@ $error = $validate_errors;
       <input type="hidden" name="written_oath[separator]" value="," />
       <input type="hidden" name="" value="" />
       <div class="l-form__option-link-area">
-        <a href="#" target="_blank" class="l-form__option-link"><i class="fas fa-external-link-alt"></i>
+        <a href="<?php echo esc_url(home_url('oath')); ?>" target="_blank" class="l-form__option-link"><i class="fas fa-external-link-alt"></i>
           反社会的勢力ではないことの誓約書</a>
       </div>
     </div>
