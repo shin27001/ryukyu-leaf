@@ -1,6 +1,5 @@
 <?php get_header(); ?>
   <?php get_header('sub'); ?>
-  <?php pr($_POST); ?>
   <div class="content-wrap">
     <div class="form-page__title">
       <h1 class="c-red main-title">入力内容の確認</h1>
@@ -15,13 +14,6 @@
             <td>新規登録</td>
           </tr>
         </table>
-
-        <?php
-          // pr($_POST);
-          //$_POST['options']
-        ?>
-
-
         <h2 class="l-fome__title">ご担当者様情報</h2>
         <table class="l-info__table">
           <tr>
@@ -236,4 +228,4 @@
       </div>
     </div>
   </div>
-<?php get_footer(); pr($_POST);?>
+<?php get_footer(); ?>
