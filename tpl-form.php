@@ -368,8 +368,8 @@ $error = $validate_errors;
         </label>
       </dt>
       <dd class="l-form__action">
-        <div class="f-checkbox">
-          <ul class="f-checkbox__list">
+        <div class="form-checkbox">
+          <ul class="form-checkbox__list">
             <?php
             $coronas = get_field_object('coronas', choices_id());
             ?>
@@ -426,7 +426,7 @@ $error = $validate_errors;
           店舗の写真やロゴ画像
         </label>
       </dt>
-      <dd class="l-form__action">
+      <dd class="l-form__action p-1">
         <input type="file" name="shop_main_image" id="shop_main_image" class="shop_image" />
         <!-- <span data-mwform-file-delete="shop_image" class="mwform-file-delete">&times;</span> -->
       </dd>
@@ -470,7 +470,7 @@ $error = $validate_errors;
         </label>
         <p class="sub-text">料理やドリンクの写真その他掲載希望される画像</p>
       </dt>
-      <dd class="l-form__action">
+      <dd class="l-form__action p-1">
         <input type="file" name="shop_image4" id="shop_image4" class="shop_image4" />
         <!-- <span data-mwform-file-delete="shop_image4" class="mwform-file-delete">&times;</span> -->
       </dd>
