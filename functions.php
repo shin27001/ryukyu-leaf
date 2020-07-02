@@ -159,6 +159,62 @@ function stz($str, $echo = false) {
   // return sanitize_text_field($str);
 }
 
+// バリデーション
+function validate_field($field_name, $args = array()) {
+  $args = array_merge(array('empty'=>false, 'word'=>false, 'sanitize'=>true, 'taxonomy'=>false), $args);
+  $errors = array();#初期化
+
+  if (!is_array($args)) { return false; }
+  $value = (!empty($_POST[$field_name])) ? $_POST[$field_name] : false;
+
+  //サニタイズ
+  $value = ($args['sanitize']) ? sanitize_text_field($value) : $value;
+
+  // 必須チェック
+  if (!$args['empty']) {
+    if(!$value) {
+      if ($args['taxonomy']) {
+        switch ($field_name) {
+          case 'area':
+            $errors[$field_name][] = "「エリア」が選択されていません。";
+            break;
+          case 'dishes':
+            $errors[$field_name][] = "「料理ジャンル」が選択されていません。";
+            break;
+          case 'options':
+            $errors[$field_name][] = "「こだわり」が選択されていません。";
+            break;
+        }
+      } else {
+        $params = array(
+            's'  => $field_name, // フィールド名は抜粋に入っているため、キーワード検索で良い
+            'exact' => true, //タイトル／投稿の全体から正確なキーワードで検索するか デフォルト値はfalse
+            'post_type' => 'acf-field',
+        );
+        $acf_field = get_posts( $params )[0];
+        $errors[$field_name][] = "「".$acf_field->post_title."」が入力されていません。";
+      }
+    }
+  }
+
+  //文字数チェック
+  if ($args['word']) {
+  // if (is_numeric($args['word_count'])) {
+    if(!$value) {
+      if($args['word_count'] < mb_strlen($value, 'UTF-8')) {
+        $errors[$field_name][] ="文字数が制限を超えています。(文字数：".mb_strlen($value, 'UTF-8')."文字)";
+      }
+    }
+  }
+  return $errors;
+}
+
+function err_disp($param = array()) {
+  foreach ($param as $key => $value) {
+    echo "<p>".$value."</p>";
+  }
+}
+
 function tmp_img($field_key) {
   $img = $_FILES[$field_key];
   $tmp = ABSPATH.'wp-content/tmp_imgs';

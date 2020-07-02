@@ -303,8 +303,14 @@ class wp_post_helper {
 			return $val ? update_field($field_key, $val, $this->postid) : false;
 	}
 
-	// バリデーション
-	public function validate_field($field_key, $field_name, $required = true, $sanitize = true){
+	public function insert_field($field_key, $field_name, $sanitize = true) {
+		$value = (!empty($_POST[$field_name])) ? $_POST[$field_name] : false;
+		if(!$value) {
+			$value = ($sanitize) ? sanitize_text_field($value) : $value;
+			$this->add_field($field_key, $value);
+		}
+	}
+	public function validate_field2($field_key, $field_name, $required = true, $sanitize = true){
 		if ($required == true) {
 			if(empty($_POST[$field_name]) || $_POST[$field_name] == "") {
 				$args = array(

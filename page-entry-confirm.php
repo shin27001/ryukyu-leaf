@@ -1,5 +1,6 @@
 <?php get_header(); ?>
   <?php get_header('sub'); ?>
+  <?php pr($_POST); ?>
   <div class="content-wrap">
     <div class="form-page__title">
       <h1 class="c-red main-title">入力内容の確認</h1>
@@ -235,4 +236,4 @@
       </div>
     </div>
   </div>
-<?php get_footer(); ?>
+<?php get_footer(); pr($_POST);?>
