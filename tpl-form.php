@@ -1,34 +1,34 @@
 <?php
-  if (e('post_all')) {
-    // pr(e('post_all'));
-    /*
+if (e('post_all')) {
+  // pr(e('post_all'));
+  /*
     YToyOTp7czoxMDoidGFudG9fbmFtZSI7czoxMzoi55Sw5LitIOWkqumDjiI7czoxMDoidGFudG9fbWFpbCI7czoxNjoibWFpbEBleGFtcGxlLmNvbSI7czo5OiJ0YW50b190ZWwiO3M6MTA6IjA5ODAwMDExMTEiO3M6OToic2hvcF9uYW1lIjtzOjI3OiLjgaHjgovjgZDjgo7jg7zjgIDljJfosLflupciO3M6ODoiemlwX2NvZGUiO3M6ODoiOTA0LTAwMDEiO3M6NzoiYWRkcmVzcyI7czoyOToi5rKW57iE55yM5YyX6LC355S65qGR5rGfMS0xLTEiO3M6NjoiZGlzaGVzIjthOjI6e2k6MDtzOjI6IndhIjtpOjE7czozOiJ5b3UiO31zOjQ6Im1lbnUiO3M6NjU6IuODn+ODg+OCr+OCueOBneOBsA0K77yI5aSn77yJODMw5YaG77yI5Lit77yJNzMw5YaG77yI5bCP77yJNTMw5YaGIjtzOjY6InRlbF9ubyI7czoxMDoiMDk4MDAwMTExMSI7czo1OiJob3VycyI7czo0Nzoi5pyI772e6YeRIDEy77yaMDDvvZ4xNO+8mjAw44CBMTjvvJowMO+9njI077yaMDAiO3M6NzoicGFya2luZyI7czo2OiIxMDDlj7AiO3M6NzoiaG9saWRheSI7czo5OiLmnKjmm5zml6UiO3M6NToic2VhdHMiO3M6NDI6IjEwMOW4reOAgeODhuODvOODluODq+W4reOAgeOCq+OCpuODs+OCv+ODvCI7czo4OiJtYXBfY29kZSI7czoxMzoiMzMgNTkyIDM1MCo2NCI7czozOiJ1cmwiO3M6MjA6Imh0dHBzOi8vd3d3Lnh4eHh4LmpwIjtzOjI6ImZiIjtzOjI2OiJodHRwczovL2ZhY2Vib29rLmNvbS94eHh4eCI7czoyOiJ0dyI7czoyNToiaHR0cHM6Ly90d2l0dGVyLmNvbS94eHh4eCI7czo1OiJpbnN0YSI7czoyNzoiaHR0cHM6Ly9pbnN0YWdyYW0uY29tL3h4eHh4IjtzOjQ6ImxpbmUiO3M6MjI6Imh0dHBzOi8vbGluZS5jb20veHh4eHgiO3M6NzoibWVzc2FnZSI7czo4Mzoi55CJ55CDTEVBRuOCkuOBv+OBpuadpeW6l+OBl+OBpuOBj+OCjOOBn+aWueOBq+OBr+ODieODquODs+OCrzHmna/jg5fjg6zjgrzjg7Pjg4jvvIEiO3M6Nzoib3B0aW9ucyI7YToyOntpOjA7czo3OiJ0YWtlb3V0IjtpOjE7czo4OiJkZWxpdmVyeSI7fXM6MTU6InRha2VvdXRfbWVzc2FnZSI7czoxMDA6IiAgICAgICAgICAgICAgICAgIOS6iOe0hOWPl+S7mO+8mjE1OjAw44CcMTg6MDANCuWPl+OBkea4oeOBl+aZgumWk++8mjE1OjAw44CcMTk6MDANCiAgICAgICAgICAgICAgICAiO3M6MTY6ImRlbGl2ZXJ5X21lc3NhZ2UiO3M6MTkyOiIgICAgICAgICAgICAgICAgICDlr77lv5zlnLDln5/vvJrlrpzph47mub7luILlhoXjga7jgb/vvIgxNDowMOOBvuOBp+OBruazqOaWh+OBq+mZkOOCiuOBvuOBme+8iQ0K5LqI57SE5Y+X5LuY77yaMTU6MDDjgJwxNzowMO+8iDHmmYLjgbvjganjgYrmmYLplpPjgpLjgYTjgZ/jgaDjgY3jgb7jgZnjgILvvIkNCiAgICAgICAgICAgICAgICAiO3M6ODoicGF5bWVudHMiO2E6Mjp7aTowO3M6NDoidmlzYSI7aToxO3M6NjoibWFzdGVyIjt9czo3OiJjb3JvbmFzIjthOjI6e2k6MDtzOjI0OiLmiYvmjIfmtojmr5LmtrLjga7oqK3nva4iO2k6MTtzOjY6IuaPm+awlyI7fXM6MTM6ImNvcm9uYXNfb3RoZXIiO3M6ODc6IuOBneOBruS7luOCs+ODreODiuWvvuetluOBq+WPluOCiue1hOOCk+OBp+OBhOOCi+OBk+OBqOOBjOOBguOCjOOBsOOBlOWFpeWKm+OBj+OBoOOBleOBhCI7czoxNToicmVxdWVzdF9tZXNzYWdlIjtzOjE0NDoi5b2T44K144Kk44OI44G444Gu44Gd44Gu5LuW44Gu44GU6KaB5pyb44KE5L6d6aC85b2T44K144Kk44OI44G444Gu44Gd44Gu5LuW44Gu44GU6KaB5pyb44KE5L6d6aC85b2T44K144Kk44OI44G444Gu44Gd44Gu5LuW44Gu44GU6KaB5pyb44KE5L6d6aC8IjtzOjE0OiJjb250YWN0X3BvbGljeSI7YToxOntzOjk6InNlcGFyYXRvciI7czoxOiIsIjt9czoxMjoid3JpdHRlbl9vYXRoIjthOjE6e3M6OToic2VwYXJhdG9yIjtzOjE6IiwiO319
     */
-    $data = unserialize(base64_decode(e('post_all')));
-    // pr(unserialize(base64_decode($_POST['post_all'])));
-    // $data['options'] = array();
-    // pr($data);
-    /*
+  $data = unserialize(base64_decode(e('post_all')));
+  // pr(unserialize(base64_decode($_POST['post_all'])));
+  // $data['options'] = array();
+  // pr($data);
+  /*
     foreach ($data as $key => $value) {
       echo '<?php echo e('."'".$key."'".', $data); ?>';
     }
     */
-  } else {
-    //$p = 'YToyOTp7czoxMDoidGFudG9fbmFtZSI7czoxMzoi55Sw5LitIOWkqumDjiI7czoxMDoidGFudG9fbWFpbCI7czoxNjoibWFpbEBleGFtcGxlLmNvbSI7czo5OiJ0YW50b190ZWwiO3M6MTA6IjA5ODAwMDExMTEiO3M6OToic2hvcF9uYW1lIjtzOjI3OiLjgaHjgovjgZDjgo7jg7zjgIDljJfosLflupciO3M6ODoiemlwX2NvZGUiO3M6ODoiOTA0LTAwMDEiO3M6NzoiYWRkcmVzcyI7czoyOToi5rKW57iE55yM5YyX6LC355S65qGR5rGfMS0xLTEiO3M6NjoiZGlzaGVzIjthOjI6e2k6MDtzOjI6IndhIjtpOjE7czozOiJ5b3UiO31zOjQ6Im1lbnUiO3M6NjU6IuODn+ODg+OCr+OCueOBneOBsA0K77yI5aSn77yJODMw5YaG77yI5Lit77yJNzMw5YaG77yI5bCP77yJNTMw5YaGIjtzOjY6InRlbF9ubyI7czoxMDoiMDk4MDAwMTExMSI7czo1OiJob3VycyI7czo0Nzoi5pyI772e6YeRIDEy77yaMDDvvZ4xNO+8mjAw44CBMTjvvJowMO+9njI077yaMDAiO3M6NzoicGFya2luZyI7czo2OiIxMDDlj7AiO3M6NzoiaG9saWRheSI7czo5OiLmnKjmm5zml6UiO3M6NToic2VhdHMiO3M6NDI6IjEwMOW4reOAgeODhuODvOODluODq+W4reOAgeOCq+OCpuODs+OCv+ODvCI7czo4OiJtYXBfY29kZSI7czoxMzoiMzMgNTkyIDM1MCo2NCI7czozOiJ1cmwiO3M6MjA6Imh0dHBzOi8vd3d3Lnh4eHh4LmpwIjtzOjI6ImZiIjtzOjI2OiJodHRwczovL2ZhY2Vib29rLmNvbS94eHh4eCI7czoyOiJ0dyI7czoyNToiaHR0cHM6Ly90d2l0dGVyLmNvbS94eHh4eCI7czo1OiJpbnN0YSI7czoyNzoiaHR0cHM6Ly9pbnN0YWdyYW0uY29tL3h4eHh4IjtzOjQ6ImxpbmUiO3M6MjI6Imh0dHBzOi8vbGluZS5jb20veHh4eHgiO3M6NzoibWVzc2FnZSI7czo4Mzoi55CJ55CDTEVBRuOCkuOBv+OBpuadpeW6l+OBl+OBpuOBj+OCjOOBn+aWueOBq+OBr+ODieODquODs+OCrzHmna/jg5fjg6zjgrzjg7Pjg4jvvIEiO3M6Nzoib3B0aW9ucyI7YToyOntpOjA7czo3OiJ0YWtlb3V0IjtpOjE7czo4OiJkZWxpdmVyeSI7fXM6MTU6InRha2VvdXRfbWVzc2FnZSI7czoxMDA6IiAgICAgICAgICAgICAgICAgIOS6iOe0hOWPl+S7mO+8mjE1OjAw44CcMTg6MDANCuWPl+OBkea4oeOBl+aZgumWk++8mjE1OjAw44CcMTk6MDANCiAgICAgICAgICAgICAgICAiO3M6MTY6ImRlbGl2ZXJ5X21lc3NhZ2UiO3M6MTkyOiIgICAgICAgICAgICAgICAgICDlr77lv5zlnLDln5/vvJrlrpzph47mub7luILlhoXjga7jgb/vvIgxNDowMOOBvuOBp+OBruazqOaWh+OBq+mZkOOCiuOBvuOBme+8iQ0K5LqI57SE5Y+X5LuY77yaMTU6MDDjgJwxNzowMO+8iDHmmYLjgbvjganjgYrmmYLplpPjgpLjgYTjgZ/jgaDjgY3jgb7jgZnjgILvvIkNCiAgICAgICAgICAgICAgICAiO3M6ODoicGF5bWVudHMiO2E6Mjp7aTowO3M6NDoidmlzYSI7aToxO3M6NjoibWFzdGVyIjt9czo3OiJjb3JvbmFzIjthOjI6e2k6MDtzOjI0OiLmiYvmjIfmtojmr5LmtrLjga7oqK3nva4iO2k6MTtzOjY6IuaPm+awlyI7fXM6MTM6ImNvcm9uYXNfb3RoZXIiO3M6ODc6IuOBneOBruS7luOCs+ODreODiuWvvuetluOBq+WPluOCiue1hOOCk+OBp+OBhOOCi+OBk+OBqOOBjOOBguOCjOOBsOOBlOWFpeWKm+OBj+OBoOOBleOBhCI7czoxNToicmVxdWVzdF9tZXNzYWdlIjtzOjE0NDoi5b2T44K144Kk44OI44G444Gu44Gd44Gu5LuW44Gu44GU6KaB5pyb44KE5L6d6aC85b2T44K144Kk44OI44G444Gu44Gd44Gu5LuW44Gu44GU6KaB5pyb44KE5L6d6aC85b2T44K144Kk44OI44G444Gu44Gd44Gu5LuW44Gu44GU6KaB5pyb44KE5L6d6aC8IjtzOjE0OiJjb250YWN0X3BvbGljeSI7YToxOntzOjk6InNlcGFyYXRvciI7czoxOiIsIjt9czoxMjoid3JpdHRlbl9vYXRoIjthOjE6e3M6OToic2VwYXJhdG9yIjtzOjE6IiwiO319';
-    //$data = unserialize(base64_decode($p));
-    // pr($data);
+} else {
+  //$p = 'YToyOTp7czoxMDoidGFudG9fbmFtZSI7czoxMzoi55Sw5LitIOWkqumDjiI7czoxMDoidGFudG9fbWFpbCI7czoxNjoibWFpbEBleGFtcGxlLmNvbSI7czo5OiJ0YW50b190ZWwiO3M6MTA6IjA5ODAwMDExMTEiO3M6OToic2hvcF9uYW1lIjtzOjI3OiLjgaHjgovjgZDjgo7jg7zjgIDljJfosLflupciO3M6ODoiemlwX2NvZGUiO3M6ODoiOTA0LTAwMDEiO3M6NzoiYWRkcmVzcyI7czoyOToi5rKW57iE55yM5YyX6LC355S65qGR5rGfMS0xLTEiO3M6NjoiZGlzaGVzIjthOjI6e2k6MDtzOjI6IndhIjtpOjE7czozOiJ5b3UiO31zOjQ6Im1lbnUiO3M6NjU6IuODn+ODg+OCr+OCueOBneOBsA0K77yI5aSn77yJODMw5YaG77yI5Lit77yJNzMw5YaG77yI5bCP77yJNTMw5YaGIjtzOjY6InRlbF9ubyI7czoxMDoiMDk4MDAwMTExMSI7czo1OiJob3VycyI7czo0Nzoi5pyI772e6YeRIDEy77yaMDDvvZ4xNO+8mjAw44CBMTjvvJowMO+9njI077yaMDAiO3M6NzoicGFya2luZyI7czo2OiIxMDDlj7AiO3M6NzoiaG9saWRheSI7czo5OiLmnKjmm5zml6UiO3M6NToic2VhdHMiO3M6NDI6IjEwMOW4reOAgeODhuODvOODluODq+W4reOAgeOCq+OCpuODs+OCv+ODvCI7czo4OiJtYXBfY29kZSI7czoxMzoiMzMgNTkyIDM1MCo2NCI7czozOiJ1cmwiO3M6MjA6Imh0dHBzOi8vd3d3Lnh4eHh4LmpwIjtzOjI6ImZiIjtzOjI2OiJodHRwczovL2ZhY2Vib29rLmNvbS94eHh4eCI7czoyOiJ0dyI7czoyNToiaHR0cHM6Ly90d2l0dGVyLmNvbS94eHh4eCI7czo1OiJpbnN0YSI7czoyNzoiaHR0cHM6Ly9pbnN0YWdyYW0uY29tL3h4eHh4IjtzOjQ6ImxpbmUiO3M6MjI6Imh0dHBzOi8vbGluZS5jb20veHh4eHgiO3M6NzoibWVzc2FnZSI7czo4Mzoi55CJ55CDTEVBRuOCkuOBv+OBpuadpeW6l+OBl+OBpuOBj+OCjOOBn+aWueOBq+OBr+ODieODquODs+OCrzHmna/jg5fjg6zjgrzjg7Pjg4jvvIEiO3M6Nzoib3B0aW9ucyI7YToyOntpOjA7czo3OiJ0YWtlb3V0IjtpOjE7czo4OiJkZWxpdmVyeSI7fXM6MTU6InRha2VvdXRfbWVzc2FnZSI7czoxMDA6IiAgICAgICAgICAgICAgICAgIOS6iOe0hOWPl+S7mO+8mjE1OjAw44CcMTg6MDANCuWPl+OBkea4oeOBl+aZgumWk++8mjE1OjAw44CcMTk6MDANCiAgICAgICAgICAgICAgICAiO3M6MTY6ImRlbGl2ZXJ5X21lc3NhZ2UiO3M6MTkyOiIgICAgICAgICAgICAgICAgICDlr77lv5zlnLDln5/vvJrlrpzph47mub7luILlhoXjga7jgb/vvIgxNDowMOOBvuOBp+OBruazqOaWh+OBq+mZkOOCiuOBvuOBme+8iQ0K5LqI57SE5Y+X5LuY77yaMTU6MDDjgJwxNzowMO+8iDHmmYLjgbvjganjgYrmmYLplpPjgpLjgYTjgZ/jgaDjgY3jgb7jgZnjgILvvIkNCiAgICAgICAgICAgICAgICAiO3M6ODoicGF5bWVudHMiO2E6Mjp7aTowO3M6NDoidmlzYSI7aToxO3M6NjoibWFzdGVyIjt9czo3OiJjb3JvbmFzIjthOjI6e2k6MDtzOjI0OiLmiYvmjIfmtojmr5LmtrLjga7oqK3nva4iO2k6MTtzOjY6IuaPm+awlyI7fXM6MTM6ImNvcm9uYXNfb3RoZXIiO3M6ODc6IuOBneOBruS7luOCs+ODreODiuWvvuetluOBq+WPluOCiue1hOOCk+OBp+OBhOOCi+OBk+OBqOOBjOOBguOCjOOBsOOBlOWFpeWKm+OBj+OBoOOBleOBhCI7czoxNToicmVxdWVzdF9tZXNzYWdlIjtzOjE0NDoi5b2T44K144Kk44OI44G444Gu44Gd44Gu5LuW44Gu44GU6KaB5pyb44KE5L6d6aC85b2T44K144Kk44OI44G444Gu44Gd44Gu5LuW44Gu44GU6KaB5pyb44KE5L6d6aC85b2T44K144Kk44OI44G444Gu44Gd44Gu5LuW44Gu44GU6KaB5pyb44KE5L6d6aC8IjtzOjE0OiJjb250YWN0X3BvbGljeSI7YToxOntzOjk6InNlcGFyYXRvciI7czoxOiIsIjt9czoxMjoid3JpdHRlbl9vYXRoIjthOjE6e3M6OToic2VwYXJhdG9yIjtzOjE6IiwiO319';
+  //$data = unserialize(base64_decode($p));
+  // pr($data);
 
-    $data = array(); #初期化
-  }
-  $checked = ""; #初期化
+  $data = array(); #初期化
+}
+$checked = ""; #初期化
 
-  global $validate_errors;
-  $error = $validate_errors;
+global $validate_errors;
+$error = $validate_errors;
 ?>
 
 
 <div class="l-form">
-  <form method="POST" id="registform" action="<?php echo esc_url( home_url('entry-regist') ); ?>" enctype="multipart/form-data">
+  <form method="POST" id="registform" action="<?php echo esc_url(home_url('entry-regist')); ?>" enctype="multipart/form-data">
     <input type="hidden" name="confirm" value="true">
     <h2 class="l-fome__title">掲載内容</h2>
     <div class="l-form__radio">
@@ -109,6 +109,10 @@
         <input type="text" name="address" id="address" class="address" size="60" maxlength="500" value="<?php echo e('address', $data); ?>" />
         <?php if (e('address', $error)) : ?><div class="validate-text"><?php echo e('address', $error); ?></div><?php endif; ?>
       </dd>
+      <!-- エリア選択 -->
+      <dt><label class="l-form__label" for="area">
+          エリアを選択 <span class="form-require js-require">必須</span></label>
+      </dt>
       <dd class="l-form__action">
         <div class="selectWrap">
           <select class="searchBody__select" name="area">
@@ -119,25 +123,31 @@
             <?php endforeach; ?>
           </select>
         </div>
-      </dd>      
+      </dd>
       <!-- ジャンル -->
       <dt>
         <label class="l-form__label" for="genre">
           ジャンルを選択（複数選択可） <span class="form-require js-require">必須</span>
         </label>
         <?php if (e('dishes', $error)) : ?><div class="validate-text"><?php echo e('dishes', $error); ?></div><?php endif; ?>
-    </dt>
+      </dt>
       <dd class="l-form__action">
         <div class="form-checkbox l-form__genre">
           <ul class="form-checkbox__list">
             <?php
-              $args = array('taxonomy' => 'dishes', 'hide_empty' => false, 'orderby' => 'ID');
-              $dishes = new WP_Term_Query($args);
+            $args = array('taxonomy' => 'dishes', 'hide_empty' => false, 'orderby' => 'ID');
+            $dishes = new WP_Term_Query($args);
             ?>
             <?php foreach ($dishes->terms as $key => $dish) : ?>
               <?php if (e('dishes', $data)) : foreach (e('dishes', $data) as $value) : ?>
-                <?php if(trim($dish->slug) == trim($value)) { $checked = 'checked="checked"'; break; } else { $checked = ""; }; ?>
-              <?php endforeach; endif; ?>
+                  <?php if (trim($dish->slug) == trim($value)) {
+                    $checked = 'checked="checked"';
+                    break;
+                  } else {
+                    $checked = "";
+                  }; ?>
+              <?php endforeach;
+              endif; ?>
               <li>
                 <input class="form-checkbox__button-input" type="checkbox" name="dishes[]" id="<?php echo $dish->slug; ?>" value="<?php echo $dish->slug; ?>" <?php echo $checked; ?>>
                 <label class="form-checkbox__button" for="<?php echo $dish->slug; ?>"><?php echo $dish->name; ?></label>
@@ -153,9 +163,8 @@
         </label>
       </dt>
       <dd class="l-form__action">
-        <textarea name="menu" id="menu" class="menu" cols="100" rows="5"
-          placeholder="その他、キャンペーンやおすすめなどお知らせしたい情報があれば入力してください。（300文字以内）"><?php echo e('menu', $data); ?></textarea>
-          <?php if (e('menu', $error)) : ?><div class="validate-text"><?php echo e('menu', $error); ?></div><?php endif; ?>
+        <textarea name="menu" id="menu" class="menu" cols="100" rows="5" placeholder="その他、キャンペーンやおすすめなどお知らせしたい情報があれば入力してください。（300文字以内）"><?php echo e('menu', $data); ?></textarea>
+        <?php if (e('menu', $error)) : ?><div class="validate-text"><?php echo e('menu', $error); ?></div><?php endif; ?>
       </dd>
 
       <!-- お店の電話番号 -->
@@ -269,8 +278,7 @@
         </label>
       </dt>
       <dd class="l-form__action">
-        <textarea name="message" id="message" class="message" cols="100" rows="5"
-          placeholder="その他、キャンペーンやおすすめなどお知らせしたい情報があれば入力してください。例：琉球LEAFをみて来店してくれた方にはドリンク1杯プレゼント！（300文字以内）"><?php echo e('message', $data); ?></textarea>
+        <textarea name="message" id="message" class="message" cols="100" rows="5" placeholder="その他、キャンペーンやおすすめなどお知らせしたい情報があれば入力してください。例：琉球LEAFをみて来店してくれた方にはドリンク1杯プレゼント！（300文字以内）"><?php echo e('message', $data); ?></textarea>
       </dd>
       <!-- こだわり -->
       <dt>
@@ -279,16 +287,22 @@
         </label>
       </dt>
       <dd class="l-form__action">
-        <div class="checkbox-Wrap">
-          <ul class="checkbox-list">
+        <div class="form-checkbox">
+          <ul class="form-checkbox__list">
             <?php
-              $args = array('taxonomy' => 'options', 'hide_empty' => false, 'orderby' => 'ID');
-              $options = new WP_Term_Query($args);
+            $args = array('taxonomy' => 'options', 'hide_empty' => false, 'orderby' => 'ID');
+            $options = new WP_Term_Query($args);
             ?>
             <?php foreach ($options->terms as $key => $option) : ?>
               <?php if (e('options', $data)) : foreach (e('options', $data) as $value) : ?>
-                <?php if(trim($option->slug) == trim($value)) { $checked = 'checked="checked"'; break; } else { $checked = ""; }; ?>
-              <?php endforeach; endif; ?>
+                  <?php if (trim($option->slug) == trim($value)) {
+                    $checked = 'checked="checked"';
+                    break;
+                  } else {
+                    $checked = "";
+                  }; ?>
+              <?php endforeach;
+              endif; ?>
               <li>
                 <input class="form-checkbox__button-input" type="checkbox" name="options[]" id="<?php echo $option->slug; ?>" value="<?php echo $option->slug; ?>" <?php echo $checked; ?>>
                 <label class="form-checkbox__button" for="<?php echo $option->slug; ?>"><?php echo $option->name; ?></label>
@@ -306,8 +320,7 @@
         <p class="sub-text">テイクアウト可能な場合のみご入力ください</p>
       </dt>
       <dd class="l-form__action">
-        <textarea name="takeout_message" id="takeout_message" class="takeout_message" cols="100" rows="4"
-          placeholder="予約受付：15:00〜18:00&#013;&#010;受け渡し時間：15:00〜19:00"><?php echo e('takeout_message', $data); ?></textarea>
+        <textarea name="takeout_message" id="takeout_message" class="takeout_message" cols="100" rows="4" placeholder="予約受付：15:00〜18:00&#013;&#010;受け渡し時間：15:00〜19:00"><?php echo e('takeout_message', $data); ?></textarea>
       </dd>
       <!-- デリバリー対応地域・受付時間 -->
       <dt>
@@ -317,8 +330,7 @@
         <p class="sub-text">デリバリー対応可能な場合のみご入力ください</p>
       </dt>
       <dd class="l-form__action">
-        <textarea name="delivery_message" id="delivery_message" class="delivery_message" cols="100" rows="4"
-          placeholder="対応地域：宜野湾市内のみ（14:00までの注文に限ります）&#013;&#010;予約受付：15:00〜17:00（1時ほどお時間をいただきます。）"><?php echo e('delivery_message', $data); ?></textarea>
+        <textarea name="delivery_message" id="delivery_message" class="delivery_message" cols="100" rows="4" placeholder="対応地域：宜野湾市内のみ（14:00までの注文に限ります）&#013;&#010;予約受付：15:00〜17:00（1時ほどお時間をいただきます。）"><?php echo e('delivery_message', $data); ?></textarea>
       </dd>
       <dt>
         <label class="l-form__label" for="credit">
@@ -328,13 +340,19 @@
       </dt>
       <dd class="l-form__action">
         <!-- <textarea name="credit" id="credit" class="credit" cols="100" rows="4" placeholder="VISA MASTER"></textarea> -->
-        <div class="checkbox-Wrap">
-          <ul class="checkbox-list">
+        <div class="form-checkbox__">
+          <ul class="form-checkbox__list">
             <?php $payments = get_field_object('payments', choices_id()); ?>
             <?php foreach ($payments['choices'] as $key => $payment) : ?>
               <?php if (e('payments', $data)) : foreach (e('payments', $data) as $value) : ?>
-                <?php if(trim($key) == trim($value)) { $checked = 'checked="checked"'; break; } else { $checked = ""; }; ?>
-              <?php endforeach; endif; ?>
+                  <?php if (trim($key) == trim($value)) {
+                    $checked = 'checked="checked"';
+                    break;
+                  } else {
+                    $checked = "";
+                  }; ?>
+              <?php endforeach;
+              endif; ?>
               <li>
                 <input class="form-checkbox__button-input" type="checkbox" name="payments[]" id="<?php echo $payment; ?>" value="<?php echo $key; ?>" <?php echo $checked; ?>>
                 <label class="form-checkbox__button" for="<?php echo $payment; ?>"><?php echo $payment; ?></label>
@@ -353,12 +371,18 @@
         <div class="f-checkbox">
           <ul class="f-checkbox__list">
             <?php
-              $coronas = get_field_object('coronas', choices_id());
+            $coronas = get_field_object('coronas', choices_id());
             ?>
             <?php foreach ($coronas['choices'] as $key => $corona) : ?>
               <?php if (e('coronas', $data)) : foreach (e('coronas', $data) as $value) : ?>
-                <?php if(trim($key) == trim($value)) { $checked = 'checked="checked"'; break; } else { $checked = ""; }; ?>
-              <?php endforeach; endif; ?>
+                  <?php if (trim($key) == trim($value)) {
+                    $checked = 'checked="checked"';
+                    break;
+                  } else {
+                    $checked = "";
+                  }; ?>
+              <?php endforeach;
+              endif; ?>
               <li>
                 <input class="form-checkbox__button-input" type="checkbox" name="coronas[]" id="<?php echo $corona; ?>" value="<?php echo $key; ?>" <?php echo $checked; ?>>
                 <label class="form-checkbox__button" for="<?php echo $corona; ?>"><?php echo $corona; ?></label>
@@ -375,9 +399,21 @@
         </label>
       </dt>
       <dd class="l-form__action">
-        <textarea name="coronas_other" id="coronas_other" class="coronas_other" cols="100" rows="4"
-          placeholder="その他コロナ対策に取り組んでいることがあればご入力ください（300文字以内）"><?php echo e('coronas_other', $data); ?></textarea>
-          <?php if (e('coronas_other', $error)) : ?><div class="validate-text"><?php echo e('coronas_other', $error); ?></div><?php endif; ?>
+        <textarea name="coronas_other" id="coronas_other" class="coronas_other" cols="100" rows="4" placeholder="その他コロナ対策に取り組んでいることがあればご入力ください（300文字以内）"><?php echo e('coronas_other', $data); ?></textarea>
+        <?php if (e('coronas_other', $error)) : ?><div class="validate-text"><?php echo e('coronas_other', $error); ?></div><?php endif; ?>
+      </dd>
+    </dl>
+    <h2 class="l-fome__title">掲載動画</h2>
+    <p class="sub-text">店舗の動画をUPすることができます。YOUTUBEのURLを入力してください。<br>
+      ※YOUTUBEにアップロードしてある動画のみになります。</p>
+    <dl>
+      <dt>
+        <label class="l-form__label" for="shop_main_image">
+          掲載動画
+        </label>
+      </dt>
+      <dd class="l-form__action">
+        <input type="text" name="y-tube" id="y-tube" class="y-tube" size="60" maxlength="500" value="<?php echo e('y-tube', $data); ?>" />
       </dd>
     </dl>
     <h2 class="l-fome__title">掲載画像</h2>
@@ -395,38 +431,38 @@
         <!-- <span data-mwform-file-delete="shop_image" class="mwform-file-delete">&times;</span> -->
       </dd>
 
-  <dt>
-    <label class="l-form__label" for="shop_image1">
-      掲載画像１
-    </label>
-    <p class="sub-text">外観や座席などその他掲載希望される画像</p>
-  </dt>
-  <dd class="l-form__action p-1">
-    <input type="file" name="shop_image1" id="shop_image1" class="shop_image1" />
-    <!-- <span data-mwform-file-delete="shop_image1" class="mwform-file-delete">&times;</span> -->
-  </dd>
+      <dt>
+        <label class="l-form__label" for="shop_image1">
+          掲載画像１
+        </label>
+        <p class="sub-text">外観や座席などその他掲載希望される画像</p>
+      </dt>
+      <dd class="l-form__action p-1">
+        <input type="file" name="shop_image1" id="shop_image1" class="shop_image1" />
+        <!-- <span data-mwform-file-delete="shop_image1" class="mwform-file-delete">&times;</span> -->
+      </dd>
 
-  <dt>
-    <label class="l-form__label" for="shop_image2">
-      掲載画像２
-    </label>
-    <p class="sub-text">外観や座席などその他掲載希望される画像</p>
-  </dt>
-  <dd class="l-form__action p-1">
-    <input type="file" name="shop_image2" id="shop_image2" class="shop_image2" />
-    <!-- <span data-mwform-file-delete="shop_image2" class="mwform-file-delete">&times;</span> -->
-  </dd>
+      <dt>
+        <label class="l-form__label" for="shop_image2">
+          掲載画像２
+        </label>
+        <p class="sub-text">外観や座席などその他掲載希望される画像</p>
+      </dt>
+      <dd class="l-form__action p-1">
+        <input type="file" name="shop_image2" id="shop_image2" class="shop_image2" />
+        <!-- <span data-mwform-file-delete="shop_image2" class="mwform-file-delete">&times;</span> -->
+      </dd>
 
-  <dt>
-    <label class="l-form__label" for="shop_image3">
-      掲載画像３
-    </label>
-    <p class="sub-text">料理やドリンクの写真その他掲載希望される画像</p>
-  </dt>
-  <dd class="l-form__action p-1">
-    <input type="file" name="shop_image3" id="shop_image3" class="shop_image3" />
-    <!-- <span data-mwform-file-delete="shop_image3" class="mwform-file-delete">&times;</span> -->
-  </dd>
+      <dt>
+        <label class="l-form__label" for="shop_image3">
+          掲載画像３
+        </label>
+        <p class="sub-text">料理やドリンクの写真その他掲載希望される画像</p>
+      </dt>
+      <dd class="l-form__action p-1">
+        <input type="file" name="shop_image3" id="shop_image3" class="shop_image3" />
+        <!-- <span data-mwform-file-delete="shop_image3" class="mwform-file-delete">&times;</span> -->
+      </dd>
 
       <dt>
         <label class="l-form__label" for="shop_image4">
@@ -444,40 +480,39 @@
         </label>
       </dt>
       <dd class="l-form__action">
-        <textarea name="request_message" id="request_message" class="request_message" cols="60" rows="10"
-          placeholder="1,000文字以内で入力してください。"><?php echo e('request_message', $data); ?></textarea>
+        <textarea name="request_message" id="request_message" class="request_message" cols="60" rows="10" placeholder="1,000文字以内で入力してください。"><?php echo e('request_message', $data); ?></textarea>
       </dd>
     </dl>
 
-<div class="l-form__option">
-  <span class="l-form__option-wrap">
-    <label for="contact_policy-1">
-      <input type="checkbox" name="contact_policy[data][]" value="プライバシーポリシーに同意する" id="contact_policy-1" class="option_checkbox" />
-      <span class="l-form__option-text">プライバシーポリシーに同意する</span>
-    </label>
-  </span>
-  <input type="hidden" name="contact_policy[separator]" value="," />
-  <input type="hidden" } />
-  <div class="l-form__option-link-area">
-    <a href="#" target="_blank" class="l-form__option-link"><i class="fas fa-external-link-alt"></i>
-      プライバシーポリシー</a>
-  </div>
-</div>
+    <div class="l-form__option">
+      <span class="l-form__option-wrap">
+        <label for="contact_policy-1">
+          <input type="checkbox" name="contact_policy[data][]" value="プライバシーポリシーに同意する" id="contact_policy-1" class="option_checkbox" />
+          <span class="l-form__option-text">プライバシーポリシーに同意する</span>
+        </label>
+      </span>
+      <input type="hidden" name="contact_policy[separator]" value="," />
+      <input type="hidden" } />
+      <div class="l-form__option-link-area">
+        <a href="#" target="_blank" class="l-form__option-link"><i class="fas fa-external-link-alt"></i>
+          プライバシーポリシー</a>
+      </div>
+    </div>
 
-<div class="l-form__option">
-  <span class="l-form__option-wrap">
-    <label for="written_oath-1">
-      <input type="checkbox" name="written_oath[data][]" value="「反社会的勢力ではないことの誓約書」に同意する" id="written_oath-1" class="option_checkbox" />
-      <span class="l-form__option-text">「反社会的勢力ではないことの誓約書」に同意する</span>
-    </label>
-  </span>
-  <input type="hidden" name="written_oath[separator]" value="," />
-  <input type="hidden" name="" value="" />
-  <div class="l-form__option-link-area">
-    <a href="#" target="_blank" class="l-form__option-link"><i class="fas fa-external-link-alt"></i>
-      反社会的勢力ではないことの誓約書</a>
-  </div>
-</div>
-<button class="btn btn-m-red" type="submit"><span><i class="fas fa-search"></i> 入力内容を確認する</span></button>
-</form>
+    <div class="l-form__option">
+      <span class="l-form__option-wrap">
+        <label for="written_oath-1">
+          <input type="checkbox" name="written_oath[data][]" value="「反社会的勢力ではないことの誓約書」に同意する" id="written_oath-1" class="option_checkbox" />
+          <span class="l-form__option-text">「反社会的勢力ではないことの誓約書」に同意する</span>
+        </label>
+      </span>
+      <input type="hidden" name="written_oath[separator]" value="," />
+      <input type="hidden" name="" value="" />
+      <div class="l-form__option-link-area">
+        <a href="#" target="_blank" class="l-form__option-link"><i class="fas fa-external-link-alt"></i>
+          反社会的勢力ではないことの誓約書</a>
+      </div>
+    </div>
+    <button class="btn btn-m-red" type="submit"><span><i class="fas fa-search"></i> 入力内容を確認する</span></button>
+  </form>
 </div><!-- /l-form -->
