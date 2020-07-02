@@ -109,6 +109,17 @@
         <input type="text" name="address" id="address" class="address" size="60" maxlength="500" value="<?php echo e('address', $data); ?>" />
         <?php if (e('address', $error)) : ?><div class="validate-text"><?php echo e('address', $error); ?></div><?php endif; ?>
       </dd>
+      <dd class="l-form__action">
+        <div class="selectWrap">
+          <select class="searchBody__select" name="area">
+            <option value="" hidden>未選択</option>
+            <?php $areas = term_hierarchy('area'); ?>
+            <?php foreach ($areas as $key => $area) : ?>
+              <option value="<?php echo $area->slug; ?>"><?php echo $area->name; ?></option>
+            <?php endforeach; ?>
+          </select>
+        </div>
+      </dd>      
       <!-- ジャンル -->
       <dt>
         <label class="l-form__label" for="genre">
