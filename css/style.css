@@ -232,7 +232,7 @@
     line-height: 1;
     z-index: 999;
     background: #fff;
-    height: 56px;
+    height: 64px;
   }
   .mobile__menu {
     background: none;
@@ -268,12 +268,14 @@
     margin-top: 0;
     top: 0;
     position: fixed;
-    height: 55px;
+    height: 64px;
     background: #fff;
     background: rgba(255, 255, 255, 0.7);
     transition: top 0.65s ease-in;
     -webkit-transition: top 0.65s ease-in;
     -moz-transition: top 0.65s ease-in;
+    -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+            box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
   }
 }
 
