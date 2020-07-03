@@ -88,7 +88,7 @@
   </div>
 </div>
 <!-- /l-insta -->
-<div class="l-special">
+<!-- <div class="l-special">
   <h2 class="main-title"><span class="c-red"><i class="fas fa-bookmark"></i></span> おすすめ特集</h2>
   <div class="l-special__list">
     <div class="l-special__item">
@@ -104,7 +104,7 @@
       </a>
     </div>
 
-    <!-- /l-special__item -->
+  
     <div class="l-special__item">
       <a class="l-special__link" href="#">
         <div class="l-special__photo">
@@ -117,7 +117,7 @@
         </div>
       </a>
     </div>
-    <!-- /l-special__item -->
+
     <div class="l-special__item">
       <a class="l-special__link" href="#">
         <div class="l-special__photo">
@@ -130,7 +130,7 @@
         </div>
       </a>
     </div>
-    <!-- /l-special__item -->
+ 
     <div class="l-special__item">
       <a class="l-special__link" href="#">
         <div class="l-special__photo">
@@ -143,10 +143,10 @@
         </div>
       </a>
     </div>
-    <!-- /l-special__item -->
+
   </div>
   <p class="btn-wrap"><a href="#" class="btn btn-m-white"><i class="far fa-newspaper"></i> 記事一覧を見る</a></p>
-</div>
+</div> -->
 <!-- /l-special -->
 
 <div class="mod_share">
