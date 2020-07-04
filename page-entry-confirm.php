@@ -99,7 +99,7 @@
           </tr>
           <tr>
             <th>備考</th>
-            <td>このテキストはダミーです。このテキストはダミーです。このテキストはダミーです。このテキストはダミーです。このテキストはダミーです。</td>
+            <td></td>
           </tr>
           <tr>
             <th>こだわり<span class="small-text">（複数選択可）</span></th>
@@ -148,9 +148,7 @@
             <td><?php stz(e('coronas_other'), true); ?></td>
           </tr>
         </table>
-        <?php
-          // pr($_FILES);
-        ?>
+
         <h2 class="l-fome__title">掲載画像</h2>
         <table class="l-info__table">
           <tr>

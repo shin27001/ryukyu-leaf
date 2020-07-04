@@ -338,25 +338,20 @@ class wp_post_helper {
 	// バリデーション
 	public function add_media2($field_name){
 		$filename = $_POST[$field_name];
-		// $filename = $_FILES[$field_name]['name'];
-
 		$wp_upload_dir = wp_upload_dir();
-		move_uploaded_file(get_tmp_img_dir().$filename, $wp_upload_dir['basedir'].'/' . $filename);
-		// move_uploaded_file($_FILES[$field_name]['tmp_name'], $wp_upload_dir['basedir'].'/' . $filename);
+		$this->move(get_tmp_img_dir().$filename, $wp_upload_dir['basedir'].'/' . $filename);
 		return $this->add_media($wp_upload_dir['basedir'].'/' . $filename);
-		// echo "attachment_id -- ".$attachment_id;
-		// $this->add_field($field_key, $attachment_id);
 	}
 
-	public function add_media_sub_field($field_key, $attach = array()){
-		// $field_key = "field_5ef2c011413da";
-		$value = array($attach);
-		$this->shopimg['shop_images'][] = $attach;
-		update_field( $field_key, $this->shopimg, $this->postid );
+	public function move( $from, $to ){
+	    if ( copy ($from, $to) ){
+	        unlink($from);
+	        return TRUE;
+	    }
+	    else{
+	        return FALSE;
+	    }
 	}
-
-
-
 }
 
 function remote_get_file($url = null, $file_dir = '') {

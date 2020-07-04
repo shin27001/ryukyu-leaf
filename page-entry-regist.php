@@ -5,10 +5,6 @@
   if (e('post_all')) {
     $_POST  = unserialize(base64_decode(e('post_all')));
   }
-  // $_FILES = unserialize(base64_decode(e('post_files')));
-
-//   pr($_POST);
-// return;
 
   $my_post = array();
   $my_post['post_title'] = stz($_POST['shop_name']);
@@ -48,11 +44,9 @@
   $post->add_terms('dishes',  $_POST['dishes']);
   $post->add_terms('options', $_POST['options']);
 
-
+  // 投稿し、post_idを取得
   $postid = $post->insert();
   // echo "post-id -- ".$postid;
-
-  $_POST['confirm'] = "";
 
   // 画像ファイル保存
   if (!empty($_POST['shop_main_image'])) {
