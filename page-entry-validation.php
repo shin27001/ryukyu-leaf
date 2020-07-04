@@ -3,10 +3,14 @@
 
 $errors = array();
 
+// pr($_POST);
 // pr(validate_field('tanto_name'));
 
 //stz($_POST['shop_name']);
 // $errors = array_merge($errors, validate_field('shop_name'));
+$errors = array_merge($errors, validate_field('contact_policy'));
+$errors = array_merge($errors, validate_field('written_oath'));
+
 $errors = array_merge($errors, validate_field('tanto_name'));
 $errors = array_merge($errors, validate_field('tanto_mail'));
 $errors = array_merge($errors, validate_field('tanto_tel'));

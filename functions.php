@@ -161,7 +161,7 @@ function stz($str, $echo = false) {
 
 // バリデーション
 function validate_field($field_name, $args = array()) {
-  $args = array_merge(array('empty'=>false, 'word'=>false, 'sanitize'=>true, 'taxonomy'=>false), $args);
+  $args = array_merge(array('empty'=>false, 'word'=>false, 'sanitize'=>true, 'acf-field'=>false), $args);
   $errors = array();#初期化
 
   if (!is_array($args)) { return false; }
@@ -173,7 +173,7 @@ function validate_field($field_name, $args = array()) {
   // 必須チェック
   if (!$args['empty']) {
     if(!$value) {
-      if ($args['taxonomy']) {
+      if (!$args['acf-field']) {
         switch ($field_name) {
           case 'area':
             $errors[$field_name][] = "「エリア」が選択されていません。";
@@ -183,6 +183,12 @@ function validate_field($field_name, $args = array()) {
             break;
           case 'options':
             $errors[$field_name][] = "「こだわり」が選択されていません。";
+            break;
+          case 'contact_policy':
+            $errors[$field_name][] = "「プライバシーポリシーに同意する」が選択されていません。";
+            break;
+          case 'written_oath':
+            $errors[$field_name][] = "「反社会的勢力ではないことの誓約書に同意する」が選択されていません。";
             break;
         }
       } else {
