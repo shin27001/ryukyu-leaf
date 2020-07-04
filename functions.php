@@ -102,24 +102,22 @@ add_action( 'load-post-new.php', 'disable_visual_editor_in_page' );
 
 
 # カスタムタクソノミーの階層構造を維持する
-function term_hierarchy($taxonomy) {
+function term_hierarchy($taxonomy, $parent = true) {
   $term_hierarchy = array();
   $args = array('taxonomy' => $taxonomy, 'hide_empty' => false, 'parent' => false, 'orderby' => 'ID');
   $taxonomies = new WP_Term_Query($args);
 
+  $term_hierarchy = array();
   foreach ($taxonomies->terms as $key => $term) {
-    $term_hierarchy[] = $term;
-    $args = array('taxonomy' => $taxonomy, 'hide_empty' => false, 'parent' => $term->term_id);
+    if($parent) { $term_hierarchy[] = $term; }
+    $args = array('taxonomy' => $taxonomy, 'hide_empty' => false, 'parent' => $term->term_id, 'orderby' => 'ID');
     $terms = new WP_Term_Query($args);
     foreach ($terms->terms as $key => $term_child) {
       $term_hierarchy[] = $term_child;
     }
   }
-
   return $term_hierarchy;
 }
-
-
 
 # カスタムタクソノミーをソートする
 function get_ordered_terms( $id = 0, $taxonomy = 'category', $orderby = 'term_id', $order = 'DESC' ) {
@@ -228,6 +226,60 @@ function tmp_img($field_key) {
   move_uploaded_file($img['tmp_name'], $tmp.'/'.$img['name']);
   return $img['name'];
   // return home_url('wp-content/tmp_imgs').'/'.$img['name'];
+}
+
+/**
+ * youtubeのURLから埋め込みタグを生成する
+ *
+ * @param   string $param youtubeのURL
+ * @return  string        埋め込みタグ
+ */
+function createvideotag($param)
+{
+    //とりあえずURLがyoutubeのURLであるかをチェック
+    if(preg_match('#https?://www.youtube.com/.*#i',$param,$matches)){
+        //parse_urlでhttps://www.youtube.com/watch以下のパラメータを取得
+        $parse_url = parse_url($param);
+        // 動画IDを取得
+        if (preg_match('#v=([-\w]{11})#i', $parse_url['query'], $v_matches)) {
+            $video_id = $v_matches[1];
+        } else {
+            // 万が一動画のIDの存在しないURLだった場合は埋め込みコードを生成しない。
+            return false;
+        }
+        $v_param = '';
+        // パラメータにt=XXmXXsがあった時の埋め込みコード用パラメータ設定
+        // t=〜〜の部分を抽出する正規表現は記述を誤るとlist=〜〜の部分を抽出してしまうので注意
+        if (preg_match('#t=([0-9ms]+)#i', $parse_url['query'], $t_maches)) {
+            $time = 0;
+            if (preg_match('#(\d+)m#i', $t_maches[1], $minute)) {
+                // iframeでは正の整数のみ有効なのでt=XXmXXsとなっている場合は整形する必要がある。
+                $time = $minute[1]*60;
+            }
+            if (preg_match('#(\d+)s#i', $t_maches[1], $second)) {
+                $time = $time+$second[1];
+            }
+            if (!preg_match('#(\d+)m#i', $t_maches[1]) && !preg_match('#(\d+)s#i', $t_maches[1])) {
+                // t=(整数)の場合はそのままの値をセット ※秒数になる
+                $time = $t_maches[1];
+            }
+            $v_param .= '?start=' . $time;
+        }
+        // パラメータにlist=XXXXがあった時の埋め込みコード用パラメータ設定
+        if (preg_match('#list=([-\w]+)#i', $parse_url['query'], $l_maches)) {
+            if (!empty($v_param)) {
+                // $v_paramが既にセットされていたらそれに続ける
+                $v_param .= '&list=' . $l_maches[1];
+            } else {
+                // $v_paramが既にセットされていなかったら先頭のパラメータとしてセット
+                $v_param .= '?list=' . $l_maches[1];
+            }
+        }
+        // 埋め込みコードを返す
+        return '<iframe width="600" height="338" src="https://www.youtube.com/embed/' . $video_id . $v_param . '" frameborder="0" allowfullscreen></iframe>';
+    }
+    // パラメータが不正(youtubeのURLではない)ときは埋め込みコードを生成しない。
+    return false;
 }
 
 function init_custom_post_shops() {

@@ -1,5 +1,6 @@
 <?php
 // pr($_POST);
+// return;
 
 $errors = array();
 
@@ -11,6 +12,7 @@ $errors = array_merge($errors, validate_field('tanto_mail'));
 $errors = array_merge($errors, validate_field('tanto_tel'));
 $errors = array_merge($errors, validate_field('zip_code'));
 $errors = array_merge($errors, validate_field('address'));
+$errors = array_merge($errors, validate_field('area'));
 $errors = array_merge($errors, validate_field('dishes', array('sanitize'=>false, 'taxonomy'=>true)));
 $errors = array_merge($errors, validate_field('options', array('sanitize'=>false, 'taxonomy'=>true)));
 $errors = array_merge($errors, validate_field('map_code', array('empty'=>true))); #
@@ -20,6 +22,7 @@ $errors = array_merge($errors, validate_field('hours'));
 $errors = array_merge($errors, validate_field('parking'));
 $errors = array_merge($errors, validate_field('holiday'));
 $errors = array_merge($errors, validate_field('seats'));
+$errors = array_merge($errors, validate_field('youtube', array('empty'=>true)));#
 $errors = array_merge($errors, validate_field('url', array('empty'=>true)));#
 $errors = array_merge($errors, validate_field('fb', array('empty'=>true)));#
 $errors = array_merge($errors, validate_field('tw', array('empty'=>true)));#

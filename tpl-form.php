@@ -13,7 +13,6 @@
 
   global $validate_errors;
   $error = $validate_errors;
-
 ?>
 <div class="l-form">
   <form method="POST" id="registform" action="<?php echo esc_url( home_url('entry-validation') ); ?>" enctype="multipart/form-data">
@@ -97,19 +96,23 @@
         <?php if (e('address', $error)) : ?><div class="validate-text"><?php echo err_disp(e('address', $error)); ?></div><?php endif; ?>
       </dd>
       <!-- エリア選択 -->
-      <dt><label class="l-form__label" for="area">
-          エリアを選択 <span class="form-require js-require">必須</span></label>
+      <dt>
+        <label class="l-form__label" for="area">
+          エリアを選択 <span class="form-require js-require">必須</span>
+        </label>
       </dt>
       <dd class="l-form__action">
         <div class="selectWrap">
           <select class="searchBody__select" name="area">
-            <option value="" hidden>未選択</option>
-            <?php $areas = term_hierarchy('area'); ?>
+            <option value="">未選択</option>
+            <?php $areas = term_hierarchy('area', false); ?>
             <?php foreach ($areas as $key => $area) : ?>
-              <option value="<?php echo $area->slug; ?>"><?php echo $area->name; ?></option>
+              <?php $checked = (e('area', $data) == $area->slug ) ? 'selected' : ""; ?>
+              <option value="<?php echo $area->slug; ?>" <?php echo $checked ?>><?php echo $area->name; ?></option>
             <?php endforeach; ?>
           </select>
         </div>
+        <?php if (e('area', $error)) : ?><div class="validate-text"><?php echo err_disp(e('area', $error)); ?></div><?php endif; ?>
       </dd>
       <!-- ジャンル -->
       <dt>
@@ -402,7 +405,7 @@
         </label>
       </dt>
       <dd class="l-form__action">
-        <input type="text" name="y-tube" id="y-tube" class="y-tube" size="60" maxlength="500" value="<?php echo e('y-tube', $data); ?>" />
+        <input type="text" name="youtube" id="youtube" class="youtube" size="60" maxlength="500" value="<?php echo e('youtube', $data); ?>" />
       </dd>
     </dl>
     <h2 class="l-fome__title">掲載画像</h2>

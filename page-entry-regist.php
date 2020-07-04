@@ -28,6 +28,7 @@
   $post->insert_field('field_5ef5754418b7b', 'parking');
   $post->insert_field('field_5ef05e3555a6b', 'holiday');
   $post->insert_field('field_5ef05e7255a6c', 'seats');
+  $post->insert_field('field_5ef57a045001d', 'youtube'); #
   $post->insert_field('field_5ef05f3655a6e', 'url');#
   $post->insert_field('field_5ef6f6956bade', 'fb');#
   $post->insert_field('field_5ef6f6df6badf', 'tw');#
@@ -41,6 +42,9 @@
   $post->insert_field('field_5efad0d2748b7', 'request_message');#
   $post->insert_field('field_5ef6f2eb9f16b', 'coronas_other'); #
 
+
+
+  $post->add_terms('area',  $_POST['area']);
   $post->add_terms('dishes',  $_POST['dishes']);
   $post->add_terms('options', $_POST['options']);
 

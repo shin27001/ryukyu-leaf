@@ -158,7 +158,7 @@
         <tr>
           <th>掲載動画</th>
           <td>
-
+            <?php echo createvideotag(e('youtube')); ?>
           </td>
         </tr>
       </table>
