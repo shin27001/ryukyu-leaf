@@ -79,9 +79,9 @@
       <h2 class="l-insta__title"><i class="fab fa-instagram symbol"></i><br>INSTAGRAMに投稿して<br class="br-sp">お気に入りのお店を応援しよう！</h2>
       <p class="l-insta__read">美味しかったお店や<br class="br-sp">
         応援したいお店をシェアして広めよう！<br>
-        <span>#沖縄GO!HAN旅 </span>をつけて<br>
+        <span>#<?php get_pref(); ?>GO!HAN旅 </span>をつけて<br>
         INSTAGRAMに投稿してくださいね！</p>
-      <p class="btn-wrap"><a href="#" class="btn btn-m-blue"><span class="bold-text">#沖縄GO!HAN旅
+      <p class="btn-wrap"><a href="#" class="btn btn-m-blue"><span class="bold-text">#<?php get_pref(); ?>GO!HAN旅
           </span>の投稿をみる</a>
       </p>
     </div>
@@ -104,7 +104,7 @@
       </a>
     </div>
 
-  
+
     <div class="l-special__item">
       <a class="l-special__link" href="#">
         <div class="l-special__photo">
@@ -130,7 +130,7 @@
         </div>
       </a>
     </div>
- 
+
     <div class="l-special__item">
       <a class="l-special__link" href="#">
         <div class="l-special__photo">
@@ -172,7 +172,7 @@
 <div class="owner">
   <div class="owner__inner">
     <h2 class="owner__title">飲食店の皆様へ</h2>
-    <p class="owner__read">沖縄GO!HAN旅は、コロナ対策をしながら営業を再開した飲食店を応援したいと思い、<span class="d-inline">このサイトを立ち上げました！</span><br>
+    <p class="owner__read"><?php get_pref(); ?>GO!HAN旅は、コロナ対策をしながら営業を再開した飲食店を応援したいと思い、<span class="d-inline">このサイトを立ち上げました！</span><br>
       こんな時だからこそ、お客様にゆっくりグルメを楽しんでもらえる環境があるという事を知ってもらい、<span class="d-inline">更にお店のファンが増えたらいいなと思っています。</span><br>
       無料で掲載できますので、<span class="d-inline">ご賛同いただけましたら以下のフォームよりご連絡ください。</span></p>
     <p class="btn-wrap"><a href="<?php echo esc_url(home_url('entry-form')); ?>" class="btn btn-m-white"><i class="fas fa-edit"></i> 新規店舗登録はこちら</a></p>
