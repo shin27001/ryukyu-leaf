@@ -8,6 +8,12 @@ function choices_id() { return 29; }
 //画像ファイルの一時保存先を取得する
 function get_tmp_img_dir() { return "wp-content/tmp_imgs/"; }
 
+function get_pref($echo = true) {
+  $pref = (strpos($_SERVER["REQUEST_URI"], '/okinawa/')) ? "沖縄" : "京都";
+  if ($echo) { echo $pref; } else { return $pref; }
+  return;
+}
+
 // バリデーションエラーのグローバル変数
 $validate_errors = array();
 
