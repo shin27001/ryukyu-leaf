@@ -38,7 +38,6 @@ $errors = array_merge($errors, validate_field('coronas_other'));
 
 global $validate_errors;
 $validate_errors = $errors;
-pr($errors);
 ?>
 <?php if($errors) : ?>
   <?php get_header(); ?>
