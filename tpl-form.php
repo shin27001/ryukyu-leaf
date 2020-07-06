@@ -4,18 +4,18 @@
   } elseif($_POST) {
     $data = $_POST;
   } else {
-    $p = 'YToyOTp7czoxMDoidGFudG9fbmFtZSI7czoxMzoi55Sw5LitIOWkqumDjiI7czoxMDoidGFudG9fbWFpbCI7czoxNjoibWFpbEBleGFtcGxlLmNvbSI7czo5OiJ0YW50b190ZWwiO3M6MTA6IjA5ODAwMDExMTEiO3M6OToic2hvcF9uYW1lIjtzOjI3OiLjgaHjgovjgZDjgo7jg7zjgIDljJfosLflupciO3M6ODoiemlwX2NvZGUiO3M6ODoiOTA0LTAwMDEiO3M6NzoiYWRkcmVzcyI7czoyOToi5rKW57iE55yM5YyX6LC355S65qGR5rGfMS0xLTEiO3M6NjoiZGlzaGVzIjthOjI6e2k6MDtzOjI6IndhIjtpOjE7czozOiJ5b3UiO31zOjQ6Im1lbnUiO3M6NjU6IuODn+ODg+OCr+OCueOBneOBsA0K77yI5aSn77yJODMw5YaG77yI5Lit77yJNzMw5YaG77yI5bCP77yJNTMw5YaGIjtzOjY6InRlbF9ubyI7czoxMDoiMDk4MDAwMTExMSI7czo1OiJob3VycyI7czo0Nzoi5pyI772e6YeRIDEy77yaMDDvvZ4xNO+8mjAw44CBMTjvvJowMO+9njI077yaMDAiO3M6NzoicGFya2luZyI7czo2OiIxMDDlj7AiO3M6NzoiaG9saWRheSI7czo5OiLmnKjmm5zml6UiO3M6NToic2VhdHMiO3M6NDI6IjEwMOW4reOAgeODhuODvOODluODq+W4reOAgeOCq+OCpuODs+OCv+ODvCI7czo4OiJtYXBfY29kZSI7czoxMzoiMzMgNTkyIDM1MCo2NCI7czozOiJ1cmwiO3M6MjA6Imh0dHBzOi8vd3d3Lnh4eHh4LmpwIjtzOjI6ImZiIjtzOjI2OiJodHRwczovL2ZhY2Vib29rLmNvbS94eHh4eCI7czoyOiJ0dyI7czoyNToiaHR0cHM6Ly90d2l0dGVyLmNvbS94eHh4eCI7czo1OiJpbnN0YSI7czoyNzoiaHR0cHM6Ly9pbnN0YWdyYW0uY29tL3h4eHh4IjtzOjQ6ImxpbmUiO3M6MjI6Imh0dHBzOi8vbGluZS5jb20veHh4eHgiO3M6NzoibWVzc2FnZSI7czo4Mzoi55CJ55CDTEVBRuOCkuOBv+OBpuadpeW6l+OBl+OBpuOBj+OCjOOBn+aWueOBq+OBr+ODieODquODs+OCrzHmna/jg5fjg6zjgrzjg7Pjg4jvvIEiO3M6Nzoib3B0aW9ucyI7YToyOntpOjA7czo3OiJ0YWtlb3V0IjtpOjE7czo4OiJkZWxpdmVyeSI7fXM6MTU6InRha2VvdXRfbWVzc2FnZSI7czoxMDA6IiAgICAgICAgICAgICAgICAgIOS6iOe0hOWPl+S7mO+8mjE1OjAw44CcMTg6MDANCuWPl+OBkea4oeOBl+aZgumWk++8mjE1OjAw44CcMTk6MDANCiAgICAgICAgICAgICAgICAiO3M6MTY6ImRlbGl2ZXJ5X21lc3NhZ2UiO3M6MTkyOiIgICAgICAgICAgICAgICAgICDlr77lv5zlnLDln5/vvJrlrpzph47mub7luILlhoXjga7jgb/vvIgxNDowMOOBvuOBp+OBruazqOaWh+OBq+mZkOOCiuOBvuOBme+8iQ0K5LqI57SE5Y+X5LuY77yaMTU6MDDjgJwxNzowMO+8iDHmmYLjgbvjganjgYrmmYLplpPjgpLjgYTjgZ/jgaDjgY3jgb7jgZnjgILvvIkNCiAgICAgICAgICAgICAgICAiO3M6ODoicGF5bWVudHMiO2E6Mjp7aTowO3M6NDoidmlzYSI7aToxO3M6NjoibWFzdGVyIjt9czo3OiJjb3JvbmFzIjthOjI6e2k6MDtzOjI0OiLmiYvmjIfmtojmr5LmtrLjga7oqK3nva4iO2k6MTtzOjY6IuaPm+awlyI7fXM6MTM6ImNvcm9uYXNfb3RoZXIiO3M6ODc6IuOBneOBruS7luOCs+ODreODiuWvvuetluOBq+WPluOCiue1hOOCk+OBp+OBhOOCi+OBk+OBqOOBjOOBguOCjOOBsOOBlOWFpeWKm+OBj+OBoOOBleOBhCI7czoxNToicmVxdWVzdF9tZXNzYWdlIjtzOjE0NDoi5b2T44K144Kk44OI44G444Gu44Gd44Gu5LuW44Gu44GU6KaB5pyb44KE5L6d6aC85b2T44K144Kk44OI44G444Gu44Gd44Gu5LuW44Gu44GU6KaB5pyb44KE5L6d6aC85b2T44K144Kk44OI44G444Gu44Gd44Gu5LuW44Gu44GU6KaB5pyb44KE5L6d6aC8IjtzOjE0OiJjb250YWN0X3BvbGljeSI7YToxOntzOjk6InNlcGFyYXRvciI7czoxOiIsIjt9czoxMjoid3JpdHRlbl9vYXRoIjthOjE6e3M6OToic2VwYXJhdG9yIjtzOjE6IiwiO319';
-    $data = unserialize(base64_decode($p));
+    //$p = 'YToyOTp7czoxMDoidGFudG9fbmFtZSI7czoxMzoi55Sw5LitIOWkqumDjiI7czoxMDoidGFudG9fbWFpbCI7czoxNjoibWFpbEBleGFtcGxlLmNvbSI7czo5OiJ0YW50b190ZWwiO3M6MTA6IjA5ODAwMDExMTEiO3M6OToic2hvcF9uYW1lIjtzOjI3OiLjgaHjgovjgZDjgo7jg7zjgIDljJfosLflupciO3M6ODoiemlwX2NvZGUiO3M6ODoiOTA0LTAwMDEiO3M6NzoiYWRkcmVzcyI7czoyOToi5rKW57iE55yM5YyX6LC355S65qGR5rGfMS0xLTEiO3M6NjoiZGlzaGVzIjthOjI6e2k6MDtzOjI6IndhIjtpOjE7czozOiJ5b3UiO31zOjQ6Im1lbnUiO3M6NjU6IuODn+ODg+OCr+OCueOBneOBsA0K77yI5aSn77yJODMw5YaG77yI5Lit77yJNzMw5YaG77yI5bCP77yJNTMw5YaGIjtzOjY6InRlbF9ubyI7czoxMDoiMDk4MDAwMTExMSI7czo1OiJob3VycyI7czo0Nzoi5pyI772e6YeRIDEy77yaMDDvvZ4xNO+8mjAw44CBMTjvvJowMO+9njI077yaMDAiO3M6NzoicGFya2luZyI7czo2OiIxMDDlj7AiO3M6NzoiaG9saWRheSI7czo5OiLmnKjmm5zml6UiO3M6NToic2VhdHMiO3M6NDI6IjEwMOW4reOAgeODhuODvOODluODq+W4reOAgeOCq+OCpuODs+OCv+ODvCI7czo4OiJtYXBfY29kZSI7czoxMzoiMzMgNTkyIDM1MCo2NCI7czozOiJ1cmwiO3M6MjA6Imh0dHBzOi8vd3d3Lnh4eHh4LmpwIjtzOjI6ImZiIjtzOjI2OiJodHRwczovL2ZhY2Vib29rLmNvbS94eHh4eCI7czoyOiJ0dyI7czoyNToiaHR0cHM6Ly90d2l0dGVyLmNvbS94eHh4eCI7czo1OiJpbnN0YSI7czoyNzoiaHR0cHM6Ly9pbnN0YWdyYW0uY29tL3h4eHh4IjtzOjQ6ImxpbmUiO3M6MjI6Imh0dHBzOi8vbGluZS5jb20veHh4eHgiO3M6NzoibWVzc2FnZSI7czo4Mzoi55CJ55CDTEVBRuOCkuOBv+OBpuadpeW6l+OBl+OBpuOBj+OCjOOBn+aWueOBq+OBr+ODieODquODs+OCrzHmna/jg5fjg6zjgrzjg7Pjg4jvvIEiO3M6Nzoib3B0aW9ucyI7YToyOntpOjA7czo3OiJ0YWtlb3V0IjtpOjE7czo4OiJkZWxpdmVyeSI7fXM6MTU6InRha2VvdXRfbWVzc2FnZSI7czoxMDA6IiAgICAgICAgICAgICAgICAgIOS6iOe0hOWPl+S7mO+8mjE1OjAw44CcMTg6MDANCuWPl+OBkea4oeOBl+aZgumWk++8mjE1OjAw44CcMTk6MDANCiAgICAgICAgICAgICAgICAiO3M6MTY6ImRlbGl2ZXJ5X21lc3NhZ2UiO3M6MTkyOiIgICAgICAgICAgICAgICAgICDlr77lv5zlnLDln5/vvJrlrpzph47mub7luILlhoXjga7jgb/vvIgxNDowMOOBvuOBp+OBruazqOaWh+OBq+mZkOOCiuOBvuOBme+8iQ0K5LqI57SE5Y+X5LuY77yaMTU6MDDjgJwxNzowMO+8iDHmmYLjgbvjganjgYrmmYLplpPjgpLjgYTjgZ/jgaDjgY3jgb7jgZnjgILvvIkNCiAgICAgICAgICAgICAgICAiO3M6ODoicGF5bWVudHMiO2E6Mjp7aTowO3M6NDoidmlzYSI7aToxO3M6NjoibWFzdGVyIjt9czo3OiJjb3JvbmFzIjthOjI6e2k6MDtzOjI0OiLmiYvmjIfmtojmr5LmtrLjga7oqK3nva4iO2k6MTtzOjY6IuaPm+awlyI7fXM6MTM6ImNvcm9uYXNfb3RoZXIiO3M6ODc6IuOBneOBruS7luOCs+ODreODiuWvvuetluOBq+WPluOCiue1hOOCk+OBp+OBhOOCi+OBk+OBqOOBjOOBguOCjOOBsOOBlOWFpeWKm+OBj+OBoOOBleOBhCI7czoxNToicmVxdWVzdF9tZXNzYWdlIjtzOjE0NDoi5b2T44K144Kk44OI44G444Gu44Gd44Gu5LuW44Gu44GU6KaB5pyb44KE5L6d6aC85b2T44K144Kk44OI44G444Gu44Gd44Gu5LuW44Gu44GU6KaB5pyb44KE5L6d6aC85b2T44K144Kk44OI44G444Gu44Gd44Gu5LuW44Gu44GU6KaB5pyb44KE5L6d6aC8IjtzOjE0OiJjb250YWN0X3BvbGljeSI7YToxOntzOjk6InNlcGFyYXRvciI7czoxOiIsIjt9czoxMjoid3JpdHRlbl9vYXRoIjthOjE6e3M6OToic2VwYXJhdG9yIjtzOjE6IiwiO319';
+    //$data = unserialize(base64_decode($p));
 
     $data = array(); #初期化
   }
-  $checked = ""; #初期化
+$checked = ""; #初期化
 
-  global $validate_errors;
-  $error = $validate_errors;
+global $validate_errors;
+$error = $validate_errors;
 ?>
 <div class="l-form">
-  <form method="POST" id="registform" action="<?php echo esc_url( home_url('entry-validation') ); ?>" enctype="multipart/form-data">
+  <form method="POST" id="registform" action="<?php echo esc_url(home_url('entry-validation')); ?>" enctype="multipart/form-data">
     <h2 class="l-fome__title">掲載内容</h2>
     <div class="l-form__radio">
       <span class="l-form__radio-btn">
@@ -112,7 +112,7 @@
             // pr($areas);
             $areas = term_hierarchy('area', true); ?>
             <?php foreach ($areas as $key => $area) : ?>
-              <?php $checked = (e('area', $data) == $area->slug ) ? 'selected' : ""; ?>
+              <?php $checked = (e('area', $data) == $area->slug) ? 'selected' : ""; ?>
               <option value="<?php echo $area->slug; ?>" <?php echo $checked ?>><?php echo $area->name; ?></option>
             <?php endforeach; ?>
           </select>
@@ -158,9 +158,8 @@
         </label>
       </dt>
       <dd class="l-form__action">
-        <textarea name="menu" id="menu" class="menu" cols="100" rows="5"
-          placeholder="その他、キャンペーンやおすすめなどお知らせしたい情報があれば入力してください。（300文字以内）"><?php echo e('menu', $data); ?></textarea>
-          <?php if (e('menu', $error)) : ?><div class="validate-text"><?php echo err_disp(e('menu', $error)); ?></div><?php endif; ?>
+        <textarea name="menu" id="menu" class="menu" cols="100" rows="5" placeholder="その他、キャンペーンやおすすめなどお知らせしたい情報があれば入力してください。（300文字以内）"><?php echo e('menu', $data); ?></textarea>
+        <?php if (e('menu', $error)) : ?><div class="validate-text"><?php echo err_disp(e('menu', $error)); ?></div><?php endif; ?>
       </dd>
 
       <!-- お店の電話番号 -->
@@ -395,9 +394,8 @@
         </label>
       </dt>
       <dd class="l-form__action">
-        <textarea name="coronas_other" id="coronas_other" class="coronas_other" cols="100" rows="4"
-          placeholder="その他コロナ対策に取り組んでいることがあればご入力ください（300文字以内）"><?php echo e('coronas_other', $data); ?></textarea>
-          <?php if (e('coronas_other', $error)) : ?><div class="validate-text"><?php echo err_disp(e('coronas_other', $error)); ?></div><?php endif; ?>
+        <textarea name="coronas_other" id="coronas_other" class="coronas_other" cols="100" rows="4" placeholder="その他コロナ対策に取り組んでいることがあればご入力ください（300文字以内）"><?php echo e('coronas_other', $data); ?></textarea>
+        <?php if (e('coronas_other', $error)) : ?><div class="validate-text"><?php echo err_disp(e('coronas_other', $error)); ?></div><?php endif; ?>
       </dd>
     </dl>
     <h2 class="l-fome__title">掲載動画</h2>
@@ -512,6 +510,8 @@
       </div>
       <?php if (e('written_oath', $error)) : ?><div class="validate-text"><?php echo err_disp(e('written_oath', $error)); ?></div><?php endif; ?>
     </div>
-    <button class="btn btn-m-red" type="submit"><span><i class="fas fa-search"></i> 入力内容を確認する</span></button>
+    <div class="btn-wrap">
+      <button class="btn btn-m-red" type="submit"><span><i class="fas fa-search"></i> 入力内容を確認する</span></button>
+    </div>
   </form>
 </div><!-- /l-form -->
