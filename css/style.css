@@ -1380,9 +1380,8 @@ footer.l-footer {
   padding-left: 1em;
 }
 
-.number-listli {
+.number-list li {
   list-style: decimal;
-  /* padding-left: 1em; */
   list-style-position: outside;
   margin-bottom: 10px;
 }
