@@ -1,6 +1,7 @@
 <div class="l-shop">
   <h1 class="main-title">
-    「浦添・宜野湾市」一覧
+    「<?php esd_title(); ?>」の一覧
+    <!-- 「浦添・宜野湾市」一覧 -->
   </h1>
   <ul class="l-shop__list">
 

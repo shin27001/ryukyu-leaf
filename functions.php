@@ -31,11 +31,25 @@ function esd_title( $arg=array('echo'=>true) ) {
   if (is_home()) {
     $title = "Home";
   } elseif(is_search()) {
-    $title = get_search_query()."の検索結果";
+    // pr($_GET);
+    // $title = get_search_query()."の検索結果";
+    $area = get_term_by('slug', $_GET['area'], 'area');
+    $area = ($area) ? "(エリア)".$area->name."," : "";
+    $dish = get_term_by('slug', $_GET['dishes'], 'dishes');
+    $dish = ($dish) ? "(ジャンル)".$dish->name."," : "";
+    $options = "";
+    if (isset($_GET['options'])) {
+      $options = "(こだわり)";
+      foreach ($_GET['options'] as $slug) {
+        $options .= get_term_by('slug', $slug, 'options')->name.",";
+      }
+    }
+    $title = $area.$dish.$options;
+    $title = substr($title, 0, -1);
   } elseif(is_category()) {
     $title = get_cat_name( get_query_var('cat') );
   } elseif(is_archive()) {
-    $title = get_the_archive_title();
+    $title = str_replace('アーカイブ:', '', get_the_archive_title());
   } else {
     $title = the_title_attribute(array('echo'=>false));
   }
@@ -148,7 +162,8 @@ function get_ordered_terms( $id = 0, $taxonomy = 'category', $orderby = 'term_id
 }
 
 function e($field, $array = array()) {
-  if(!empty($_POST) && empty($array)) { $array = $_POST; }
+  if(!empty($_POST) && empty($array))    { $array = $_POST; }
+  elseif(!empty($_GET) && empty($array)) { $array = $_GET; }
   return !empty($array[$field]) ? $array[$field] : false;
 }
 

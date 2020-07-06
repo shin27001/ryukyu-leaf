@@ -303,36 +303,12 @@ class wp_post_helper {
 			return $val ? update_field($field_key, $val, $this->postid) : false;
 	}
 
+	# matayoshi 追加
 	public function insert_field($field_key, $field_name, $sanitize = true) {
 		$value = (!empty($_POST[$field_name])) ? $_POST[$field_name] : false;
 		if($value) {
 			$value = ($sanitize) ? sanitize_text_field($value) : $value;
 			$this->add_field($field_key, $value);
-		}
-	}
-	
-	public function validate_field2($field_key, $field_name, $required = true, $sanitize = true){
-		if ($required == true) {
-			if(empty($_POST[$field_name]) || $_POST[$field_name] == "") {
-				$args = array(
-				    's'  => $field_name, // フィールド名は抜粋に入っているため、キーワード検索で良い
-						'exact' => true, //タイトル／投稿の全体から正確なキーワードで検索するか デフォルト値はfalse
-				    'post_type' => 'acf-field',
-				);
-				$acf_field = get_posts( $args )[0];
-				$this->validate_errors[$acf_field->post_excerpt] = "「".$acf_field->post_title."」が入力されていません。";
-			} else {
-				$value = $_POST[$field_name];
-				$value = ($sanitize) ? sanitize_text_field($value) : $value;
-				$this->add_field($field_key, $value);
-			}
-		} else {
-			if(!empty($_POST[$field_name]) && $_POST[$field_name] != "") {
-				//if ($field_name == 'coronas_other') { echo "<h1>".$_POST['coronas_other']."</h1>"; }
-				$value = $_POST[$field_name];
-				$value = ($sanitize) ? sanitize_text_field($value) : $value;
-				$this->add_field($field_key, $value);
-			}
 		}
 	}
 

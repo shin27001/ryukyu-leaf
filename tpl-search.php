@@ -8,7 +8,7 @@
           <dl class="searchBody__dl">
             <dt class="searchBody__dt"><i class="fas fa-search"></i> キーワードで検索</dt>
             <dd class="searchBody__dd">
-              <input id="searchInput" name="s" class="searchBody__input" type="search" placeholder="キーワードで検索" value="" autocomplete="off">
+              <input id="searchInput" name="s" class="searchBody__input" type="search" placeholder="キーワードで検索" value="<?php echo e('s'); ?>" autocomplete="off">
               <button class="searchBody__submit" type="submit"></button>
             </dd>
           </dl>
@@ -20,10 +20,11 @@
               <dd class="searchBody__dd">
                 <div class="selectWrap">
                   <select class="searchBody__select" name="area">
-                    <option value="" hidden>未選択</option>
+                    <option value="">未選択</option>
                     <?php $areas = term_hierarchy('area'); ?>
                     <?php foreach ($areas as $key => $area) : ?>
-                      <option value="<?php echo $area->slug; ?>"><?php echo $area->name; ?></option>
+                      <?php $checked = (e('area') == $area->slug) ? 'selected' : ""; ?>
+                      <option value="<?php echo $area->slug; ?>" <?php echo $checked; ?>><?php echo $area->name; ?></option>
                     <?php endforeach; ?>
                   </select>
                 </div>
@@ -34,13 +35,11 @@
               <dd class="searchBody__dd">
                 <div class="selectWrap">
                   <select class="searchBody__select" name="dishes">
-                    <option value="" hidden>未選択</option>
-                    <?php
-                    $args = array('taxonomy' => 'dishes', 'hide_empty' => false, 'orderby' => 'ID');
-                    $dishes = new WP_Term_Query($args);
-                    ?>
-                    <?php foreach ($dishes->terms as $key => $dish) : ?>
-                      <option value="<?php echo $dish->slug; ?>"><?php echo $dish->name; ?></option>
+                    <option value="">未選択</option>
+                    <?php $dishes = get_terms('dishes', array('hide_empty' => false, 'orderby' => 'ID')); ?>
+                    <?php foreach ($dishes as $key => $dish) : ?>
+                      <?php $checked = (e('dishes') == $dish->slug) ? 'selected' : ""; ?>
+                      <option value="<?php echo $dish->slug; ?>" <?php echo $checked; ?>><?php echo $dish->name; ?></option>
                     <?php endforeach; ?>
                   </select>
                 </div>
@@ -52,13 +51,22 @@
             <dd class="searchBody__dd">
               <div class="form-checkbox">
                 <ul class="form-checkbox__list">
-                  <?php
-                  $args = array('taxonomy' => 'options', 'hide_empty' => false, 'orderby' => 'ID');
-                  $options = new WP_Term_Query($args);
-                  ?>
-                  <?php foreach ($options->terms as $key => $option) : ?>
+                  <?php $options = get_terms('options', array('hide_empty' => false, 'orderby' => 'ID')); ?>
+                  <?php foreach ($options as $option) : ?>
+                    <?php
+                      if (e('options')) {
+                        foreach (e('options') as $val) {
+                          if($option->slug == $val) {
+                            $checked = 'checked="checked"';
+                            break;
+                          } else {
+                            $checked = "";
+                          }
+                        }
+                      }
+                    ?>
                     <li>
-                      <input class="form-checkbox__button-input" type="checkbox" name="options[]" id="<?php echo $option->slug; ?>" value="<?php echo $option->slug; ?>">
+                      <input class="form-checkbox__button-input" type="checkbox" name="options[]" id="<?php echo $option->slug; ?>" value="<?php echo $option->slug; ?>" <?php echo $checked; ?>>
                       <label class="form-checkbox__button" for="<?php echo $option->slug; ?>"><?php echo $option->name; ?></label>
                     </li>
                   <?php endforeach; ?>

@@ -10,7 +10,7 @@
   <meta property='og:description' content='サイト説明'>
   <meta property="og:image" content="ogイメージのパス入れる">
   <meta name="description" content="サイト説明" />
-  <title><?php esd_title(); ?> <?php echo " | "; ?><?php bloginfo('name'); ?></title>
+  <title><?php esd_title(); ?><?php echo " | "; ?><?php bloginfo('name'); ?></title>
   <link href="<?php echo get_template_directory_uri(); ?>/css/vendors/slick.css" media="all" rel="stylesheet" type="text/css" />
   <link href="<?php echo get_template_directory_uri(); ?>/css/destyle.css?<?php echo date('Ymd-Hi'); ?>" media="all" rel="stylesheet" type="text/css" />
   <link href="<?php echo get_template_directory_uri(); ?>/css/style.css?<?php echo date('Ymd-Hi'); ?>" media="all" rel="stylesheet" type="text/css" />
