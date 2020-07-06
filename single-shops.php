@@ -68,12 +68,10 @@
           <div class="l-info__korona-box">
             <p class="l-info__korona-sub">基本の取り組み</p>
             <ul class="l-info__korona-list">
-              <?php $coronas = get_field('coronas'); //pr($coronas); 
-              ?>
-              <?php if ($coronas) : foreach ($coronas as $key => $corona) : ?>
-                  <li><?php echo $corona; ?></li>
-              <?php endforeach;
-              endif; ?>
+              <?php $coronas =  get_field('coronas'); ?>
+              <?php if ($coronas) : foreach ($coronas as $corona) : ?>
+                  <li><?php echo $corona['label']; ?></li>
+              <?php endforeach; endif; ?>
             </ul>
           </div>
           <!-- /l-info__korona-box -->
@@ -154,10 +152,9 @@
             <th>現金以外のお支払い方法</th>
             <td>
               <?php $payments = get_field('payments'); ?>
-              <?php if ($payments) : foreach ($payments as $key => $payment) : ?>
+              <?php if ($payments) : foreach ($payments as $payment) : ?>
                   <?php echo $payment['label'] . "/"; ?>
-              <?php endforeach;
-              endif; ?>
+              <?php endforeach; endif; ?>
             </td>
           </tr>
           <tr class="last">
