@@ -9,13 +9,13 @@
 
     $data = array(); #初期化
   }
-  $checked = ""; #初期化
+$checked = ""; #初期化
 
-  global $validate_errors;
-  $error = $validate_errors;
+global $validate_errors;
+$error = $validate_errors;
 ?>
 <div class="l-form">
-  <form method="POST" id="registform" action="<?php echo esc_url( home_url('entry-validation') ); ?>" enctype="multipart/form-data">
+  <form method="POST" id="registform" action="<?php echo esc_url(home_url('entry-validation')); ?>" enctype="multipart/form-data">
     <h2 class="l-fome__title">掲載内容</h2>
     <div class="l-form__radio">
       <span class="l-form__radio-btn">
@@ -105,9 +105,14 @@
         <div class="selectWrap">
           <select class="searchBody__select" name="area">
             <option value="">未選択</option>
-            <?php $areas = term_hierarchy('area', false); ?>
+            <?php
+            // $args = array('taxonomy' => 'area', 'hide_empty' => false, 'parent' => false, 'orderby' => 'ID');
+            // $taxonomies = new WP_Term_Query($args);
+            // $areas = $taxonomies->terms;
+            // pr($areas);
+            $areas = term_hierarchy('area', true); ?>
             <?php foreach ($areas as $key => $area) : ?>
-              <?php $checked = (e('area', $data) == $area->slug ) ? 'selected' : ""; ?>
+              <?php $checked = (e('area', $data) == $area->slug) ? 'selected' : ""; ?>
               <option value="<?php echo $area->slug; ?>" <?php echo $checked ?>><?php echo $area->name; ?></option>
             <?php endforeach; ?>
           </select>
@@ -153,9 +158,8 @@
         </label>
       </dt>
       <dd class="l-form__action">
-        <textarea name="menu" id="menu" class="menu" cols="100" rows="5"
-          placeholder="その他、キャンペーンやおすすめなどお知らせしたい情報があれば入力してください。（300文字以内）"><?php echo e('menu', $data); ?></textarea>
-          <?php if (e('menu', $error)) : ?><div class="validate-text"><?php echo err_disp(e('menu', $error)); ?></div><?php endif; ?>
+        <textarea name="menu" id="menu" class="menu" cols="100" rows="5" placeholder="その他、キャンペーンやおすすめなどお知らせしたい情報があれば入力してください。（300文字以内）"><?php echo e('menu', $data); ?></textarea>
+        <?php if (e('menu', $error)) : ?><div class="validate-text"><?php echo err_disp(e('menu', $error)); ?></div><?php endif; ?>
       </dd>
 
       <!-- お店の電話番号 -->
@@ -390,9 +394,8 @@
         </label>
       </dt>
       <dd class="l-form__action">
-        <textarea name="coronas_other" id="coronas_other" class="coronas_other" cols="100" rows="4"
-          placeholder="その他コロナ対策に取り組んでいることがあればご入力ください（300文字以内）"><?php echo e('coronas_other', $data); ?></textarea>
-          <?php if (e('coronas_other', $error)) : ?><div class="validate-text"><?php echo err_disp(e('coronas_other', $error)); ?></div><?php endif; ?>
+        <textarea name="coronas_other" id="coronas_other" class="coronas_other" cols="100" rows="4" placeholder="その他コロナ対策に取り組んでいることがあればご入力ください（300文字以内）"><?php echo e('coronas_other', $data); ?></textarea>
+        <?php if (e('coronas_other', $error)) : ?><div class="validate-text"><?php echo err_disp(e('coronas_other', $error)); ?></div><?php endif; ?>
       </dd>
     </dl>
     <h2 class="l-fome__title">掲載動画</h2>
@@ -507,6 +510,8 @@
       </div>
       <?php if (e('written_oath', $error)) : ?><div class="validate-text"><?php echo err_disp(e('written_oath', $error)); ?></div><?php endif; ?>
     </div>
-    <button class="btn btn-m-red" type="submit"><span><i class="fas fa-search"></i> 入力内容を確認する</span></button>
+    <div class="btn-wrap">
+      <button class="btn btn-m-red" type="submit"><span><i class="fas fa-search"></i> 入力内容を確認する</span></button>
+    </div>
   </form>
 </div><!-- /l-form -->

@@ -103,11 +103,10 @@ add_action( 'load-post-new.php', 'disable_visual_editor_in_page' );
 
 # カスタムタクソノミーの階層構造を維持する
 function term_hierarchy($taxonomy, $parent = true) {
-  $term_hierarchy = array();
+  $term_hierarchy = array(); #初期化
+
   $args = array('taxonomy' => $taxonomy, 'hide_empty' => false, 'parent' => false, 'orderby' => 'ID');
   $taxonomies = new WP_Term_Query($args);
-
-  $term_hierarchy = array();
   foreach ($taxonomies->terms as $key => $term) {
     if($parent) { $term_hierarchy[] = $term; }
     $args = array('taxonomy' => $taxonomy, 'hide_empty' => false, 'parent' => $term->term_id, 'orderby' => 'ID');
