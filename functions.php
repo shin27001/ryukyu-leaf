@@ -169,6 +169,9 @@ function validate_field($field_name, $args = array()) {
     if(!$value) {
       if (!$args['acf-field']) {
         switch ($field_name) {
+          case 'shop_name':
+            $errors[$field_name][] = "「店名」が入力されていません。";
+            break;
           case 'area':
             $errors[$field_name][] = "「エリア」が選択されていません。";
             break;
