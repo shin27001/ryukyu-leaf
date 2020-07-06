@@ -9,7 +9,7 @@ function choices_id() { return 29; }
 function get_tmp_img_dir() { return "wp-content/tmp_imgs/"; }
 
 function get_pref($echo = true) {
-  $pref = (strpos($_SERVER["REQUEST_URI"], '/okinawa/')) ? "沖縄" : "京都";
+  $pref = (strpos($_SERVER["REQUEST_URI"], 'okinawa')) ? "沖縄" : "京都";
   if ($echo) { echo $pref; } else { return $pref; }
   return;
 }
