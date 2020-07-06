@@ -140,8 +140,8 @@ function get_ordered_terms( $id = 0, $taxonomy = 'category', $orderby = 'term_id
 }
 
 function e($field, $array = array()) {
-   if(!empty($_POST) && empty($array)) { $array = $_POST; }
-  return !empty($array[$field]) ? $array[$field] : "" ;
+  if(!empty($_POST) && empty($array)) { $array = $_POST; }
+  return !empty($array[$field]) ? $array[$field] : false;
 }
 
 # 入力文字をサニタイズする
@@ -150,15 +150,12 @@ function stz($str, $echo = false) {
     echo sanitize_text_field($str);
     return;
   }
-
   return sanitize_text_field($str);
-  // return $echo ? echo sanitize_text_field($str) : sanitize_text_field($str);
-  // return sanitize_text_field($str);
 }
 
 // バリデーション
 function validate_field($field_name, $args = array()) {
-  $args = array_merge(array('empty'=>false, 'word'=>false, 'sanitize'=>true, 'acf-field'=>false), $args);
+  $args = array_merge(array('empty'=>false, 'word'=>false, 'sanitize'=>true, 'acf-field'=>true), $args);
   $errors = array();#初期化
 
   if (!is_array($args)) { return false; }

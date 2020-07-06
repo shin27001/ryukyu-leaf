@@ -1,20 +1,20 @@
 <?php
-// pr($_POST);
+//pr($_POST);
 // return;
 
 $errors = array();
 
-$errors = array_merge($errors, validate_field('contact_policy'));
-$errors = array_merge($errors, validate_field('written_oath'));
+$errors = array_merge($errors, validate_field('contact_policy', array('acf-field'=>false)));
+$errors = array_merge($errors, validate_field('written_oath', array('acf-field'=>false)));
 
 $errors = array_merge($errors, validate_field('tanto_name'));
 $errors = array_merge($errors, validate_field('tanto_mail'));
 $errors = array_merge($errors, validate_field('tanto_tel'));
 $errors = array_merge($errors, validate_field('zip_code'));
 $errors = array_merge($errors, validate_field('address'));
-$errors = array_merge($errors, validate_field('area'));
-$errors = array_merge($errors, validate_field('dishes', array('sanitize'=>false, 'taxonomy'=>true)));
-$errors = array_merge($errors, validate_field('options', array('sanitize'=>false, 'taxonomy'=>true)));
+$errors = array_merge($errors, validate_field('area', array('acf-field'=>false)));
+$errors = array_merge($errors, validate_field('dishes', array('sanitize'=>false, 'acf-field'=>false)));
+$errors = array_merge($errors, validate_field('options', array('sanitize'=>false, 'acf-field'=>false)));
 $errors = array_merge($errors, validate_field('map_code', array('empty'=>true))); #
 $errors = array_merge($errors, validate_field('menu'));
 $errors = array_merge($errors, validate_field('tel_no'));
@@ -38,6 +38,7 @@ $errors = array_merge($errors, validate_field('coronas_other'));
 
 global $validate_errors;
 $validate_errors = $errors;
+pr($errors);
 ?>
 <?php if($errors) : ?>
   <?php get_header(); ?>
