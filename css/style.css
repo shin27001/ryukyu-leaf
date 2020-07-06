@@ -1102,7 +1102,7 @@ li {
 }
 
 .l-mainvisual {
-  height: 160px;
+  height: 200px;
   position: relative;
 }
 
@@ -1110,14 +1110,14 @@ li {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  height: 160px;
+  height: 200px;
 }
 
 .l-mainvisual__title {
   position: absolute;
   width: 80%;
   max-width: 380px;
-  top: 60%;
+  top: 50%;
   left: 50%;
   -webkit-transform: translateY(-50%) translateX(-50%);
           transform: translateY(-50%) translateX(-50%);
