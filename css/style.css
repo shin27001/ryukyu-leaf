@@ -1264,6 +1264,23 @@ footer.l-footer {
   text-align: center;
   background: #eee;
   border-radius: 5px;
+  color: #fff;
+}
+
+.s-btn .s-fb {
+  background: #3b5998;
+}
+
+.s-btn .s-twitter {
+  background: #55acee;
+}
+
+.s-btn .s-insta {
+  background: #cf2e92;
+}
+
+.s-btn .s-line {
+  background: #1bb91f;
 }
 
 .l-tel {
