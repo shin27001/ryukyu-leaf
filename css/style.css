@@ -1267,19 +1267,19 @@ footer.l-footer {
   color: #fff;
 }
 
-.s-btn .s-fb {
+.s-btn.s-fb {
   background: #3b5998;
 }
 
-.s-btn .s-twitter {
+.s-btn.s-twitter {
   background: #55acee;
 }
 
-.s-btn .s-insta {
+.s-btn.s-insta {
   background: #cf2e92;
 }
 
-.s-btn .s-line {
+.s-btn.s-line {
   background: #1bb91f;
 }
 
