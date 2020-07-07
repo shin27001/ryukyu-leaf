@@ -114,6 +114,7 @@
   width: 230px;
   padding: 10px;
   font-size: 0.7rem;
+  line-height: 1.5;
 }
 
 .l-header__nav {
@@ -1253,6 +1254,16 @@ footer.l-footer {
 
 .l-info__table td {
   width: 100%;
+}
+
+.s-btn {
+  padding: 0.5em 1em;
+  margin-right: 5px;
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  background: #eee;
+  border-radius: 5px;
 }
 
 .l-tel {
