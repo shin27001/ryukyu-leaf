@@ -33,19 +33,20 @@ function esd_title( $arg=array('echo'=>true) ) {
   } elseif(is_search()) {
     // pr($_GET);
     // $title = get_search_query()."の検索結果";
+    $keyword = (!empty($_GET['s'])) ? "(キーワード)".$_GET['s'] : "";
     $area = get_term_by('slug', $_GET['area'], 'area');
-    $area = ($area) ? "(エリア)".$area->name."," : "";
+    $area = ($area) ? "(エリア)".$area->name : "";
     $dish = get_term_by('slug', $_GET['dishes'], 'dishes');
-    $dish = ($dish) ? "(ジャンル)".$dish->name."," : "";
+    $dish = ($dish) ? "(ジャンル)".$dish->name : "";
     $options = "";
     if (isset($_GET['options'])) {
       $options = "(こだわり)";
       foreach ($_GET['options'] as $slug) {
         $options .= get_term_by('slug', $slug, 'options')->name.",";
       }
+      $options = substr($options, 0, -1);
     }
-    $title = $area.$dish.$options;
-    $title = substr($title, 0, -1);
+    $title = $keyword." ".$area." ".$dish." ".$options;
   } elseif(is_category()) {
     $title = get_cat_name( get_query_var('cat') );
   } elseif(is_archive()) {

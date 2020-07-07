@@ -54,3 +54,11 @@ $(document).ready(function () {
     return false;
   });
 });
+
+$("input[name='request']").click(function () {
+  if ($(this).val() == 'update') {
+    $('.l-searchBox').fadeIn(1000);
+  } else if($(this).val() == 'regist') {
+    $('.l-searchBox').fadeOut(1000);
+  }
+});

@@ -1,7 +1,6 @@
 <div class="l-shop">
   <h1 class="main-title">
     「<?php esd_title(); ?>」の一覧
-    <!-- 「浦添・宜野湾市」一覧 -->
   </h1>
   <ul class="l-shop__list">
 
@@ -27,8 +26,8 @@
             </div>
           </a>
         </li>
-      <?php endwhile;
-    else : ?>
+      <?php endwhile; else : ?>
+        <h2>該当するお店がありません。</h2>
     <?php endif; ?>
 
   </ul>

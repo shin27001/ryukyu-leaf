@@ -216,22 +216,18 @@
         </tr>
       </table>
 
-      <?php if (!empty($img)) {
-        $_POST = array_merge($_POST, $img);
-      } ?>
+      <?php $_POST = (!empty($img)) ? array_merge($_POST, $img) : $_POST; ?>
       <div class="submit__btn">
         <div class="submit__btnTop">
           <div class="l-form__button-back">
             <form method="POST" id="registform" action="<?php echo esc_url(home_url('entry-form')); ?>" enctype="multipart/form-data">
               <input type="hidden" name="post_all" value='<?php echo base64_encode(serialize($_POST)); ?>'>
-              <input type="hidden" name="post_files" value="<?php echo base64_encode(serialize($_FILES)); ?>">
               <input type="submit" name="submitBack" value="戻る" class="btn btn-m-gray">
             </form>
           </div>
           <div class="l-form__button-submit">
             <form method="POST" id="registform" action="<?php echo esc_url(home_url('entry-regist')); ?>" enctype="multipart/form-data">
               <input type="hidden" name="post_all" value="<?php echo base64_encode(serialize($_POST)); ?>">
-              <input type="hidden" name="post_files" value="<?php echo base64_encode(serialize($_FILES)); ?>">
               <input type="submit" name="submitSend" value="送信する" class="btn btn-m-red">
             </form>
           </div>
