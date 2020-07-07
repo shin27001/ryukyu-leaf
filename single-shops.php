@@ -13,21 +13,24 @@
             <?php $dishes = get_the_terms(get_the_ID(), 'dishes'); ?>
             <?php if ($dishes) : foreach ($dishes as $dish) : ?>
                 <li class="l-info__cate-list <?php the_field('class', "dishes_" . $dish->term_id); ?>"><?php echo $dish->name; ?></li>
-            <?php endforeach; endif; ?>
+            <?php endforeach;
+            endif; ?>
           </ul>
           <h1 class="l-info__name"><?php echo $post->post_title; ?></h1>
           <p class="l-info__area">
             <?php $areas = get_the_terms($post->ID, 'area'); ?>
             <?php if ($areas) : foreach ($areas as $area) : ?>
                 <i class="fas fa-map-marker-alt"></i><?php echo $area->name; ?>
-            <?php endforeach; endif; ?>
+            <?php endforeach;
+            endif; ?>
           </p>
           <p class="l-info__kodawari">
             <i class="far fa-check-circle"></i>
             <?php $options = get_the_terms($post->ID, 'options'); ?>
             <?php if ($options) : foreach ($options as $option) : ?>
                 <?php echo $option->name . "/"; ?>
-            <?php endforeach; endif; ?>
+            <?php endforeach;
+            endif; ?>
           </p>
           <div class="l-tel-pc">
             <p class="l-tel-pc__title">ご予約・ご注文はこちらから</p>
@@ -46,7 +49,8 @@
             $title = (get_sub_field('shop_image_title')) ? get_sub_field('shop_image_title') : $shop_img['title'];
             $shop_images .= '<li><img src="' . $shop_img['sizes']['large'] . '" alt="' . $title . '"></li>' . "¥n";
             ?>
-        <?php endwhile; endif; ?>
+        <?php endwhile;
+        endif; ?>
         <div class="l-info__slide">
           <ul class="l-info__slid-thum">
             <?php echo $shop_images; ?>
@@ -67,7 +71,8 @@
               <?php $coronas =  get_field('coronas'); ?>
               <?php if ($coronas) : foreach ($coronas as $corona) : ?>
                   <li><?php echo $corona['label']; ?></li>
-              <?php endforeach; endif; ?>
+              <?php endforeach;
+              endif; ?>
             </ul>
           </div>
           <!-- /l-info__korona-box -->
@@ -140,7 +145,7 @@
               <a href="<?php the_field('insta'); ?>" class="s-btn s-insta"><i class="fab fa-instagram"></i></a>
               <a href="<?php the_field('fb'); ?>" class="s-btn s-fb"><i class="fab fa-facebook"></i></a>
               <a href="<?php the_field('tw'); ?>" class="s-btn s-twitter"><i class="fab fa-twitter"></i></a>
-              <a href="<?php the_field('line'); ?>" class="s-btn s-twitter"><i class="fab fa-line"></i></a>
+              <a href="<?php the_field('line'); ?>" class="s-btn s-line"><i class="fab fa-line"></i></a>
             </td>
           </tr>
           <tr>
@@ -149,7 +154,8 @@
               <?php $payments = get_field('payments'); ?>
               <?php if ($payments) : foreach ($payments as $payment) : ?>
                   <?php echo $payment['label'] . "/"; ?>
-              <?php endforeach; endif; ?>
+              <?php endforeach;
+              endif; ?>
             </td>
           </tr>
           <tr class="last">
