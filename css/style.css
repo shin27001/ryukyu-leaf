@@ -51,14 +51,14 @@
 
 .btn.btn-m-blue {
   background-color: white;
-  color: #022558;
+  color: #212121;
   -webkit-box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.5);
           box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.5);
   border: none;
 }
 
 .btn.btn-m-blue:hover {
-  background-color: #022558;
+  background-color: #212121;
   color: white;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -159,7 +159,7 @@
   /* .l-header__nav top + #mobile-head height */
   -webkit-transform: translateY(556px);
   transform: translateY(556px);
-  background: #022558;
+  background: #212121;
 }
 
 /* Toggle Button */
@@ -182,7 +182,7 @@
   position: absolute;
   height: 3px;
   width: 100%;
-  background: #022558;
+  background: #212121;
   left: 0;
   -webkit-transition: 0.35s ease-in-out;
   transition: 0.35s ease-in-out;
@@ -262,7 +262,7 @@
   #top-header .l-header__nav-item a,
   #top-header.fixed .l-header__nav-item a {
     padding: 0 1em;
-    color: #022558;
+    color: #212121;
   }
   /* Fixed */
   #top-header.fixed {
@@ -326,7 +326,7 @@
 
 .searchBody__dt {
   margin-bottom: 5px;
-  color: #3b4043;
+  color: #212121;
 }
 
 .searchBody__dd {
@@ -338,7 +338,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  color: #3b4043;
+  color: #212121;
 }
 
 .searchBody__input {
@@ -604,7 +604,7 @@ Stylesheet: ベーススタイル
 ******************************************************************/
 body {
   font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-  color: #3b4043;
+  color: #212121;
   font-size: 16px;
   min-width: 320px;
   line-height: 1.6;
@@ -745,7 +745,7 @@ li {
 .l-alert h2 {
   font-size: 1.2rem;
   margin-bottom: 1em;
-  color: #022558;
+  color: #212121;
   text-align: center;
 }
 
@@ -755,7 +755,12 @@ li {
 }
 
 .l-shop__item {
-  padding: 10px;
+  margin: 0 10px 10px 0;
+  width: calc(50% - 5px);
+}
+
+.l-shop__item:nth-child(2n) {
+  margin-right: 0;
 }
 
 .l-shop__link {
@@ -796,7 +801,7 @@ li {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   font-family: "object-fit: cover;";
 }
 
@@ -903,16 +908,12 @@ li {
   }
 }
 
-.l-shop__item {
-  width: 50%;
-}
-
 .l-insta {
   background-image: url(../images/insta-bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  max-width: 1087px;
+  max-width: 1104px;
   margin: 0 auto;
   border-radius: 10px;
   width: 90%;
@@ -949,7 +950,7 @@ li {
       -ms-flex-align: start;
           align-items: flex-start;
   margin-bottom: 1em;
-  color: #3b4043;
+  color: #212121;
 }
 
 .l-special__photo {
@@ -1083,11 +1084,9 @@ li {
 }
 
 .owner {
-  background-image: url(../images/owner-bg.jpg);
-  background-repeat: no-repeat;
-  background-position: -130px;
-  background-size: cover;
-  padding: 32px 0 64px;
+  background: #fdeeea;
+  padding: 0 0 32px;
+  margin-top: 32px;
 }
 
 .owner__title {
@@ -1125,7 +1124,7 @@ li {
 }
 
 footer.l-footer {
-  background: #022558;
+  background: #212121;
   padding: 2em 0;
   color: white;
   text-align: center;
@@ -1297,7 +1296,7 @@ footer.l-footer {
 
 .l-tel .btn {
   font-size: 1.3rem;
-  color: #3b4043;
+  color: #212121;
   margin: 0;
   padding: 5px 0;
 }
@@ -1474,7 +1473,14 @@ Stylesheet: 600px以上のタブレットやモニタで適用
     width: 67%;
   }
   .l-shop__item {
-    width: 33%;
+    margin: 0 16px 16px 0;
+    width: calc(33.3333333% - 32px / 3);
+  }
+  .l-shop__item:nth-child(2n) {
+    margin-right: 16px;
+  }
+  .l-shop__item:nth-child(3n) {
+    margin-right: 0;
   }
   .l-shop__info {
     padding: 0.5em 1em 2em;
@@ -1506,6 +1512,9 @@ Stylesheet: 600px以上のタブレットやモニタで適用
     padding: 5px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
+  }
+  .l-insta {
+    width: 86%;
   }
   .l-insta__inner {
     padding: 0;
@@ -1608,7 +1617,14 @@ Stylesheet: 960px以上のモニタで適用
     padding: 2% 2% 7%;
   }
   .l-shop__item {
-    width: 25%;
+    margin: 0 16px 16px 0;
+    width: calc(25% - 48px / 4);
+  }
+  .l-shop__item:nth-child(3n) {
+    margin-right: 16px;
+  }
+  .l-shop__item:nth-child(4n) {
+    margin-right: 0;
   }
   .l-tel {
     display: none;
@@ -1692,6 +1708,10 @@ Stylesheet: 960px以上のモニタで適用
   }
   .l-keyvisual .btn {
     padding: 10px 20px;
+  }
+  .owner {
+    padding: 0;
+    margin-top: 0;
   }
 }
 
