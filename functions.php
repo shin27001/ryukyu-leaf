@@ -28,7 +28,7 @@ function pr($arg) {
 
 
 # タイトルを取得
-function esd_title( $arg=array('echo'=>true) ) {
+function esd_title($arg=['echo'=>true]) {
   if (is_home()) {
     $title = "Home";
   } elseif(is_search()) {
@@ -61,6 +61,18 @@ function esd_title( $arg=array('echo'=>true) ) {
   } else {
     return $title;
   }
+}
+
+function get_og($field) {
+  $og = ['image'=>'', 'description'=>''];
+  if (is_single()) {
+    $og['image'] = get_field('shop_main_image')['url'];
+    $og['description'] = get_field('messages');
+  } else {
+    $og['image'] = get_template_directory_uri()."/images/ogp.jpg";
+    $og['description'] = get_bloginfo('description');
+  }
+  return $og[$field];
 }
 
 function pagination($pages = '', $range = 2, $show_only = true)
