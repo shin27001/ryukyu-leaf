@@ -1174,24 +1174,23 @@ footer.l-footer {
 .l-info__korona h2 {
   margin-top: 20px;
   text-align: center;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, transparent), color-stop(60%, #fdeeea));
+  background: linear-gradient(transparent 60%, #fdeeea 60%);
 }
 
 .l-info__korona-sub {
   margin: 16px 0 8px;
   padding: 2px 0;
-  background: #f4f3f2;
   text-align: center;
 }
 
 .l-info__korona-list li {
   position: relative;
-  padding-left: 1.3em;
-  border-bottom: 1px solid #eee;
-  padding: 2px 0 2px 23px;
+  padding: 2px 0 5px 23px;
 }
 
 .l-info__korona-list li:before {
-  content: "\f14a";
+  content: "\f111";
   font-family: FontAwesome;
   position: absolute;
   top: 3px;
