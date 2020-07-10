@@ -54,3 +54,15 @@ $(document).ready(function () {
     return false;
   });
 });
+
+$("input[name='request']").click(function () {
+  if ($(this).val() == 'update') {
+    $('.searchOff').fadeIn(1000);
+    $('#registform').fadeOut(1000);
+    $("input[name='update']").val(true);
+  } else if($(this).val() == 'regist') {
+    $('.searchOff').fadeOut(1000);
+    $('#registform').fadeIn(1000);
+    $("input[name='update']").val(false);
+  }
+});

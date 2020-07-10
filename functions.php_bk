@@ -9,8 +9,7 @@ function choices_id() { return 29; }
 function get_tmp_img_dir() { return "wp-content/tmp_imgs/"; }
 
 function get_pref($echo = true) {
-  $pref = (strpos(ABSPATH, 'okinawa')) ? "沖縄" : "京都";
-  // $pref = (strpos($_SERVER["REQUEST_URI"], 'okinawa')) ? "沖縄" : "京都";
+  $pref = (strpos($_SERVER["REQUEST_URI"], 'okinawa')) ? "沖縄" : "京都";
   if ($echo) { echo $pref; } else { return $pref; }
   return;
 }
@@ -122,6 +121,13 @@ function disable_visual_editor_filter(){
 add_action( 'load-post.php', 'disable_visual_editor_in_page' );
 add_action( 'load-post-new.php', 'disable_visual_editor_in_page' );
 
+
+function send_the_content($id) {
+    echo "send_the_content";
+    echo "<h1>ID -- ".$id."</h1>x";
+    return;
+}
+add_action('publish_post', 'send_the_content', 10, 3 );
 
 # カスタムタクソノミーの階層構造を維持する
 function term_hierarchy($taxonomy, $parent = true) {
@@ -307,6 +313,26 @@ function createvideotag($param)
 }
 
 
+function on_all_status_transitions( $post ) {
+  pr($post);
+  echo "on_all_status_transitions";
+    if ( $new_status != $old_status ) {
+        // 投稿ステータスが任意に変わるとき実行する処理。
+    }
+}
+add_action(  'transition_post_status',  'on_all_status_transitions', 10, 3 );
+
+
+// function send_the_content($id) {
+//     echo "send_the_content";
+//     echo "<h1>ID -- ".$id."</h1>x";
+//     return;
+// }
+// add_action('publish_post', 'send_the_content', 10, 3 );
+// add_action('publish_shopupdate', 'send_the_content', 10, 3 );
+
+
+
 #店舗（カスタム投稿）メニュー追加
 function init_custom_post_shops() {
     # カスタム投稿
@@ -404,7 +430,7 @@ function init_custom_post_shop_update() {
     	'show_ui' => true,
     	'menu_position' => 5,
     );
-    register_post_type( 'shop_update', $args );
+    register_post_type( 'shopupdate', $args );
 
 }
 add_action('init', 'init_custom_post_shop_update');
@@ -415,29 +441,90 @@ add_action('init', 'init_custom_post_shop_update');
 # 更新依頼メニュー追加
 #
 ##################################
-function shop_update($id, $post) {
-    $exclude = array();
+// function my_hook( $post_id, $post ) {
+//   pr($post);
+//     if ( 'english' !== $post->post_type || 'pending' !== $post->post_status ) {
+//         return false;
+//     }
+// }
+// add_action( 'save_post', 'my_hook', 10, 2 );
+// do_action("save_post");
 
-    # 更新データ取得
-    $update_fields = get_fields($id);
+// function setup_latest_post_url($id,$post) {
+//   echo "setup_latest_post_url -- ".$id;
+//     pr($post);
+//     echo '<script type="text/javascript">confirm("'.$id.'");</script>';
+//     // $permalink = get_permalink( $id );
+//     // $uid = intval($post->post_author);
+//     // update_user_meta( $uid, "latestpermalink", $permalink);
+// }
+// add_action('publish_post', 'setup_latest_post_url', 10, 2);
+// do_action("publish_post");
 
-    # メインの店舗IDを取得し、更新除外フィールドを消す
-    $main_post_id = trim($update_fields['main_post_id']);
-    foreach (['del_flg', 'main_post_id'] as $value) {
-        unset($update_fields[$value]);
-    }
+// add_action('publish_shop_update', 'testFunction');
+// add_action('publish_page', 'testFunction');
+// add_action('publish_post', 'testFunction', 10, 2);
+// do_action("publish_post");
+// function testFunction($id, $post) {
+//   // $post_id = get_the_ID();
+//   echo "<h1>ID -- ".$id."</h1>";
+//   // echo '<script type="text/javascript">confirm("1111");</script>';
+//
+// }
 
-    foreach ($update_fields as $key => $value) {
-      if(!empty($value)) {
-        update_field($key, $value, $main_post_id);
-      }
-    }
-    // $obj = wp_update_post($post, true);
-    // pr($post);
+// function on_all_status_transitions( $post ) {
+//   pr($post);
+//   echo "on_all_status_transitions";
+//     if ( $new_status != $old_status ) {
+//         // 投稿ステータスが任意に変わるとき実行する処理。
+//     }
+// }
+// add_action(  'transition_post_status',  'on_all_status_transitions', 10, 3 );
+// // do_action("transition_post_status");
+//
+//
+// function send_the_content($id) {
+//     // global $post;
+//     // pr($id);echo "id--";
+//
+//     echo "send_the_content";
+//     echo "<h1>ID -- ".$id."</h1>x";
+//     // $post_id = get_the_ID();
+//     // echo '<script type="text/javascript">confirm("'.$post_id.'");</script>';
+//     // $post = get_post($id);
+//     // $send_title = $post->post_title;
+//     // $send_content = $post->post_content;
+//     // wp_mail('shin27001@gmail.com',$send_title,$send_content,'From:shin27001@gmail.com');
+//
+//     return;
+// }
+// add_action('publish_shopupdate', 'send_the_content', 10, 3 );
+// do_action("publish_shop_update");
 
-// exit;
-    return;
-}
-add_action('publish_shop_update', 'shop_update', 10, 3 );
+
+
+
+// add_action( 'admin_menu', 'my_plugin_menu' );
+/** ステップ1 */
+// function my_plugin_menu() {
+// 	// add_options_page( 'My Plugin Options', 'My Plugin', 'manage_options', 'my-unique-identifier', 'my_plugin_options' );
+//   add_menu_page( '更新依頼管理', '更新依頼管理', 'manage_options', 'update_request', 'update_request_page', "", 8 );
+// }
+
+/** ステップ3 */
+// function update_request_page() {
+// 	if ( !current_user_can( 'manage_options' ) )  {
+// 		wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
+// 	}
+// 	// echo '<div class="wrap">';
+// 	// echo '<p>オプション用のフォームをここに表示する。</p>';
+// 	// echo '</div>';
+//
+// echo <<<EOF
+//   <div class="wrap">
+//     <p>オプション用のフォームをここに表示する。222</p>
+//   </div>
+// EOF;
+// }
 
 ?>

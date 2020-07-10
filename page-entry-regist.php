@@ -15,7 +15,9 @@
 
   $post = new wp_post_helper($my_post);
 
-  $post->add_field('field_5ef0603255a70', 1); //初期値は、1:掲載しない
+  if (!e('update')) {
+    $post->add_field('field_5ef0603255a70', 1); //初期値は、1:掲載しない
+  }
   $post->insert_field('field_5efae5e7b749f', 'tanto_name');
   $post->insert_field('field_5efae60bb74a0', 'tanto_mail');
   $post->insert_field('field_5efae62cb74a1', 'tanto_tel');
@@ -46,10 +48,10 @@
   $term = get_term_by('slug', $_POST['area'], 'area');
   $parent_term = get_term($term->parent);
 
-  $post->add_terms('area',  $_POST['area']);
-  $post->add_terms('area',  $parent_term->slug);
-  $post->add_terms('dishes',  $_POST['dishes']);
-  $post->add_terms('options', $_POST['options']);
+  $post->insert_terms('area',  $_POST['area']);
+  $post->insert_terms('area',  $parent_term->slug);
+  $post->insert_terms('dishes',  $_POST['dishes']);
+  $post->insert_terms('options', $_POST['options']);
 
   // 投稿し、post_idを取得
   $postid = $post->insert();
