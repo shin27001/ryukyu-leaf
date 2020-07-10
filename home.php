@@ -149,33 +149,8 @@
 </div> -->
 <!-- /l-special -->
 
-<div class="mod_share">
-  <h3 class="mod_share__title">この情報を共有する</h3>
-  <ul class="mod_share__list">
-    <li class="mod_share__item twitter"><a href="#" class="link" target="_blank">
-        <p class="txt"><i class="fab fa-twitter symbol"></i><br>Twitterで<br>シェア</p>
-      </a></li>
-    <li class="mod_share__item facebook"><a href="#" class="link" target="_blank">
-        <p class="txt"><i class="fab fa-facebook symbol"></i><br>Facebookで<br>シェア</p>
-      </a></li>
-    <li class="mod_share__item line"><a href="#" class="link">
-        <p class="txt"><i class="fab fa-line symbol"></i><br>LINEで<br>送る</p>
-      </a></li>
-    <li class="mod_share__item copy">
-      <div class="link" id="clipboard">
-        <p class="txt"><i class="far fa-copy symbol"></i><br>URLを<br>コピー</p>
-      </div>
-    </li>
-  </ul>
-</div>
+<?php get_footer('sns'); ?>
 <!-- /mod_share -->
-<div class="owner">
-  <div class="owner__inner">
-    <h2 class="owner__title">飲食店の皆様へ</h2>
-    <p class="owner__read"><?php get_pref(); ?>GO!HAN旅は、コロナ対策をしながら営業を再開した飲食店を応援したいと思い、<span class="d-inline">このサイトを立ち上げました！</span><br>
-      こんな時だからこそ、お客様にゆっくりグルメを楽しんでもらえる環境があるという事を知ってもらい、<span class="d-inline">更にお店のファンが増えたらいいなと思っています。</span><br>
-      無料で掲載できますので、<span class="d-inline">ご賛同いただけましたら以下のフォームよりご連絡ください。</span></p>
-    <p class="btn-wrap"><a href="<?php echo esc_url(home_url('entry-form')); ?>" class="btn btn-m-white"><i class="fas fa-edit"></i> 新規店舗登録はこちら</a></p>
-  </div>
-</div>
+<?php get_footer('regist'); ?>
+
 <?php get_footer(); ?>
