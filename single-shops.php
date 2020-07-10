@@ -63,7 +63,7 @@
       </div>
       <!-- /l-info__main -->
       <div class="l-info__korona">
-        <h2>新型コロナウイルス<br class="br-sp">感染症拡大防止に関して</h2>
+        <h2><span class="marker">新型コロナウイルス<br class="br-sp">感染症拡大防止に関して</span></h2>
         <div class="l-info__korona-wrap">
           <div class="l-info__korona-box">
             <p class="l-info__korona-sub">［ 基本の取り組み ］</p>
