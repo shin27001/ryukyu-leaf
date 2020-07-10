@@ -109,7 +109,7 @@
             </td>
           </tr>
           <tr>
-            <th>MAPコード（※カーナビに番号をいれると表示されます）</th>
+            <th>MAPコード<span class="small-text">（※カーナビに番号をいれると地図が表示されます）</span></th>
             <td><?php the_field('map_code'); ?></td>
           </tr>
           <tr>
