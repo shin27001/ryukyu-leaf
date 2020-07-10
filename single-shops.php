@@ -4,7 +4,6 @@
   <div class="content-inner">
 
     <!-- Search Form -->
-    <?php get_template_part('tpl', 'search'); ?>
 
     <div class="l-info">
       <div class="l-info__main">
@@ -20,7 +19,7 @@
           <p class="l-info__area">
             <?php $areas = get_the_terms($post->ID, 'area'); ?>
             <?php if ($areas) : foreach ($areas as $area) : ?>
-              <?php echo ($area->parent) ? '<i class="fas fa-map-marker-alt"></i>'.$area->name : ""; ?>
+                <?php echo ($area->parent) ? '<i class="fas fa-map-marker-alt"></i>' . $area->name : ""; ?>
                 <!-- <i class="fas fa-map-marker-alt"></i><?php echo $area->name; ?> -->
             <?php endforeach;
             endif; ?>
@@ -105,11 +104,11 @@
           </tr>
           <tr>
             <th>住所</th>
-            <td>〒<?php the_field('zip_code'); ?>　<?php the_field('address'); ?><div class="mapbtn"><a href="#" class="btn btn-m-red">mapを表示する</a></div>
+            <td>〒<?php the_field('zip_code'); ?>　<?php the_field('address'); ?><div class="mapbtn"><a href="#" class="btn btn-m-red">Google Mapへ</a></div>
             </td>
           </tr>
           <tr>
-            <th>MAPコード</th>
+            <th>MAPコード<span class="small-text">（※カーナビに番号をいれると地図が表示されます）</span></th>
             <td><?php the_field('map_code'); ?></td>
           </tr>
           <tr>
