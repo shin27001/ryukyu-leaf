@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
   <meta property='og:type' content='website'>
-  <meta property='og:title' content='<?php esd_title(); ?><?php echo " | "; ?><?php bloginfo('name'); ?>'>
+  <meta property='og:title' content='<?php esd_title()." | ".bloginfo('name'); ?>'>
   <meta property='og:url' content='<?php echo esc_url(home_url().$_SERVER['REQUEST_URI']); ?>'>
   <meta property='og:description' content='<?php echo get_og('description'); ?>'>
   <meta property="og:image" content="<?php echo get_og('image'); ?>">
