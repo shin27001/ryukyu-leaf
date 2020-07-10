@@ -650,8 +650,8 @@ h2 {
 }
 
 .marker {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, transparent), color-stop(60%, #fdeeea));
-  background: linear-gradient(transparent 60%, #fdeeea 60%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, transparent), color-stop(60%, #f7d9d0));
+  background: linear-gradient(transparent 60%, #f7d9d0 60%);
 }
 
 .d-inline {
