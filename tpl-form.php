@@ -311,8 +311,8 @@ $error = $validate_errors;
               <?php endforeach;
               endif; ?>
               <li>
-                <input class="form-checkbox__button-input" type="checkbox" name="options[]" id="<?php echo $option->slug; ?>" value="<?php echo $option->slug; ?>" <?php echo $checked; ?>>
-                <label class="form-checkbox__button" for="<?php echo $option->slug; ?>"><?php echo $option->name; ?></label>
+                <input class="form-checkbox__button-input" type="checkbox" name="options[]" id="<?php echo $option->slug; ?>-search" value="<?php echo $option->slug; ?>" <?php echo $checked; ?>>
+                <label class="form-checkbox__button" for="<?php echo $option->slug; ?>-search"><?php echo $option->name; ?></label>
               </li>
             <?php endforeach; ?>
           </ul>
