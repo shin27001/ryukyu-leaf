@@ -2,8 +2,14 @@
   <h4 class="l-searchBox__title"><i class="fas fa-search"></i> お店を探す</h4>
   <div class="searchBody">
     <div class="searchBody__inner">
+      <?php
+        $slug = get_post_field('post_name', get_post());
+        // $action = ($slug == 'entry-form') ? esc_url(home_url('entry-form/')) : esc_url(home_url());
+      ?>
       <form method="get" id="searchform" action="<?php echo esc_url(home_url()); ?>">
         <input type="hidden" name="post_type" value="shops">
+        <?php echo !empty($_GET['update']) || ($slug == 'entry-form') ? '<input type="hidden" name="update" value="true">' : "" ; ?>
+        <!-- <input type="hidden" name="update" value="<?php echo (!empty($_GET['update'])) ? $_GET['update'] : false; ?>"> -->
         <div class="searchBody__top">
           <dl class="searchBody__dl">
             <dt class="searchBody__dt"><i class="fas fa-search"></i> キーワードで検索</dt>

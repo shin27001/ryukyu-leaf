@@ -312,6 +312,16 @@ class wp_post_helper {
 		}
 	}
 
+	# matayoshi 追加
+	public function insert_terms($field_name, $sanitize = true) {
+		$value = (!empty($_POST[$field_name])) ? $_POST[$field_name] : false;
+		if($value) {
+			$value = ($sanitize) ? sanitize_text_field($value) : $value;
+			$this->add_terms($field_name, $value);
+		}
+	}
+
+
 	// バリデーション
 	public function add_media2($field_name){
 		$filename = $_POST[$field_name];

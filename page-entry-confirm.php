@@ -11,7 +11,7 @@
       <table class="l-info__table">
         <tr>
           <th>掲載内容</th>
-          <td>新規登録</td>
+          <td><?php echo e('update') ? '更新依頼' : '新規登録'; ?></td>
         </tr>
       </table>
       <h2 class="l-fome__title">ご担当者様情報</h2>

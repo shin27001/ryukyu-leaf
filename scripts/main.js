@@ -57,8 +57,12 @@ $(document).ready(function () {
 
 $("input[name='request']").click(function () {
   if ($(this).val() == 'update') {
-    $('.l-searchBox').fadeIn(1000);
+    $('.searchOff').fadeIn(1000);
+    $('#registform').fadeOut(1000);
+    $("input[name='update']").val(true);
   } else if($(this).val() == 'regist') {
-    $('.l-searchBox').fadeOut(1000);
+    $('.searchOff').fadeOut(1000);
+    $('#registform').fadeIn(1000);
+    $("input[name='update']").val(false);
   }
 });

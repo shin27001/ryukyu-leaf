@@ -16,30 +16,40 @@ $checked = ""; #初期化
 global $validate_errors;
 $error = $validate_errors;
 ?>
-<div class="l-form">
-  <form method="POST" id="registform" action="<?php echo esc_url(home_url('entry-validation')); ?>" enctype="multipart/form-data">
-    <h2 class="l-fome__title">掲載内容</h2>
-    <div class="l-form__radio">
-      <span class="l-form__radio-btn">
-        <label for="request-1">
-          <?php $checked = (e('request', $data) == 'regist') || empty(e('request', $data)) ? 'checked="checked"' : ""; ?>
-          <input type="radio" name="request" value="regist" id="request-1" <?php echo $checked; ?>>
-          <span class="l-form__radio-text">新規登録</span>
-        </label>
-      </span>
-      <span class="l-form__radio-btn">
-        <label for="request-2">
-          <?php $checked = e('request', $data) == 'update' ? 'checked="checked"' : ""; ?>
-          <input type="radio" name="request" value="update" id="request-2"<?php echo $checked; ?>>
-          <span class="l-form__radio-text">更新依頼</span>
-        </label>
-      </span>
-    </div>
-    <p class="sub-text">内容更新の場合は [更新] をお選びください。変更の必要のない項目は空のままでご入力ください。<br>その場合でも、ご担当者様情報、店名は必ず入力をお願いします。</p>
-
-    <!-- Search Form -->
+<?php if(!e('update', $_GET)) : ?>
+  <h2 class="l-fome__title">掲載内容</h2>
+  <div class="l-form__radio">
+    <span class="l-form__radio-btn">
+      <label for="request-1">
+        <?php $checked = (e('request', $data) == 'regist') || empty(e('request', $data)) ? 'checked="checked"' : ""; ?>
+        <input type="radio" name="request" value="regist" id="request-1" <?php echo $checked; ?>>
+        <span class="l-form__radio-text">新規登録</span>
+      </label>
+    </span>
+    <span class="l-form__radio-btn">
+      <label for="request-2">
+        <?php $checked = e('request', $data) == 'update' ? 'checked="checked"' : ""; ?>
+        <input type="radio" name="request" value="update" id="request-2"<?php echo $checked; ?>>
+        <span class="l-form__radio-text">更新依頼</span>
+      </label>
+    </span>
+  </div>
+  <p class="sub-text">内容更新の場合は [更新] をお選びください。変更の必要のない項目は空のままでご入力ください。<br>その場合でも、ご担当者様情報、店名は必ず入力をお願いします。</p>
+<?php endif; ?>
+  <!-- Search Form -->
+  <div class="searchOff">
     <?php get_template_part('tpl', 'search'); ?>
-
+  </div>
+  <form method="POST" id="registform" action="<?php echo esc_url(home_url('entry-validation')); ?>" enctype="multipart/form-data">
+    <?php $slug = get_post_field('post_name', get_post()); ?>
+    <?php
+      // echo e('update', $_GET) || ($slug == 'entry-form') ? '<input type="hidden" name="update" value="true">' : "" ;
+      if(e('update', $_GET) || ($slug == 'entry-form')) {
+        echo '<input type="hidden" name="update" value="true">';
+        echo '<input type="hidden" name="main_post_id" value="'.e('main_post_id', $_GET).'">';
+      }
+    ?>
+    <div class="l-form">
     <h2 class="l-fome__title">ご担当者様情報</h2>
     <!-- 担当者名 -->
     <dl>

@@ -8,7 +8,12 @@ $errors = array_merge($errors, validate_field('contact_policy', array('acf-field
 $errors = array_merge($errors, validate_field('written_oath', array('acf-field'=>false)));
 
 
-if ($_POST['request'] == 'regist') {
+if (e('update', $_GET)) {
+  $errors = array_merge($errors, validate_field('shop_name', array('acf-field'=>false)));
+  $errors = array_merge($errors, validate_field('tanto_name'));
+  $errors = array_merge($errors, validate_field('tanto_mail'));
+  $errors = array_merge($errors, validate_field('tanto_tel'));
+} else {
   $errors = array_merge($errors, validate_field('shop_name', array('acf-field'=>false)));
   $errors = array_merge($errors, validate_field('tanto_name'));
   $errors = array_merge($errors, validate_field('tanto_mail'));
@@ -38,11 +43,6 @@ if ($_POST['request'] == 'regist') {
   $errors = array_merge($errors, validate_field('delivery_message', array('empty'=>true)));#
   $errors = array_merge($errors, validate_field('request_message', array('empty'=>true)));#
   $errors = array_merge($errors, validate_field('coronas_other'));
-} elseif($_POST['request'] == 'update') {
-  $errors = array_merge($errors, validate_field('shop_name', array('acf-field'=>false)));
-  $errors = array_merge($errors, validate_field('tanto_name'));
-  $errors = array_merge($errors, validate_field('tanto_mail'));
-  $errors = array_merge($errors, validate_field('tanto_tel'));
 }
 
 
