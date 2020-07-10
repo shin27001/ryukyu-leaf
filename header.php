@@ -6,8 +6,8 @@
   <meta property='og:type' content='website'>
   <meta property='og:title' content='<?php esd_title(); ?><?php echo " | "; ?><?php bloginfo('name'); ?>'>
   <meta property='og:url' content='<?php echo esc_url(home_url().$_SERVER['REQUEST_URI']); ?>'>
-  <meta property='og:description' content='<?php echo get_field('messages'); ?>'>
-  <meta property="og:image" content="<?php echo get_field('shop_main_image')['url']; ?>">
+  <meta property='og:description' content='<?php echo get_og('description'); ?>'>
+  <meta property="og:image" content="<?php echo get_og('image'); ?>">
   <meta name="description" content="<?php bloginfo('description'); ?>" />
   <title><?php esd_title(); ?><?php echo " | "; ?><?php bloginfo('name'); ?></title>
   <link href="<?php echo get_template_directory_uri(); ?>/css/vendors/slick.css" media="all" rel="stylesheet" type="text/css" />
