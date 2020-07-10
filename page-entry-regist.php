@@ -5,15 +5,23 @@
   if (e('post_all')) {
     $_POST  = unserialize(base64_decode(e('post_all')));
   }
-
+  // pr($_POST);
   $my_post = array();
+  // echo "main_post_id--".stz(e('main_post_id'));
+  // $my_post['ID'] = e('update') ? stz(e('main_post_id')) : "";
+  // if (e('update')) {
+  //   $my_post['ID'] = stz(e('main_post_id'));
+  // }
   $my_post['post_title'] = stz($_POST['shop_name']);
   $my_post['post_content'] = stz($_POST['message']);
   $my_post['post_author'] = 1;
   $my_post['post_status'] = 'publish';
-  $my_post['post_type'] = 'shops';
+  $my_post['post_type'] = e('update') ? 'shop_update' : 'shops';
 
   $post = new wp_post_helper($my_post);
+
+// pr($post);
+// exit;
 
   if (!e('update')) {
     $post->add_field('field_5ef0603255a70', 1); //初期値は、1:掲載しない
@@ -44,18 +52,28 @@
   $post->insert_field('field_5efad0d2748b7', 'request_message');#
   $post->insert_field('field_5ef6f2eb9f16b', 'coronas_other'); #
 
-  #エリアの親ターム取得
-  $term = get_term_by('slug', $_POST['area'], 'area');
-  $parent_term = get_term($term->parent);
+  $a = e('update') ? $post->insert_field('field_5f051683d37f5', 'main_post_id') : false;
 
-  $post->insert_terms('area',  $_POST['area']);
-  $post->insert_terms('area',  $parent_term->slug);
-  $post->insert_terms('dishes',  $_POST['dishes']);
-  $post->insert_terms('options', $_POST['options']);
+
+  #エリアの親ターム取得
+  if(!empty($_POST['area'])) {
+    $term = get_term_by('slug', $_POST['area'], 'area');
+    $parent_term = get_term($term->parent);
+
+    $post->insert_terms('area',  $_POST['area']);
+    $post->insert_terms('area',  $parent_term->slug);
+  }
+  $_POST['dishes'] ?? $post->insert_terms('dishes',  $_POST['dishes']);
+  $_POST['options'] ?? $post->insert_terms('options', $_POST['options']);
+
+
 
   // 投稿し、post_idを取得
-  $postid = $post->insert();
+  $postid = e('update') ? $post->update() : $post->insert();
   // echo "post-id -- ".$postid;
+
+  // pr($post);
+  // exit;
 
   // 画像ファイル保存
   if (!empty($_POST['shop_main_image'])) {

@@ -26,6 +26,11 @@ function pr($arg) {
   }
 }
 
+// function sql_dump($query) {
+//     var_dump($query);
+//     return $query;
+// }
+// add_filter('query', 'sql_dump');
 
 # タイトルを取得
 function esd_title($args=array()) {
