@@ -20,7 +20,8 @@
           <p class="l-info__area">
             <?php $areas = get_the_terms($post->ID, 'area'); ?>
             <?php if ($areas) : foreach ($areas as $area) : ?>
-                <i class="fas fa-map-marker-alt"></i><?php echo $area->name; ?>
+              <?php echo ($area->parent) ? '<i class="fas fa-map-marker-alt"></i>'.$area->name : ""; ?>
+                <!-- <i class="fas fa-map-marker-alt"></i><?php echo $area->name; ?> -->
             <?php endforeach;
             endif; ?>
           </p>
