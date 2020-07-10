@@ -66,7 +66,7 @@
         <h2>新型コロナウイルス<br class="br-sp">感染症拡大防止に関して</h2>
         <div class="l-info__korona-wrap">
           <div class="l-info__korona-box">
-            <p class="l-info__korona-sub">基本の取り組み</p>
+            <p class="l-info__korona-sub">［ 基本の取り組み ］</p>
             <ul class="l-info__korona-list">
               <?php $coronas =  get_field('coronas'); ?>
               <?php if ($coronas) : foreach ($coronas as $corona) : ?>
@@ -77,7 +77,7 @@
           </div>
           <!-- /l-info__korona-box -->
           <div class="l-info__korona-box">
-            <p class="l-info__korona-sub">その他の取り組み</p>
+            <p class="l-info__korona-sub">［ その他の取り組み ］</p>
             <p class="l-info__korona-comme"><?php the_field('coronas_other'); ?></p>
           </div>
           <!-- /l-info__korona-box -->
