@@ -66,3 +66,9 @@ $("input[name='request']").click(function () {
     $("input[name='update']").val(false);
   }
 });
+
+$("#clipboard").click(function () {
+  $("body").append("<textarea id=\"copyTarget\" style=\"position:absolute; left:-9999px; top:0px;\" readonly=\"readonly\">" +location.href+ "</textarea>");
+  $("#copyTarget").select();
+  document.execCommand('copy');
+});
