@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
   <meta property='og:type' content='website'>
-  <meta property='og:title' content='<?php echo esd_title(['echo'=>false])." | ".get_bloginfo('name'); ?>'>
+  <meta property='og:title' content='<?php esd_title(); ?>'>
   <meta property='og:url' content='<?php echo esc_url(home_url().$_SERVER['REQUEST_URI']); ?>'>
   <meta property='og:description' content='<?php echo get_og('description'); ?>'>
   <meta property="og:image" content="<?php echo get_og('image'); ?>">
   <meta name="description" content="<?php bloginfo('description'); ?>" />
-  <title><?php esd_title(); ?><?php echo " | "; ?><?php bloginfo('name'); ?></title>
+  <title><?php esd_title(); ?></title>
   <link href="<?php echo get_template_directory_uri(); ?>/css/vendors/slick.css" media="all" rel="stylesheet" type="text/css" />
   <link href="<?php echo get_template_directory_uri(); ?>/css/destyle.css?<?php echo date('Ymd-Hi'); ?>" media="all" rel="stylesheet" type="text/css" />
   <link href="<?php echo get_template_directory_uri(); ?>/css/style.css?<?php echo date('Ymd-Hi'); ?>" media="all" rel="stylesheet" type="text/css" />

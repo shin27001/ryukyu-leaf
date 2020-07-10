@@ -28,7 +28,9 @@ function pr($arg) {
 
 
 # タイトルを取得
-function esd_title($arg=['echo'=>true]) {
+function esd_title($args=array()) {
+  $args = array_merge(['echo'=>true, 'site_title'=>true], $args);
+
   if (is_home()) {
     $title = "";
   } elseif(is_search()) {
@@ -56,7 +58,9 @@ function esd_title($arg=['echo'=>true]) {
     $title = the_title_attribute(array('echo'=>false));
   }
 
-  if ($arg['echo']) {
+  $title .= ($args['site_title']) ? " | ".get_bloginfo('name') : "";
+
+  if ($args['echo']) {
     echo $title;
   } else {
     return $title;
