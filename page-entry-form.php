@@ -7,11 +7,6 @@
   <div class="content-inner">
     <?php get_template_part('tpl', 'form'); ?>
     <!-- Entry Form -->
-    <?php //if(!empty($_POST['update'])) ($_POST['update']) ? get_template_part('tpl', 'shoplist') : get_template_part('tpl', 'form'); ?>
-    <?php //if((empty($_POST['update'])) || ($_POST['update'] == false)) : ?>
-    <?php //elseif($_POST['update'] == true) : ?>
-      <?php //get_template_part('tpl', 'shoplist'); ?>
-    <?php //endif; ?>
   </div>
 </div>
 <?php get_footer(); ?>
