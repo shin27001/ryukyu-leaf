@@ -30,7 +30,7 @@ function pr($arg) {
 # タイトルを取得
 function esd_title($arg=['echo'=>true]) {
   if (is_home()) {
-    $title = "Home";
+    $title = "";
   } elseif(is_search()) {
     // pr($_GET);
     // $title = get_search_query()."の検索結果";
