@@ -4,7 +4,6 @@
   <div class="content-inner">
 
     <!-- Search Form -->
-    <!-- <?php get_template_part('tpl', 'search'); ?> -->
 
     <div class="l-info">
       <div class="l-info__main">
