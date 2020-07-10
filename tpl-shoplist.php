@@ -1,6 +1,6 @@
 <div class="l-shop">
   <h1 class="main-title">
-    「<?php esd_title(); ?>」の一覧
+    「<?php esd_title(['site_title'=>false]); ?>」の一覧
   </h1>
   <ul class="l-shop__list">
 
