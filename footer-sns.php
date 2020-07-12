@@ -2,8 +2,7 @@
   <h3 class="mod_share__title">この情報を共有する</h3>
   <ul class="mod_share__list">
     <?php $current_url = urlencode(esc_url(home_url() . $_SERVER['REQUEST_URI'])); ?>
-    <?php $sns_title   = urlencode(esd_title()); ?>
-    <li class="mod_share__item twitter"><a href="https://twitter.com/share? url=<?php echo $current_url; ?>&text=<?php echo $sns_title; ?>" rel="nofollow" target="_blank">
+    <li class="mod_share__item twitter"><a href="https://twitter.com/share? url=<?php echo $current_url; ?>&text=<?php echo urlencode(esd_title()); ?>" rel="nofollow" target="_blank">
         <p class="link"><i class="fab fa-twitter symbol"></i><br>Twitterで<br>シェア</p>
       </a></li>
     <li class="mod_share__item facebook"><a href="https://www.facebook.com/share.php?u=<?php echo $current_url; ?>" class="link" target="_blank">
