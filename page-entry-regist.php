@@ -19,7 +19,7 @@
   $my_post['post_type'] = e('update') ? 'shop_update' : 'shops';
 
   $post = new wp_post_helper($my_post);
-
+//  echo e('update') ? 'shop_update' : 'shops';
 // pr($post);
 // exit;
 

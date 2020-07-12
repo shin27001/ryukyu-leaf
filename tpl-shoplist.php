@@ -25,9 +25,9 @@
             </p>
           </div>
           <?php //$update = isset($_GET['update']) ? true : false; ?>
-          <?php if(!empty($_GET['update'])) : ?>
+          <?php if(!empty($_GET['search_update'])) : ?>
           <form method="GET" id="updateform" action="<?php echo esc_url(home_url('entry-form')); ?>">
-            <input type="hidden" name="update" value="<?php echo $_GET['update']; ?>">
+            <input type="hidden" name="update" value="<?php echo $_GET['search_update']; ?>">
             <input type="hidden" name="main_post_id" value="<?php echo get_the_ID(); ?>">
             <button class="btn btn-m-red" type="submit"><span><i class="fas fa-edit"></i> 記事を更新する</span></button>
           </form>

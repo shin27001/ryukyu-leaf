@@ -8,7 +8,7 @@
       ?>
       <form method="get" id="searchform" action="<?php echo esc_url(home_url()); ?>">
         <input type="hidden" name="post_type" value="shops">
-        <?php echo !empty($_GET['update']) || ($slug == 'entry-form') ? '<input type="hidden" name="update" value="true">' : "" ; ?>
+        <?php echo !empty($_GET['search_update']) || ($slug == 'entry-form') ? '<input type="hidden" name="search_update" value="true">' : "" ; ?>
         <!-- <input type="hidden" name="update" value="<?php echo (!empty($_GET['update'])) ? $_GET['update'] : false; ?>"> -->
         <div class="searchBody__top">
           <dl class="searchBody__dl">
