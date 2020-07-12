@@ -450,6 +450,7 @@ function shop_update($id, $post) {
 
     foreach ($update_fields as $key => $value) {
       if(!empty($value)) {
+        $value = (in_array($key, ['payments', 'coronas'])) ?: json_encode($value);
         update_field($key, $value, $main_post_id);
       }
     }
