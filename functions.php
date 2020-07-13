@@ -448,14 +448,18 @@ function shop_update($id, $post) {
         unset($update_fields[$value]);
     }
 
+    $ar = array();
     foreach ($update_fields as $key => $value) {
       if(!empty($value)) {
-        $value = (in_array($key, ['payments', 'coronas'])) ?: json_encode($value);
+        if((in_array($key, ['payments', 'coronas']))) {
+          foreach ($value as $k => $val) {
+            $ar[] = $val['value'];
+          }
+          $value = $ar;
+        }
         update_field($key, $value, $main_post_id);
       }
     }
-    // $obj = wp_update_post($post, true);
-    // pr($post);
 
 // exit;
     return;

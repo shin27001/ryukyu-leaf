@@ -5,23 +5,15 @@
   if (e('post_all')) {
     $_POST  = unserialize(base64_decode(e('post_all')));
   }
-  // pr($_POST);
+
   $my_post = array();
-  // echo "main_post_id--".stz(e('main_post_id'));
-  // $my_post['ID'] = e('update') ? stz(e('main_post_id')) : "";
-  // if (e('update')) {
-  //   $my_post['ID'] = stz(e('main_post_id'));
-  // }
   $my_post['post_title'] = stz($_POST['shop_name']);
   $my_post['post_content'] = stz($_POST['message']);
   $my_post['post_author'] = 1;
-  $my_post['post_status'] = 'publish';
+  $my_post['post_status'] = 'pending';
   $my_post['post_type'] = e('update') ? 'shop_update' : 'shops';
 
   $post = new wp_post_helper($my_post);
-//  echo e('update') ? 'shop_update' : 'shops';
-// pr($post);
-// exit;
 
   if (!e('update')) {
     $post->add_field('field_5ef0603255a70', 1); //初期値は、1:掲載しない
@@ -53,7 +45,6 @@
   $post->insert_field('field_5ef6f2eb9f16b', 'coronas_other'); #
 
   $a = e('update') ? $post->insert_field('field_5f051683d37f5', 'main_post_id') : false;
-
 
   #エリアの親ターム取得
   if(!empty($_POST['area'])) {
