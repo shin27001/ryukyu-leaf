@@ -100,7 +100,7 @@
 
   $subject = e('update') ? '[更新依頼]' : '[新規登録]';
   $subject .= stz($_POST['shop_name']);
-  $message = get_bloginfo('title')."から下記依頼がありました。管理画面を確認して下さい。".$subject;
+  $message = get_bloginfo('title')."から下記依頼がありました。¥n¥n管理画面を確認して下さい。¥n".$subject;
   wp_mail( get_mail(), $subject, $message);
 
   // 画像ファイル保存
