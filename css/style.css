@@ -1309,6 +1309,16 @@ footer.l-footer {
   margin-bottom: 3px;
 }
 
+.slick-slide {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
+}
+
+.slick-slide.slick-initialized {
+  opacity: 1;
+}
+
 .l-info__slide {
   margin: 1em 0;
 }
@@ -1703,7 +1713,7 @@ Stylesheet: 960px以上のモニタで適用
     margin: 0 1em 0 0;
   }
   .slick-slide img {
-    height: 300px;
+    height: 320px;
   }
   .l-info__slid-nav .slick-slide img {
     height: 70px;
