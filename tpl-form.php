@@ -19,7 +19,7 @@ $error = $validate_errors;
 
 $subject = e('update') ? '[更新依頼]' : '[新規登録]';
 $subject .= stz("サンプル");
-$message = get_bloginfo('title')."から下記依頼がありました。管理画面を確認して下さい。".$subject;
+$message = get_bloginfo('title')."から下記依頼がありました。¥n¥n管理画面を確認して下さい。¥n".$subject;
 $aaa = wp_mail( get_mail(), $subject, $message);
 if($aaa) {
   echo "true";
