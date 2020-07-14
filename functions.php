@@ -15,7 +15,7 @@ function get_pref($echo = true) {
 }
 
 function get_mail() {
-  return (strpos(ABSPATH, 'okinawa')) ? "matayoshi@sem-cloud.com" : "shin27001@gmail.com";
+  return (strpos(ABSPATH, 'okinawa')) ? "gohantabi_okinawa@food-reborn.co.jp" : "gohantabi_kyoto@leafkyoto.co.jp";
 }
 
 // バリデーションエラーのグローバル変数
