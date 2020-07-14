@@ -137,16 +137,24 @@
             <td><?php the_field('seats'); ?></td>
           </tr>
           <tr>
+            <th>テイクアウト時間・メニュー</th>
+            <td><?php the_field(''); ?></td>
+          </tr>
+          <tr>
+            <th>デリバリー対応地域・受付時間</th>
+            <td><?php the_field(''); ?></td>
+          </tr>
+          <tr>
             <th>公式HP</th>
             <td><?php the_field('url'); ?></td>
           </tr>
           <tr>
             <th>SNS</th>
-            <td>
-              <a href="<?php the_field('insta'); ?>" class="s-btn s-insta"><i class="fab fa-instagram"></i></a>
-              <a href="<?php the_field('fb'); ?>" class="s-btn s-fb"><i class="fab fa-facebook"></i></a>
-              <a href="<?php the_field('tw'); ?>" class="s-btn s-twitter"><i class="fab fa-twitter"></i></a>
-              <a href="<?php the_field('line'); ?>" class="s-btn s-line"><i class="fab fa-line"></i></a>
+            <td class="sns-link">
+              <a href="<?php the_field('insta'); ?>" target="blank"><i class="fab fa-instagram"></i> <?php the_field('insta'); ?></a>
+              <a href="<?php the_field('fb'); ?>" target="blank"><i class="fab fa-facebook"></i> <?php the_field('fb'); ?></a>
+              <a href="<?php the_field('tw'); ?>" target="blank"><i class="fab fa-twitter"></i> <?php the_field('tw'); ?></a>
+              <a href="<?php the_field('line'); ?>" target="blank"><i class="fab fa-line"></i> <?php the_field('line'); ?></a>
             </td>
           </tr>
           <tr>

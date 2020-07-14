@@ -1086,7 +1086,6 @@ li {
 .owner {
   background: #fdeeea;
   padding: 0 0 32px;
-  margin-top: 32px;
 }
 
 .owner__title {
@@ -1310,34 +1309,44 @@ footer.l-footer {
   margin-bottom: 3px;
 }
 
-.slick-slide img {
-  width: 100%;
-  height: auto;
-}
-
 .l-info__slide {
   margin: 1em 0;
 }
 
 .l-info__slid-thum .slick-list {
-  height: 230px;
   margin-bottom: 0.2em;
+  line-height: 0;
+}
+
+.l-info__slid-thum .slick-list img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.slick-slide img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 259px;
+  width: 100%;
 }
 
 .l-info__slid-nav .slick-slide {
-  margin-bottom: 0.5em;
   padding: 0.2em;
+  line-height: 0;
+}
+
+.l-info__slid-nav .slick-slide img {
+  height: 70px;
 }
 
 .l-info__slid-nav .slick-current {
   border: 2px solid #d84315;
+  opacity: 0.6;
 }
 
-.l-info__slid-nav .slick-slide img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 70px;
-  width: 100%;
+.l-info__slid-nav .sns-link a {
+  display: block;
+  margin-bottom: 5px;
 }
 
 /* slide */
@@ -1596,13 +1605,13 @@ Stylesheet: 600px以上のタブレットやモニタで適用
     padding-left: 1%;
     margin: 0 auto;
   }
-  .l-info__slid-thum .slick-list {
-    height: 360px;
+  .slick-slide img {
+    height: 380px;
   }
   .l-info__slid-nav .slick-slide img {
     -o-object-fit: cover;
-    object-fit: cover;
-    height: 100px;
+       object-fit: cover;
+    height: 140px;
     width: 100%;
   }
   .main-title {
@@ -1693,8 +1702,11 @@ Stylesheet: 960px以上のモニタで適用
     width: 30%;
     margin: 0 1em 0 0;
   }
-  .l-info__slid-thum .slick-list {
-    height: 280px;
+  .slick-slide img {
+    height: 300px;
+  }
+  .l-info__slid-nav .slick-slide img {
+    height: 70px;
   }
   .l-keyvisual__text-btnbox {
     display: -webkit-box;
