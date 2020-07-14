@@ -1,22 +1,23 @@
 <?php
-  if (e('post_all')) {
-    $data = unserialize(base64_decode(e('post_all')));
-  } elseif($_POST) {
-    $data = $_POST;
-  } else {
-    // $p = '';
+if (e('post_all')) {
+  $data = unserialize(base64_decode(e('post_all')));
+} elseif ($_POST) {
+  $data = $_POST;
+}
+else {
+  // $p = '';
 
-    $p = 'YTozMDp7czoxMDoidGFudG9fbmFtZSI7czoxMzoi55Sw5LitIOWkqumDjiI7czoxMDoidGFudG9fbWFpbCI7czoxNjoibWFpbEBleGFtcGxlLmNvbSI7czo5OiJ0YW50b190ZWwiO3M6MTA6IjA5ODAwMDExMTEiO3M6OToic2hvcF9uYW1lIjtzOjI3OiLjgaHjgovjgZDjgo7jg7zjgIDljJfosLflupciO3M6ODoiemlwX2NvZGUiO3M6ODoiOTA0LTAwMDEiO3M6NzoiYWRkcmVzcyI7czoyOToi5rKW57iE55yM5YyX6LC355S65qGR5rGfMS0xLTEiO3M6NDoiYXJlYSI7czo2OiJrZW5jaG8iO3M6NjoiZGlzaGVzIjthOjI6e2k6MDtzOjI6IndhIjtpOjE7czozOiJ5b3UiO31zOjQ6Im1lbnUiO3M6NjU6IuODn+ODg+OCr+OCueOBneOBsA0K77yI5aSn77yJODMw5YaG77yI5Lit77yJNzMw5YaG77yI5bCP77yJNTMw5YaGIjtzOjY6InRlbF9ubyI7czoxMDoiMDk4MDAwMTExMSI7czo1OiJob3VycyI7czo0Nzoi5pyI772e6YeRIDEy77yaMDDvvZ4xNO+8mjAw44CBMTjvvJowMO+9njI077yaMDAiO3M6NzoicGFya2luZyI7czo2OiIxMDDlj7AiO3M6NzoiaG9saWRheSI7czo5OiLmnKjmm5zml6UiO3M6NToic2VhdHMiO3M6NDI6IjEwMOW4reOAgeODhuODvOODluODq+W4reOAgeOCq+OCpuODs+OCv+ODvCI7czo4OiJtYXBfY29kZSI7czoxMzoiMzMgNTkyIDM1MCo2NCI7czozOiJ1cmwiO3M6MjA6Imh0dHBzOi8vd3d3Lnh4eHh4LmpwIjtzOjI6ImZiIjtzOjI2OiJodHRwczovL2ZhY2Vib29rLmNvbS94eHh4eCI7czoyOiJ0dyI7czoyNToiaHR0cHM6Ly90d2l0dGVyLmNvbS94eHh4eCI7czo1OiJpbnN0YSI7czoyNzoiaHR0cHM6Ly9pbnN0YWdyYW0uY29tL3h4eHh4IjtzOjQ6ImxpbmUiO3M6MjI6Imh0dHBzOi8vbGluZS5jb20veHh4eHgiO3M6NzoibWVzc2FnZSI7czo4Mzoi55CJ55CDTEVBRuOCkuOBv+OBpuadpeW6l+OBl+OBpuOBj+OCjOOBn+aWueOBq+OBr+ODieODquODs+OCrzHmna/jg5fjg6zjgrzjg7Pjg4jvvIEiO3M6Nzoib3B0aW9ucyI7YToyOntpOjA7czo3OiJ0YWtlb3V0IjtpOjE7czo4OiJkZWxpdmVyeSI7fXM6MTU6InRha2VvdXRfbWVzc2FnZSI7czoxMDA6IiAgICAgICAgICAgICAgICAgIOS6iOe0hOWPl+S7mO+8mjE1OjAw44CcMTg6MDANCuWPl+OBkea4oeOBl+aZgumWk++8mjE1OjAw44CcMTk6MDANCiAgICAgICAgICAgICAgICAiO3M6MTY6ImRlbGl2ZXJ5X21lc3NhZ2UiO3M6MTkyOiIgICAgICAgICAgICAgICAgICDlr77lv5zlnLDln5/vvJrlrpzph47mub7luILlhoXjga7jgb/vvIgxNDowMOOBvuOBp+OBruazqOaWh+OBq+mZkOOCiuOBvuOBme+8iQ0K5LqI57SE5Y+X5LuY77yaMTU6MDDjgJwxNzowMO+8iDHmmYLjgbvjganjgYrmmYLplpPjgpLjgYTjgZ/jgaDjgY3jgb7jgZnjgILvvIkNCiAgICAgICAgICAgICAgICAiO3M6NzoiY29yb25hcyI7YToyOntpOjA7czoxOiIwIjtpOjE7czoxOiIxIjt9czoxMzoiY29yb25hc19vdGhlciI7czo4Nzoi44Gd44Gu5LuW44Kz44Ot44OK5a++562W44Gr5Y+W44KK57WE44KT44Gn44GE44KL44GT44Go44GM44GC44KM44Gw44GU5YWl5Yqb44GP44Gg44GV44GEIjtzOjc6InlvdXR1YmUiO3M6MDoiIjtzOjE1OiJyZXF1ZXN0X21lc3NhZ2UiO3M6MTQ0OiLlvZPjgrXjgqTjg4jjgbjjga7jgZ3jga7ku5bjga7jgZTopoHmnJvjgoTkvp3poLzlvZPjgrXjgqTjg4jjgbjjga7jgZ3jga7ku5bjga7jgZTopoHmnJvjgoTkvp3poLzlvZPjgrXjgqTjg4jjgbjjga7jgZ3jga7ku5bjga7jgZTopoHmnJvjgoTkvp3poLwiO3M6MTQ6ImNvbnRhY3RfcG9saWN5IjtzOjQ6InRydWUiO3M6MTI6IndyaXR0ZW5fb2F0aCI7czo0OiJ0cnVlIjt9';
-    //$data = unserialize(base64_decode($p));
+  $p = 'YTozMDp7czoxMDoidGFudG9fbmFtZSI7czoxMzoi55Sw5LitIOWkqumDjiI7czoxMDoidGFudG9fbWFpbCI7czoxNjoibWFpbEBleGFtcGxlLmNvbSI7czo5OiJ0YW50b190ZWwiO3M6MTA6IjA5ODAwMDExMTEiO3M6OToic2hvcF9uYW1lIjtzOjI3OiLjgaHjgovjgZDjgo7jg7zjgIDljJfosLflupciO3M6ODoiemlwX2NvZGUiO3M6ODoiOTA0LTAwMDEiO3M6NzoiYWRkcmVzcyI7czoyOToi5rKW57iE55yM5YyX6LC355S65qGR5rGfMS0xLTEiO3M6NDoiYXJlYSI7czo2OiJrZW5jaG8iO3M6NjoiZGlzaGVzIjthOjI6e2k6MDtzOjI6IndhIjtpOjE7czozOiJ5b3UiO31zOjQ6Im1lbnUiO3M6NjU6IuODn+ODg+OCr+OCueOBneOBsA0K77yI5aSn77yJODMw5YaG77yI5Lit77yJNzMw5YaG77yI5bCP77yJNTMw5YaGIjtzOjY6InRlbF9ubyI7czoxMDoiMDk4MDAwMTExMSI7czo1OiJob3VycyI7czo0Nzoi5pyI772e6YeRIDEy77yaMDDvvZ4xNO+8mjAw44CBMTjvvJowMO+9njI077yaMDAiO3M6NzoicGFya2luZyI7czo2OiIxMDDlj7AiO3M6NzoiaG9saWRheSI7czo5OiLmnKjmm5zml6UiO3M6NToic2VhdHMiO3M6NDI6IjEwMOW4reOAgeODhuODvOODluODq+W4reOAgeOCq+OCpuODs+OCv+ODvCI7czo4OiJtYXBfY29kZSI7czoxMzoiMzMgNTkyIDM1MCo2NCI7czozOiJ1cmwiO3M6MjA6Imh0dHBzOi8vd3d3Lnh4eHh4LmpwIjtzOjI6ImZiIjtzOjI2OiJodHRwczovL2ZhY2Vib29rLmNvbS94eHh4eCI7czoyOiJ0dyI7czoyNToiaHR0cHM6Ly90d2l0dGVyLmNvbS94eHh4eCI7czo1OiJpbnN0YSI7czoyNzoiaHR0cHM6Ly9pbnN0YWdyYW0uY29tL3h4eHh4IjtzOjQ6ImxpbmUiO3M6MjI6Imh0dHBzOi8vbGluZS5jb20veHh4eHgiO3M6NzoibWVzc2FnZSI7czo4Mzoi55CJ55CDTEVBRuOCkuOBv+OBpuadpeW6l+OBl+OBpuOBj+OCjOOBn+aWueOBq+OBr+ODieODquODs+OCrzHmna/jg5fjg6zjgrzjg7Pjg4jvvIEiO3M6Nzoib3B0aW9ucyI7YToyOntpOjA7czo3OiJ0YWtlb3V0IjtpOjE7czo4OiJkZWxpdmVyeSI7fXM6MTU6InRha2VvdXRfbWVzc2FnZSI7czoxMDA6IiAgICAgICAgICAgICAgICAgIOS6iOe0hOWPl+S7mO+8mjE1OjAw44CcMTg6MDANCuWPl+OBkea4oeOBl+aZgumWk++8mjE1OjAw44CcMTk6MDANCiAgICAgICAgICAgICAgICAiO3M6MTY6ImRlbGl2ZXJ5X21lc3NhZ2UiO3M6MTkyOiIgICAgICAgICAgICAgICAgICDlr77lv5zlnLDln5/vvJrlrpzph47mub7luILlhoXjga7jgb/vvIgxNDowMOOBvuOBp+OBruazqOaWh+OBq+mZkOOCiuOBvuOBme+8iQ0K5LqI57SE5Y+X5LuY77yaMTU6MDDjgJwxNzowMO+8iDHmmYLjgbvjganjgYrmmYLplpPjgpLjgYTjgZ/jgaDjgY3jgb7jgZnjgILvvIkNCiAgICAgICAgICAgICAgICAiO3M6NzoiY29yb25hcyI7YToyOntpOjA7czoxOiIwIjtpOjE7czoxOiIxIjt9czoxMzoiY29yb25hc19vdGhlciI7czo4Nzoi44Gd44Gu5LuW44Kz44Ot44OK5a++562W44Gr5Y+W44KK57WE44KT44Gn44GE44KL44GT44Go44GM44GC44KM44Gw44GU5YWl5Yqb44GP44Gg44GV44GEIjtzOjc6InlvdXR1YmUiO3M6MDoiIjtzOjE1OiJyZXF1ZXN0X21lc3NhZ2UiO3M6MTQ0OiLlvZPjgrXjgqTjg4jjgbjjga7jgZ3jga7ku5bjga7jgZTopoHmnJvjgoTkvp3poLzlvZPjgrXjgqTjg4jjgbjjga7jgZ3jga7ku5bjga7jgZTopoHmnJvjgoTkvp3poLzlvZPjgrXjgqTjg4jjgbjjga7jgZ3jga7ku5bjga7jgZTopoHmnJvjgoTkvp3poLwiO3M6MTQ6ImNvbnRhY3RfcG9saWN5IjtzOjQ6InRydWUiO3M6MTI6IndyaXR0ZW5fb2F0aCI7czo0OiJ0cnVlIjt9';
+  //$data = unserialize(base64_decode($p));
 
-    $data = array(); #初期化
-  }
+  $data = array(); #初期化
+}
 $checked = ""; #初期化
 
 global $validate_errors;
 $error = $validate_errors;
 ?>
-<?php if(!e('update', $_GET)) : ?>
+<?php if (!e('update', $_GET)) : ?>
   <h2 class="l-fome__title">掲載内容</h2>
   <div class="l-form__radio">
     <span class="l-form__radio-btn">
@@ -29,27 +30,27 @@ $error = $validate_errors;
     <span class="l-form__radio-btn">
       <label for="request-2">
         <?php $checked = e('request', $data) == 'update' ? 'checked="checked"' : ""; ?>
-        <input type="radio" name="request" value="update" id="request-2"<?php echo $checked; ?>>
+        <input type="radio" name="request" value="update" id="request-2" <?php echo $checked; ?>>
         <span class="l-form__radio-text">更新依頼</span>
       </label>
     </span>
   </div>
   <p class="sub-text">内容更新の場合は [更新] をお選びください。変更の必要のない項目は空のままでご入力ください。<br>その場合でも、ご担当者様情報、店名は必ず入力をお願いします。</p>
 <?php endif; ?>
-  <!-- Search Form -->
-  <div class="searchOff">
-    <?php get_template_part('tpl', 'search'); ?>
-  </div>
-  <form method="POST" id="registform" action="<?php echo esc_url(home_url('entry-validation')); ?>" enctype="multipart/form-data">
-    <?php $slug = get_post_field('post_name', get_post()); ?>
-    <?php
-      // echo e('update', $_GET) || ($slug == 'entry-form') ? '<input type="hidden" name="update" value="true">' : "" ;
-      if(e('update', $_GET) || ($slug == 'entry-form')) {
-        echo '<input type="hidden" name="update" value="'.e('update', $_GET).'">';
-        echo '<input type="hidden" name="main_post_id" value="'.e('main_post_id', $_GET).'">';
-      }
-    ?>
-    <div class="l-form">
+<!-- Search Form -->
+<div class="searchOff">
+  <?php get_template_part('tpl', 'search'); ?>
+</div>
+<form method="POST" id="registform" action="<?php echo esc_url(home_url('entry-validation')); ?>" enctype="multipart/form-data">
+  <?php $slug = get_post_field('post_name', get_post()); ?>
+  <?php
+  // echo e('update', $_GET) || ($slug == 'entry-form') ? '<input type="hidden" name="update" value="true">' : "" ;
+  if (e('update', $_GET) || ($slug == 'entry-form')) {
+    echo '<input type="hidden" name="update" value="' . e('update', $_GET) . '">';
+    echo '<input type="hidden" name="main_post_id" value="' . e('main_post_id', $_GET) . '">';
+  }
+  ?>
+  <div class="l-form">
     <h2 class="l-fome__title">ご担当者様情報</h2>
     <!-- 担当者名 -->
     <dl>
@@ -285,7 +286,7 @@ $error = $validate_errors;
         </label>
       </dt>
       <dd class="l-form__action">
-        <textarea name="message" id="message" class="message" cols="100" rows="5" placeholder="その他、キャンペーンやおすすめなどお知らせしたい情報があれば入力してください。例：琉球LEAFをみて来店してくれた方にはドリンク1杯プレゼント！（300文字以内）"><?php echo e('message', $data); ?></textarea>
+        <textarea name="message" id="message" class="message" cols="100" rows="5" placeholder="その他、キャンペーンやおすすめなどお知らせしたい情報があれば入力してください。例：GO!HAN旅をみて来店してくれた方にはドリンク1杯プレゼント！（300文字以内）"><?php echo e('message', $data); ?></textarea>
       </dd>
       <!-- こだわり -->
       <dt>
@@ -322,7 +323,7 @@ $error = $validate_errors;
       <!-- テイクアウト時間・メニュー -->
       <dt>
         <label class="l-form__label" for="takeout_message">
-          テイクアウト時間・メニュー</span>
+          テイクアウト時間・メニュー
         </label>
         <p class="sub-text">テイクアウト可能な場合のみご入力ください</p>
       </dt>
@@ -337,7 +338,7 @@ $error = $validate_errors;
         <p class="sub-text">デリバリー対応可能な場合のみご入力ください</p>
       </dt>
       <dd class="l-form__action">
-        <textarea name="delivery_message" id="delivery_message" class="delivery_message" cols="100" rows="4" placeholder="対応地域：宜野湾市内のみ（14:00までの注文に限ります）&#013;&#010;予約受付：15:00〜17:00（1時ほどお時間をいただきます。）"><?php echo e('delivery_message', $data); ?></textarea>
+        <textarea name="delivery_message" id="delivery_message" class="delivery_message" cols="100" rows="4" placeholder="対応地域：宜野湾市内のみ（14:00までの注文に限ります）&#013;&#010;予約受付：10:00〜17:00"><?php echo e('delivery_message', $data); ?></textarea>
       </dd>
       <dt>
         <label class="l-form__label" for="credit">
@@ -523,5 +524,5 @@ $error = $validate_errors;
     <div class="btn-wrap">
       <button class="btn btn-m-red" type="submit"><span><i class="fas fa-search"></i> 入力内容を確認する</span></button>
     </div>
-  </form>
-</div><!-- /l-form -->
+  </div><!-- /l-form -->
+</form>
