@@ -1309,7 +1309,7 @@ footer.l-footer {
   margin-bottom: 3px;
 }
 
-.l-info__slide {
+.l-info__slide ul {
   opacity: 0;
   -webkit-transition: opacity 0.3s linear;
   transition: opacity 0.3s linear;
