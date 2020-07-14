@@ -98,6 +98,11 @@
     add_row('shop_images', $row, $postid );
   }
 
+  $subject = e('update') ? '[更新依頼]' : '[新規登録]';
+  $subject .= stz($_POST['shop_name']);
+  $message = get_bloginfo('title')."から下記依頼がありました。管理画面を確認して下さい。".$subject;
+  wp_mail( get_mail(), $subject, $message);
+
   // 画像ファイル保存
   // $filename = $_FILES['shop_main_image']['name'];
   // $wp_upload_dir = wp_upload_dir();
