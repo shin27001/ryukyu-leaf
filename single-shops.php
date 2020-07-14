@@ -105,7 +105,7 @@
           </tr>
           <tr>
             <th>住所</th>
-            <td>〒<?php the_field('zip_code'); ?>　<?php the_field('address'); ?><div class="mapbtn"><a href="https://www.google.com/maps/@?api=1&map_action=map&center=<?php the_field('address'); ?>" class="btn btn-m-red" target="blank">Google Mapへ</a></div>
+            <td>〒<?php the_field('zip_code'); ?>　<?php the_field('address'); ?><div class="mapbtn"><a href="https://maps.google.co.jp/maps/search/<?php the_field('address'); ?>" class="btn btn-m-red" target="blank">Google Mapへ</a></div>
             </td>
           </tr>
           <tr>
