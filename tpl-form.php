@@ -95,7 +95,7 @@ $error = $validate_errors;
       <!-- 郵便番号 -->
       <dt>
         <label class="l-form__label" for="zip_code">
-          郵便番号<span class="form-require js-require">必須</span>
+        郵便番号 <?php if(!e('update')) : ?><span class="form-require js-require">必須</span><?php endif; ?>
         </label>
       </dt>
       <dd class="l-form__action">
@@ -105,7 +105,7 @@ $error = $validate_errors;
       <!-- 住所 -->
       <dt>
         <label class="l-form__label" for="address">
-          住所<span class="form-require js-require">必須</span>
+          住所 <?php if(!e('update')) : ?><span class="form-require js-require">必須</span><?php endif; ?>
         </label>
       </dt>
       <dd class="l-form__action">
@@ -115,7 +115,7 @@ $error = $validate_errors;
       <!-- エリア選択 -->
       <dt>
         <label class="l-form__label" for="area">
-          エリアを選択 <span class="form-require js-require">必須</span>
+          エリアを選択 <?php if(!e('update')) : ?><span class="form-require js-require">必須</span><?php endif; ?>
         </label>
       </dt>
       <dd class="l-form__action">
@@ -134,7 +134,7 @@ $error = $validate_errors;
       <!-- ジャンル -->
       <dt>
         <label class="l-form__label" for="genre">
-          ジャンルを選択（複数選択可） <span class="form-require js-require">必須</span>
+          ジャンルを選択（複数選択可） <?php if(!e('update')) : ?><<span class="form-require js-require">必須</span><?php endif; ?>
         </label>
       </dt>
       <dd class="l-form__action">
@@ -166,7 +166,7 @@ $error = $validate_errors;
       <!-- 主なメニュー -->
       <dt>
         <label class="l-form__label" for="menu">
-          主なメニュー（300文字以内） <span class="form-require js-require">必須</span>
+          主なメニュー（300文字以内） <?php if(!e('update')) : ?><<span class="form-require js-require">必須</span><?php endif; ?>
         </label>
       </dt>
       <dd class="l-form__action">
@@ -177,7 +177,7 @@ $error = $validate_errors;
       <!-- お店の電話番号 -->
       <dt>
         <label class="l-form__label" for="tel_no">
-          電話番号（半角数字ハイフンなし）<span class="form-require js-require">必須</span>
+          電話番号（半角数字ハイフンなし）<?php if(!e('update')) : ?><<span class="form-require js-require">必須</span><?php endif; ?>
         </label>
       </dt>
       <dd class="l-form__action">
@@ -187,7 +187,7 @@ $error = $validate_errors;
       <!-- 営業時間 -->
       <dt>
         <label class="l-form__label" for="opening_hours">
-          営業時間 <span class="form-require js-require">必須</span>
+          営業時間 <?php if(!e('update')) : ?><span class="form-require js-require">必須</span><?php endif; ?>
         </label>
       </dt>
       <dd class="l-form__action">
@@ -197,7 +197,7 @@ $error = $validate_errors;
       <!-- 駐車場 -->
       <dt>
         <label class="l-form__label" for="parking">
-          駐車場 <span class="form-require js-require">必須</span>
+          駐車場 <?php if(!e('update')) : ?><span class="form-require js-require">必須</span><?php endif; ?>
         </label>
       </dt>
       <dd class="l-form__action">
@@ -207,7 +207,7 @@ $error = $validate_errors;
       <!-- 定休日 -->
       <dt>
         <label class="l-form__label" for="holiday">
-          定休日 <span class="form-require js-require">必須</span>
+          定休日 <?php if(!e('update')) : ?><span class="form-require js-require">必須</span><?php endif; ?>
         </label>
       </dt>
       <dd class="l-form__action">
@@ -217,7 +217,7 @@ $error = $validate_errors;
       <!-- 席数 -->
       <dt>
         <label class="l-form__label" for="seats">
-          席数 <span class="form-require js-require">必須</span>
+          席数 <?php if(!e('update')) : ?><span class="form-require js-require">必須</span><?php endif; ?>
         </label>
       </dt>
       <dd class="l-form__action">
@@ -290,7 +290,7 @@ $error = $validate_errors;
       <!-- こだわり -->
       <dt>
         <label class="l-form__label" for="genre">
-          こだわり（複数選択可） <span class="form-require js-require">必須</span>
+          こだわり（複数選択可） <?php if(!e('update')) : ?><span class="form-require js-require">必須</span><?php endif; ?>
         </label>
       </dt>
       <dd class="l-form__action">
@@ -371,7 +371,7 @@ $error = $validate_errors;
       <!-- コロナ対策について -->
       <dt>
         <label class="l-form__label" for="genre">
-          コロナ対策について（複数選択可） <span class="form-require js-require">必須</span>
+          コロナ対策について（複数選択可） <?php if(!e('update')) : ?><span class="form-require js-require">必須</span><?php endif; ?>
         </label>
       </dt>
       <dd class="l-form__action">
@@ -402,7 +402,7 @@ $error = $validate_errors;
       <!-- その他の取り組み -->
       <dt>
         <label class="l-form__label" for="coronas_other">
-          コロナ対策について（上記以外の取り組みなど） <span class="form-require js-require">必須</span>
+          コロナ対策について（上記以外の取り組みなど） <?php if(!e('update')) : ?><span class="form-require js-require">必須</span><?php endif; ?>
         </label>
       </dt>
       <dd class="l-form__action">

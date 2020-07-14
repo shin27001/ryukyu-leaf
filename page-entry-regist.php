@@ -6,6 +6,10 @@
     $_POST  = unserialize(base64_decode(e('post_all')));
   }
 
+
+//   pr($_POST);
+// exit;
+
   $my_post = array();
   $my_post['post_title'] = stz($_POST['shop_name']);
   $my_post['post_content'] = stz($_POST['message']);
@@ -44,27 +48,28 @@
   $post->insert_field('field_5efad0d2748b7', 'request_message');#
   $post->insert_field('field_5ef6f2eb9f16b', 'coronas_other'); #
 
-  $a = e('update') ? $post->insert_field('field_5f051683d37f5', 'main_post_id') : false;
+  // $a = e('update') ? $post->insert_field('field_5f051683d37f5', 'main_post_id') : false;
+  if(!empty($_POST['update'])) { $post->insert_field('field_5f051683d37f5', 'main_post_id'); }
 
   #エリアの親ターム取得
   if(!empty($_POST['area'])) {
     $term = get_term_by('slug', $_POST['area'], 'area');
     $parent_term = get_term($term->parent);
 
-    $post->insert_terms('area',  $_POST['area']);
-    $post->insert_terms('area',  $parent_term->slug);
+    $post->insert_terms('area',  false);
+    $_POST['area'] = $parent_term->slug;
+    $post->insert_terms('area',  false);
   }
-  $_POST['dishes'] ?? $post->insert_terms('dishes',  $_POST['dishes']);
-  $_POST['options'] ?? $post->insert_terms('options', $_POST['options']);
 
+  $post->insert_terms('dishes',  false);
+  $post->insert_terms('options', false);
 
 
   // 投稿し、post_idを取得
   $postid = e('update') ? $post->update() : $post->insert();
   // echo "post-id -- ".$postid;
 
-  // pr($post);
-  // exit;
+
 
   // 画像ファイル保存
   if (!empty($_POST['shop_main_image'])) {
