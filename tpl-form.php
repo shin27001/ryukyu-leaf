@@ -76,7 +76,7 @@ $error = $validate_errors;
         </label>
       </dt>
       <dd class="l-form__action">
-        <input type="text" name="tanto_tel" id="tanto_tel" class="tel" size="60" maxlength="11" value="<?php echo e('tanto_tel', $data); ?>" placeholder="例：090-1234-5678" />
+        <input type="text" name="tanto_tel" id="tanto_tel" class="tel" size="60" maxlength="15" value="<?php echo e('tanto_tel', $data); ?>" placeholder="例：090-1234-5678" />
         <?php if (e('tanto_tel', $error)) : ?><div class="validate-text"><?php echo err_disp(e('tanto_tel', $error)); ?></div><?php endif; ?>
       </dd>
     </dl>
@@ -84,7 +84,7 @@ $error = $validate_errors;
     <!-- 店名 -->
     <dl>
       <dt>
-        <label class="l-form__label" for="tel">
+        <label class="l-form__label" for="shop_name">
           店名 <span class="form-require">必須</span>
         </label>
       </dt>
@@ -181,7 +181,7 @@ $error = $validate_errors;
         </label>
       </dt>
       <dd class="l-form__action">
-        <input type="text" name="tel_no" id="tel_no" class="shop_tel" size="60" maxlength="11" value="<?php echo e('tel_no', $data); ?>" placeholder="例：090-1234-5678" />
+        <input type="text" name="tel_no" id="tel_no" class="shop_tel" size="60" maxlength="15" value="<?php echo e('tel_no', $data); ?>" placeholder="例：090-1234-5678" />
         <?php if (e('tel_no', $error)) : ?><div class="validate-text"><?php echo err_disp(e('tel_no', $error)); ?></div><?php endif; ?>
       </dd>
       <!-- 営業時間 -->
