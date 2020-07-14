@@ -10,9 +10,12 @@ function get_tmp_img_dir() { return "wp-content/tmp_imgs/"; }
 
 function get_pref($echo = true) {
   $pref = (strpos(ABSPATH, 'okinawa')) ? "沖縄" : "京都";
-  // $pref = (strpos($_SERVER["REQUEST_URI"], 'okinawa')) ? "沖縄" : "京都";
   if ($echo) { echo $pref; } else { return $pref; }
   return;
+}
+
+function get_mail() {
+  return (strpos(ABSPATH, 'okinawa')) ? "matayoshi@sem-cloud.com" : "shin27001@gmail.com";
 }
 
 // バリデーションエラーのグローバル変数
