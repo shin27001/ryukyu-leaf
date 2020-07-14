@@ -1309,18 +1309,15 @@ footer.l-footer {
   margin-bottom: 3px;
 }
 
-.slick-slide {
+.l-info__slide {
   opacity: 0;
   -webkit-transition: opacity 0.3s linear;
   transition: opacity 0.3s linear;
-}
-
-.slick-slide.slick-initialized {
-  opacity: 1;
-}
-
-.l-info__slide {
   margin: 1em 0;
+}
+
+.sl-info__slide.slick-initialized {
+  opacity: 1;
 }
 
 .l-info__slid-thum .slick-list {
