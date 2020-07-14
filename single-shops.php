@@ -138,11 +138,11 @@
           </tr>
           <tr>
             <th>テイクアウト時間・メニュー</th>
-            <td><?php the_field(''); ?></td>
+            <td><?php the_field('takeout_message'); ?></td>
           </tr>
           <tr>
             <th>デリバリー対応地域・受付時間</th>
-            <td><?php the_field(''); ?></td>
+            <td><?php the_field('delivery_message'); ?></td>
           </tr>
           <tr>
             <th>公式HP</th>
@@ -151,10 +151,10 @@
           <tr>
             <th>SNS</th>
             <td class="sns-link">
-              <a href="<?php the_field('insta'); ?>" target="blank"><i class="fab fa-instagram"></i> <?php the_field('insta'); ?></a>
-              <a href="<?php the_field('fb'); ?>" target="blank"><i class="fab fa-facebook"></i> <?php the_field('fb'); ?></a>
-              <a href="<?php the_field('tw'); ?>" target="blank"><i class="fab fa-twitter"></i> <?php the_field('tw'); ?></a>
-              <a href="<?php the_field('line'); ?>" target="blank"><i class="fab fa-line"></i> <?php the_field('line'); ?></a>
+              <?php if(get_field('insta')) : ?><a href="<?php the_field('insta'); ?>" target="blank"><i class="fab fa-instagram"></i> <?php the_field('insta'); ?></a><?php endif; ?> 
+              <?php if(get_field('fb')) : ?><a href="<?php the_field('fb'); ?>" target="blank"><i class="fab fa-facebook"></i> <?php the_field('fb'); ?></a><?php endif; ?>
+              <?php if(get_field('tw')) : ?><a href="<?php the_field('tw'); ?>" target="blank"><i class="fab fa-twitter"></i> <?php the_field('tw'); ?></a><?php endif; ?>
+              <?php if(get_field('line')) : ?><a href="<?php the_field('line'); ?>" target="blank"><i class="fab fa-line"></i> <?php the_field('line'); ?></a><?php endif; ?>
             </td>
           </tr>
           <tr>
