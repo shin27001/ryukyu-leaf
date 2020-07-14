@@ -150,11 +150,11 @@
           </tr>
           <tr>
             <th>SNS</th>
-            <td>
-              <a href="<?php the_field('insta'); ?>"><i class="fab fa-instagram"></i><?php the_field('insta'); ?></a>
-              <a href="<?php the_field('fb'); ?>"><i class="fab fa-facebook"></i><?php the_field('fb'); ?></a>
-              <a href="<?php the_field('tw'); ?>"><i class="fab fa-twitter"></i><?php the_field('tw'); ?></a>
-              <a href="<?php the_field('line'); ?>"><i class="fab fa-line"></i><?php the_field('line'); ?></a>
+            <td class="sns-link">
+              <a href="<?php the_field('insta'); ?>" target="blank"><i class="fab fa-instagram"></i> <?php the_field('insta'); ?></a>
+              <a href="<?php the_field('fb'); ?>" target="blank"><i class="fab fa-facebook"></i> <?php the_field('fb'); ?></a>
+              <a href="<?php the_field('tw'); ?>" target="blank"><i class="fab fa-twitter"></i> <?php the_field('tw'); ?></a>
+              <a href="<?php the_field('line'); ?>" target="blank"><i class="fab fa-line"></i> <?php the_field('line'); ?></a>
             </td>
           </tr>
           <tr>

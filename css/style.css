@@ -1344,6 +1344,11 @@ footer.l-footer {
   opacity: 0.6;
 }
 
+.l-info__slid-nav .sns-link a {
+  display: block;
+  margin-bottom: 5px;
+}
+
 /* slide */
 .l-keyvisual {
   text-align: center;
