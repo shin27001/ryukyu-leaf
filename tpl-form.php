@@ -15,6 +15,17 @@ $checked = ""; #初期化
 
 global $validate_errors;
 $error = $validate_errors;
+
+
+$subject = e('update') ? '[更新依頼]' : '[新規登録]';
+$subject .= stz("サンプル");
+$message = get_bloginfo('title')."から下記依頼がありました。管理画面を確認して下さい。".$subject;
+$aaa = wp_mail( get_mail(), $subject, $message);
+if($aaa) {
+  echo "true";
+} else {
+  echo "false";
+}
 ?>
 <?php if (!e('update', $_GET)) : ?>
   <h2 class="l-fome__title">掲載内容</h2>
