@@ -2,7 +2,7 @@
 <?php get_header('sub'); ?>
 <div class="content-wrap">
   <div class="form-page__title">
-    <h1 class="c-red main-title">入力内容の確認</h1>
+    <h1 class="main-title">入力内容の確認</h1>
     <p class="sub-text mb-2">下記のフォームにて内容をご入力をご確認のうえ、<span class="d-inline">「送信する」ボタンを押してください。</span></p>
   </div>
   <div class="content-inner">
@@ -35,93 +35,95 @@
       </table>
 
 
-        <h2 class="l-fome__title">店舗情報</h2>
-        <table class="l-info__table">
-          <tr>
-            <th>店名</th>
-            <td><?php stz(e('shop_name'), true); ?></td>
-          </tr>
-          <tr>
-            <th>住所</th>
-            <td><?php stz(e('address'), true); ?></td>
-          </tr>
-          <tr>
-            <th>ジャンルを選択</th>
-            <td>
-              <?php if (e('dishes')) : foreach (e('dishes') as $key => $value) : ?>
-                <?php echo get_term_by('slug', $value, 'dishes')->name."／"; ?>
-              <?php endforeach; endif; ?>
-            </td>
-          </tr>
-          <tr>
-            <th>主なメニュー<span class="small-text">（300文字以内）</span></th>
-            <td><?php stz(e('menu'), true); ?></td>
-          </tr>
-          <tr>
-            <th>電話番号</th>
-            <td><?php stz(e('tel_no'), true); ?></td>
-          </tr>
-          <tr>
-            <th>営業時間</th>
-            <td><?php stz(e('hours'), true); ?></td>
-          </tr>
-          <tr>
-            <th>駐車場</th>
-            <td><?php stz(e('parking'), true); ?></td>
-          </tr>
-          <tr>
-            <th>定休日</th>
-            <td><?php stz(e('holiday'), true); ?></td>
-          </tr>
-          <tr>
-            <th>席数</th>
-            <td><?php stz(e('seats'), true); ?></td>
-          </tr>
-          <tr>
-            <th>公式ホームページ（URL）</th>
-            <td><?php stz(e('url'), true); ?></td>
-          </tr>
-          <tr>
-            <th>Facebookアカウント（URL）</th>
-            <td><?php stz(e('fb'), true); ?></td>
-          </tr>
-          <tr>
-            <th>Twitterアカウント（URL）</th>
-            <td><?php stz(e('tw'), true); ?></td>
-          </tr>
-          <tr>
-            <th>Instagramアカウント（URL）</th>
-            <td><?php stz(e('insta'), true); ?></td>
-          </tr>
-          <tr>
-            <th>LINE公式アカウント（URL）</th>
-            <td><?php stz(e('line'), true); ?></td>
-          </tr>
-          <tr>
-            <th>備考</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>こだわり<span class="small-text">（複数選択可）</span></th>
-            <td>
-              <?php if (e('options')) : foreach (e('options') as $key => $value) : ?>
-                <?php echo get_term_by('slug', $value, 'options')->name."／"; ?>
-              <?php endforeach; endif; ?>
-            </td>
-          </tr>
-          <tr>
-            <th>テイクアウト時間・メニュー</th>
-            <td><?php stz(e('takeout_message'), true); ?></td>
-          </tr>
-          <tr>
-            <th>デリバリー対応地域・受付時間</th>
-            <td><?php stz(e('delivery_message'), true); ?></td>
-          </tr>
-          <tr>
-            <th>対応カードの種類について</th>
-            <td>
-              <?php $payments = get_field_object('payments', choices_id()); ?>
-              <?php if(e('payments')) : foreach (e('payments') as $value) : ?>
+      <h2 class="l-fome__title">店舗情報</h2>
+      <table class="l-info__table">
+        <tr>
+          <th>店名</th>
+          <td><?php stz(e('shop_name'), true); ?></td>
+        </tr>
+        <tr>
+          <th>住所</th>
+          <td><?php stz(e('address'), true); ?></td>
+        </tr>
+        <tr>
+          <th>ジャンルを選択</th>
+          <td>
+            <?php if (e('dishes')) : foreach (e('dishes') as $key => $value) : ?>
+                <?php echo get_term_by('slug', $value, 'dishes')->name . "／"; ?>
+            <?php endforeach;
+            endif; ?>
+          </td>
+        </tr>
+        <tr>
+          <th>主なメニュー<span class="small-text">（300文字以内）</span></th>
+          <td><?php stz(e('menu'), true); ?></td>
+        </tr>
+        <tr>
+          <th>電話番号</th>
+          <td><?php stz(e('tel_no'), true); ?></td>
+        </tr>
+        <tr>
+          <th>営業時間</th>
+          <td><?php stz(e('hours'), true); ?></td>
+        </tr>
+        <tr>
+          <th>駐車場</th>
+          <td><?php stz(e('parking'), true); ?></td>
+        </tr>
+        <tr>
+          <th>定休日</th>
+          <td><?php stz(e('holiday'), true); ?></td>
+        </tr>
+        <tr>
+          <th>席数</th>
+          <td><?php stz(e('seats'), true); ?></td>
+        </tr>
+        <tr>
+          <th>公式ホームページ（URL）</th>
+          <td><?php stz(e('url'), true); ?></td>
+        </tr>
+        <tr>
+          <th>Facebookアカウント（URL）</th>
+          <td><?php stz(e('fb'), true); ?></td>
+        </tr>
+        <tr>
+          <th>Twitterアカウント（URL）</th>
+          <td><?php stz(e('tw'), true); ?></td>
+        </tr>
+        <tr>
+          <th>Instagramアカウント（URL）</th>
+          <td><?php stz(e('insta'), true); ?></td>
+        </tr>
+        <tr>
+          <th>LINE公式アカウント（URL）</th>
+          <td><?php stz(e('line'), true); ?></td>
+        </tr>
+        <tr>
+          <th>備考</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>こだわり<span class="small-text">（複数選択可）</span></th>
+          <td>
+            <?php if (e('options')) : foreach (e('options') as $key => $value) : ?>
+                <?php echo get_term_by('slug', $value, 'options')->name . "／"; ?>
+            <?php endforeach;
+            endif; ?>
+          </td>
+        </tr>
+        <tr>
+          <th>テイクアウト時間・メニュー</th>
+          <td><?php stz(e('takeout_message'), true); ?></td>
+        </tr>
+        <tr>
+          <th>デリバリー対応地域・受付時間</th>
+          <td><?php stz(e('delivery_message'), true); ?></td>
+        </tr>
+        <tr>
+          <th>対応カードの種類について</th>
+          <td>
+            <?php $payments = get_field_object('payments', choices_id()); ?>
+            <?php if (e('payments')) : foreach (e('payments') as $value) : ?>
                 <?php
                 foreach ($payments['choices'] as $key => $payment) {
                   if ($value == $key) echo $payment . "／";
