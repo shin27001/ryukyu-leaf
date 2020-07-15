@@ -1083,6 +1083,10 @@ li {
   background: #fd8223;
 }
 
+.sns-link a {
+  display: block;
+}
+
 .owner {
   background: #fdeeea;
   padding: 0 0 32px;
