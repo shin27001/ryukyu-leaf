@@ -737,7 +737,7 @@ li {
 }
 
 .content-inner, .l-insta__cont, .l-special, .mod_share, .owner__inner {
-  padding: 2%;
+  padding: 6% 2%;
   width: 96%;
   margin: 0 auto;
 }
