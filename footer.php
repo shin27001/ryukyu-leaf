@@ -5,7 +5,7 @@
       <footer class="l-footer">
         <p class="pagetop"><a href="#top-header">▲</a></p>
         <div class="l-footer__bottom">
-          <p class="copyright">&copy;©2020 Leaf Publications</p>
+          <p class="copyright">&copy;2020 Leaf Publications</p>
         </div>
       </footer>
       </div>
