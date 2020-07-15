@@ -436,7 +436,7 @@
 
 .form-page__title {
   background: #d84315;
-  padding: 10px 0;
+  padding: 10px;
   text-align: center;
   color: #fff;
 }
@@ -1259,6 +1259,10 @@ footer.l-footer {
   width: 100%;
 }
 
+.l-info__table.unei {
+  margin-top: 3em;
+}
+
 .s-btn {
   padding: 0.5em 1em;
   margin-right: 5px;
@@ -1330,28 +1334,28 @@ footer.l-footer {
      object-fit: cover;
 }
 
-.slick-slide img {
+.l-info｛ .slick-slide img {
   -o-object-fit: cover;
      object-fit: cover;
   height: 259px;
   width: 100%;
 }
 
-.l-info__slid-nav .slick-slide {
+｝ .l-info__slid-nav .slick-slide {
   padding: 0.2em;
   line-height: 0;
 }
 
-.l-info__slid-nav .slick-slide img {
+｝ .l-info__slid-nav .slick-slide img {
   height: 70px;
 }
 
-.l-info__slid-nav .slick-current {
+｝ .l-info__slid-nav .slick-current {
   border: 2px solid #d84315;
   opacity: 0.6;
 }
 
-.l-info__slid-nav .sns-link a {
+｝ .l-info__slid-nav .sns-link a {
   display: block;
   margin-bottom: 5px;
 }
