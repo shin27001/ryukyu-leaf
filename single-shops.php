@@ -157,7 +157,7 @@
             <td><?php the_field('url'); ?></td>
           </tr>
           <?php endif; ?>
-          <?php if((empty(get_field('insta'))) && (empty(get_field('fb'))) && (empty(get_field('tw'))) && (empty(get_field('line')))) : ?>
+          <?php if((!empty(get_field('insta'))) || (!empty(get_field('fb'))) || (!empty(get_field('tw'))) || (!empty(get_field('line')))) : ?>
           <tr>
             <th>SNS</th>
             <td class="sns-link">
