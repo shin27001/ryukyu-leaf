@@ -4,6 +4,13 @@
       </div> -->
       <footer class="l-footer">
         <p class="pagetop"><a href="#top-header">▲</a></p>
+        <nav class="l-footer__nav">
+          <ul class="l-footer__nav-list">
+            <li class="l-footer__nav-item"><a href="<?php echo esc_url(home_url('admin')); ?>"><i class="fas fa-mobile-alt"></i> 運営者情報</a></a></li>
+            <li class="l-footer__nav-item"><a href="<?php echo esc_url(home_url('privacy-policy')); ?>"><i class="fas fa-mobile-alt"></i> プライバシーポリシー</a></a></li>
+            <li class="l-footer__nav-item"><a href="<?php echo esc_url(home_url('contact')); ?>"><i class="fas fa-mobile-alt"></i> お問い合わせ</a></a></li>
+          </ul>
+        </nav>
         <div class="l-footer__bottom">
           <p class="copyright">&copy;2020 Leaf Publications</p>
         </div>
