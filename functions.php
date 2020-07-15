@@ -469,4 +469,9 @@ function shop_update($id, $post) {
 }
 add_action('publish_shop_update', 'shop_update', 10, 3 );
 
+function my_acf_google_map_api( $api ){
+  $api['key'] = 'AIzaSyChamewuHdX5HFMSEPcxIyBF1bE2N0GHV8';
+  return $api;
+}
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 ?>
