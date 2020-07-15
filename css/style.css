@@ -436,7 +436,7 @@
 
 .form-page__title {
   background: #d84315;
-  padding: 10px 0;
+  padding: 10px;
   text-align: center;
   color: #fff;
 }
@@ -1259,6 +1259,10 @@ footer.l-footer {
   width: 100%;
 }
 
+.l-info__table.unei {
+  margin-top: 3em;
+}
+
 .s-btn {
   padding: 0.5em 1em;
   margin-right: 5px;
@@ -1330,7 +1334,7 @@ footer.l-footer {
      object-fit: cover;
 }
 
-.slick-slide img {
+.l-info .slick-slide img {
   -o-object-fit: cover;
      object-fit: cover;
   height: 259px;
@@ -1612,7 +1616,7 @@ Stylesheet: 600px以上のタブレットやモニタで適用
     padding-left: 1%;
     margin: 0 auto;
   }
-  .slick-slide img {
+  .l-info .slick-slide img {
     height: 380px;
   }
   .l-info__slid-nav .slick-slide img {
@@ -1712,7 +1716,7 @@ Stylesheet: 960px以上のモニタで適用
   .l-info__slide {
     min-height: 330px;
   }
-  .slick-slide img {
+  .l-info .slick-slide img {
     height: 320px;
   }
   .l-info__slid-nav .slick-slide img {
