@@ -737,7 +737,7 @@ li {
 }
 
 .content-inner, .l-insta__cont, .l-special, .mod_share, .owner__inner {
-  padding: 2%;
+  padding: 6% 2%;
   width: 96%;
   margin: 0 auto;
 }
@@ -995,7 +995,7 @@ li {
 }
 
 .mod_share {
-  margin-top: 4em;
+  margin: 40px auto;
   font-size: 0.7rem;
   line-height: 1.3;
   text-align: center;
@@ -1081,6 +1081,10 @@ li {
 
 .mod_share__item.copy {
   background: #fd8223;
+}
+
+.sns-link a {
+  display: block;
 }
 
 .owner {
@@ -1449,6 +1453,201 @@ footer.l-footer {
   margin-bottom: 5px;
 }
 
+.sp-none {
+  display: none;
+}
+
+.go-read {
+  background: #fdeeea;
+  padding: 24px 0;
+}
+
+.go-read p {
+  margin-bottom: 1em;
+  text-align: left;
+}
+
+.go-feature h2 {
+  color: #d84315;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.go-feature img {
+  max-height: 80px;
+}
+
+.go-read__link .btn {
+  border-radius: 5px;
+  padding: 15px 0px;
+}
+
+.page-anchor__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 2em;
+  color: #d84315;
+}
+
+.page-anchor__list {
+  width: 48%;
+  text-align: center;
+}
+
+.page-anchor__list a {
+  padding: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  display: block;
+}
+
+.users-box {
+  margin-bottom: 40px;
+}
+
+.users-box h3 {
+  font-size: 20px;
+  font-weight: 600;
+  border-left: 4px solid #d84315;
+  padding-left: 10px;
+}
+
+.to-users__fuki {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0;
+  padding: 24px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  background: #d84315;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  line-height: 1.3;
+  min-height: 105px;
+}
+
+.to-users__fuki:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -10px;
+  border: 10px solid transparent;
+  border-top: 10px solid #d84315;
+}
+
+.to-users__fuki p {
+  margin: 0;
+  padding: 0;
+}
+
+.to-users__fuki h4 {
+  margin-left: 10px;
+}
+
+.to-users__fuki img {
+  max-height: 40px;
+}
+
+.to-users__text-box {
+  background: #f3f3f3;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.to-users__read {
+  position: relative;
+  text-align: center;
+  color: #d84315;
+  font-size: 18px;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.to-users__read::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 2px;
+  background-color: #d84315;
+  position: absolute;
+  bottom: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+}
+
+.go-read__link {
+  font-size: 20px;
+}
+
+.go-read__link span {
+  font-size: 16px;
+  display: inline-block;
+  padding-left: 3px;
+}
+
+.go-read__text {
+  text-align: center;
+}
+
+.to-shop__text {
+  margin-bottom: 40px;
+}
+
+.to-shop__text p {
+  margin-bottom: 1em;
+}
+
+.feature-visual__img {
+  width: 100%;
+  height: auto;
+}
+
+.l-footer__nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 2em;
+}
+
+.l-footer__nav-item {
+  padding-left: 10px;
+}
+
+.l-footer__nav-item:first-child {
+  padding-left: 0;
+}
+
 @media (min-width: 480px) {
   /******************************************************************
 
@@ -1629,6 +1828,54 @@ Stylesheet: 600px以上のタブレットやモニタで適用
     font-size: 1.8rem;
     margin: 40px 0 32px;
   }
+  .pc-none {
+    display: none;
+  }
+  .sp-none {
+    display: block;
+  }
+  .go-read__text p {
+    text-align: center;
+  }
+  .go-read__text-btnbox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .go-read__link {
+    width: 48%;
+  }
+  .to-users__box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .to-users__list {
+    width: 32%;
+  }
+  .to-users__fuki {
+    display: block;
+    text-align: center;
+    padding: 24px 0;
+  }
+  .to-users__fuki img {
+    margin-bottom: 10px;
+  }
+  .to-shop__text p {
+    text-align: center;
+  }
+  #to-users .to-users__text-box {
+    min-height: 330px;
+  }
+  #to-shop .to-users__text-box {
+    min-height: 150px;
+  }
 }
 
 @media (min-width: 960px) {
@@ -1743,6 +1990,70 @@ Stylesheet: 960px以上のモニタで適用
   .owner {
     padding: 0;
     margin-top: 0;
+  }
+  .go-read__text-btnbox {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .go-read__text {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .page-anchor__box {
+    width: 50%;
+  }
+  .page-anchor__list {
+    width: 50%;
+    border-right: 1px solid #d84315;
+    border-left: 1px solid #d84315;
+  }
+  .page-anchor__list a {
+    background-color: #fff;
+    border-radius: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .page-anchor__list:last-child {
+    border-left: none;
+  }
+  .page-anchor__list a:hover {
+    background: #f3f3f3;
+  }
+  .go-read .content-inner, .go-read .l-insta__cont, .go-read .l-special, .go-read .mod_share, .go-read .owner__inner {
+    padding-bottom: 2%;
+  }
+  .go-feature {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding-top: 50px;
+  }
+  .go-feature h2 {
+    font-size: 32px;
+  }
+  .to-shop__text {
+    text-align: center;
+  }
+  #to-users .to-users__text-box {
+    min-height: 280px;
+  }
+  #to-shop .to-users__text-box {
+    min-height: 110px;
+  }
+  .users-box {
+    margin: 60px 0;
+  }
+  .to-users__fuki {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: left;
+    padding: 24px;
+  }
+  .to-users__fuki img {
+    margin-bottom: 0;
+  }
+  .mod_share {
+    padding: 5% 0 !important;
   }
 }
 
