@@ -1,3 +1,9 @@
+<?php
+/*
+Template Name: feature
+*/
+?>
+
 <?php get_header(); ?>
 
 <main class="main-container feature">
