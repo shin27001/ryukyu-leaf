@@ -1094,7 +1094,7 @@ li {
 
 .owner__title {
   color: #d84315;
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   margin-bottom: 1em;
   text-align: center;
 }
@@ -1462,7 +1462,7 @@ footer.l-footer {
   padding: 24px 0;
 }
 
-.go-read p {
+.go-read__text p {
   margin-bottom: 1em;
   text-align: left;
 }
@@ -1747,6 +1747,9 @@ Stylesheet: 600px以上のタブレットやモニタで適用
     background-position: top;
     text-align: center;
   }
+  .owner__title {
+    font-size: 1.6rem;
+  }
   .mod_share__item {
     font-size: 1rem;
   }
@@ -1825,7 +1828,7 @@ Stylesheet: 600px以上のタブレットやモニタで適用
     width: 100%;
   }
   .main-title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     margin: 40px 0 32px;
   }
   .pc-none {

@@ -1,10 +1,16 @@
+<?php
+/*
+Template Name: feature
+*/
+?>
+
 <?php get_header(); ?>
 
 <main class="main-container feature">
   <div class="feature-visual">
     <div class="feature-visual__img">
-      <img src="images/feature/main-sp.jpg" alt="GO!HAN旅 グルメ好きなあなたと飲食店をつなぐ飲食店応援プロジェクト" class="pc-none">
-      <img src="images/feature/main-pc.jpg" alt="GO!HAN旅 グルメ好きなあなたと飲食店をつなぐ飲食店応援プロジェクト" class="sp-none">
+      <img src="<?php echo get_template_directory_uri(); ?>/images/feature/main-sp.jpg" alt="GO!HAN旅 グルメ好きなあなたと飲食店をつなぐ飲食店応援プロジェクト" class="pc-none">
+      <img src="<?php echo get_template_directory_uri(); ?>/images/feature/main-pc.jpg" alt="GO!HAN旅 グルメ好きなあなたと飲食店をつなぐ飲食店応援プロジェクト" class="sp-none">
     </div>
   </div>
   <!-- /feature-visual -->
@@ -30,7 +36,7 @@
   </div>
   <div class="content-wrap go-feature">
     <div class="content-inner">
-      <h2><img src="images/feature/icon-face.svg" alt="おうちごはんを楽しみたい方も"> GO!HAN旅の特徴</h2>
+      <h2><img src="<?php echo get_template_directory_uri(); ?>/images/feature/icon-face.svg" alt="おうちごはんを楽しみたい方も"> GO!HAN旅の特徴</h2>
       <div class="page-anchor">
         <ul class="page-anchor__box">
           <li class="page-anchor__list"><a href="#to-users"><i class="fas fa-caret-down"></i> ご利用の方へ</a></li>
@@ -42,7 +48,7 @@
         <div class="to-users__box">
           <div class="to-users__list">
             <div class="to-users__fuki">
-              <img src="images/feature/icon-01.svg" alt="おうちごはんを楽しみたい方も">
+              <img src="<?php echo get_template_directory_uri(); ?>/images/feature/icon-01.svg" alt="おうちごはんを楽しみたい方も">
               <h4>おうちごはんを<br>楽しみたい方も</h4>
             </div>
             <div class="to-users__text-box">
@@ -54,7 +60,7 @@
           </div>
           <div class="to-users__list">
             <div class="to-users__fuki">
-              <img src="images/feature/icon-02.svg" alt="イートインで楽しみたい方も">
+              <img src="<?php echo get_template_directory_uri(); ?>/images/feature/icon-02.svg" alt="イートインで楽しみたい方も">
               <h4>イートインで<br>楽しみたい方も</h4>
             </div>
             <div class="to-users__text-box">
@@ -66,7 +72,7 @@
           </div>
           <div class="to-users__list">
             <div class="to-users__fuki">
-              <img src="images/feature/icon-03.svg" alt="お友達と楽しみたい方も">
+              <img src="<?php echo get_template_directory_uri(); ?>/images/feature/icon-03.svg" alt="お友達と楽しみたい方も">
               <h4>お友達と<br>楽しみたい方も</h4>
             </div>
             <div class="to-users__text-box">
@@ -83,7 +89,7 @@
         <div class="to-users__box">
           <div class="to-users__list">
             <div class="to-users__fuki">
-              <img src="images/feature/icon-04.svg" alt="コロナ対策をアピール">
+              <img src="<?php echo get_template_directory_uri(); ?>/images/feature/icon-04.svg" alt="コロナ対策をアピール">
               <h4>コロナ対策を<br>アピール！</h4>
             </div>
             <div class="to-users__text-box">
@@ -92,7 +98,7 @@
           </div>
           <div class="to-users__list">
             <div class="to-users__fuki">
-              <img src="images/feature/icon-05.svg" alt="入力フォームから掲載登録！">
+              <img src="<?php echo get_template_directory_uri(); ?>/images/feature/icon-05.svg" alt="入力フォームから掲載登録！">
               <h4>入力フォームから<br>掲載登録！</h4>
             </div>
             <div class="to-users__text-box">
@@ -101,7 +107,7 @@
           </div>
           <div class="to-users__list">
             <div class="to-users__fuki">
-              <img src="images/feature/icon-06.svg" alt="掲載料は無料">
+              <img src="<?php echo get_template_directory_uri(); ?>/images/feature/icon-06.svg" alt="掲載料は無料">
               <h4>掲載料は<br>無料!</h4>
             </div>
             <div class="to-users__text-box">
@@ -134,8 +140,8 @@
           応援したいお店をシェアして広めよう！<br>
           <span>#<?php get_pref(); ?>GO!HAN旅 </span>をつけて<br>
           INSTAGRAMに投稿してくださいね！</p>
-        <p class="btn-wrap"><a href="#" class="btn btn-m-blue"><span class="bold-text">#<?php get_pref(); ?>GO!HAN旅
-            </span>の投稿をみる</a>
+        <!-- <p class="btn-wrap"><a href="#" class="btn btn-m-blue"><span class="bold-text">#<?php get_pref(); ?>GO!HAN旅
+            </span>の投稿をみる</a> -->
         </p>
       </div>
     </div>
