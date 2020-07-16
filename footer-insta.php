@@ -6,7 +6,7 @@
         応援したいお店をシェアして広めよう！<br>
         <strong>#<?php get_pref(); ?>GO!HAN旅 </strong>をつけて<br class="br-sp">
         INSTAGRAMに投稿してくださいね！</p>
-      <p class="btn-wrap"><a href="#" class="btn btn-m-blue"><span class="bold-text">#<?php get_pref(); ?>GO!HAN旅 </span>の投稿をみる</a>
+      <!-- <p class="btn-wrap"><a href="#" class="btn btn-m-blue"><span class="bold-text">#<?php get_pref(); ?>GO!HAN旅 </span>の投稿をみる</a> -->
       </p>
     </div>
   </div>
