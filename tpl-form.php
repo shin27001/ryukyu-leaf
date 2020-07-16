@@ -112,6 +112,22 @@ $error = $validate_errors;
         <input type="text" name="address" id="address" class="address" size="60" maxlength="500" value="<?php echo e('address', $data); ?>" />
         <?php if (e('address', $error)) : ?><div class="validate-text"><?php echo err_disp(e('address', $error)); ?></div><?php endif; ?>
       </dd>
+
+      <!-- マップ -->
+      <dt>
+        <label class="l-form__label" for="address">
+          マップ <?php if(!e('update')) : ?><span class="form-require js-require">必須</span><?php endif; ?>
+        </label>
+      </dt>
+      <dd class="l-form__action">
+      <div id="map" style="width:100%; height:400px"></div>
+  <ul>
+    <li>lat: <span id="lat"></span></li>
+    <li>lng: <span id="lng"></span></li>
+  </ul>     
+      </dd>
+
+ 
       <!-- エリア選択 -->
       <dt>
         <label class="l-form__label" for="area">

@@ -72,3 +72,40 @@ $("#clipboard").click(function () {
   $("#copyTarget").select();
   document.execCommand('copy');
 });
+
+function initMap() {
+  // マップの初期化
+  // var mapCanvas = $('#map')[0];
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 13,
+    center: {lat: 26.211929, lng: 127.675543}
+  });
+
+  // クリックイベントを追加
+  map.addListener('click', function(e) {
+    getClickLatLng(e.latLng, map);
+  });
+}
+
+let marker = [];
+function getClickLatLng(lat_lng, map) {
+
+  // 座標を表示
+  $('#lat').text(lat_lng.lat());
+  $('#lng').text(lat_lng.lng());
+
+  marker.forEach(function( value ) {
+    value.setMap(null);
+  });
+
+  // マーカーを設置
+  mk = new google.maps.Marker({
+    position: lat_lng,
+    map: map
+  });
+  marker.push(mk);
+
+  // 座標の中心をずらす
+  // http://syncer.jp/google-maps-javascript-api-matome/map/method/panTo/
+  map.panTo(lat_lng);
+}

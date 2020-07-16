@@ -106,8 +106,10 @@
           </tr>
           <tr>
             <th>住所</th>
-            <td>〒<?php the_field('zip_code'); ?>　<?php the_field('address'); ?><br>
-              <div class="mapbtn"><a href="https://maps.google.co.jp/maps/search/<?php the_field('address'); ?>" class="btn btn-m-red" target="blank">Google Mapへ</a></div>
+            <td>〒<?php the_field('zip_code'); ?>　<?php the_field('address'); ?><div class="mapbtn"><a href="https://maps.google.co.jp/maps/search/<?php the_field('address'); ?>" class="btn btn-m-red" target="blank">Google Mapへ</a></div>
+            <?php $map = get_field('map'); if($map) : ?>
+            <iframe style="width:800px;height:400px;" src="https://maps.google.co.jp/maps?output=embed&q=<?php echo $map['lat']; ?>, <?php echo $map['lng']; ?>"></iframe>
+            <?php endif; ?>
             </td>
           </tr>
           <?php if (get_field('map_code')) : ?>

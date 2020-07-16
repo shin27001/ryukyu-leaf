@@ -22,6 +22,8 @@
       <script src="<?php echo get_template_directory_uri(); ?>/scripts/vendors/slick.js"></script>
       <script src="<?php echo get_template_directory_uri(); ?>/scripts/main.js?<?php echo date('Ymd-Hi'); ?>"></script>
       <script src="<?php echo get_template_directory_uri(); ?>/scripts/libs/main-slider.js"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChamewuHdX5HFMSEPcxIyBF1bE2N0GHV8&callback=initMap" async defer>
+    </script>
       </body>
 
       </html>
