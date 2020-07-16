@@ -36,7 +36,7 @@ Template Name: feature
   </div>
   <div class="content-wrap go-feature">
     <div class="content-inner">
-      <h2><img src="images/feature/icon-face.svg" alt="おうちごはんを楽しみたい方も"> GO!HAN旅の特徴</h2>
+      <h2><img src="<?php echo get_template_directory_uri(); ?>/images/feature/icon-face.svg" alt="おうちごはんを楽しみたい方も"> GO!HAN旅の特徴</h2>
       <div class="page-anchor">
         <ul class="page-anchor__box">
           <li class="page-anchor__list"><a href="#to-users"><i class="fas fa-caret-down"></i> ご利用の方へ</a></li>
