@@ -86,11 +86,11 @@
         <!-- /l-info__korona-wrap -->
       </div>
       <!-- /l-info__korona -->
-      <?php if(get_field('messages')) : ?>
-      <div class="l-info__message">
-        <h2 class="l-info__h2title"><i class="fas fa-user c-red"></i> お店からのメッセージ</h2>
-        <p class="l-info__message-text"><?php the_field('messages'); ?></p>
-      </div>
+      <?php if (get_field('messages')) : ?>
+        <div class="l-info__message">
+          <h2 class="l-info__h2title"><i class="fas fa-user c-red"></i> お店からのメッセージ</h2>
+          <p class="l-info__message-text"><?php the_field('messages'); ?></p>
+        </div>
       <?php endif; ?>
       <!-- /l-info__message -->
 
@@ -106,14 +106,15 @@
           </tr>
           <tr>
             <th>住所</th>
-            <td>〒<?php the_field('zip_code'); ?>　<?php the_field('address'); ?><div class="mapbtn"><a href="https://maps.google.co.jp/maps/search/<?php the_field('address'); ?>" class="btn btn-m-red" target="blank">Google Mapへ</a></div>
+            <td>〒<?php the_field('zip_code'); ?>　<?php the_field('address'); ?><br>
+              <div class="mapbtn"><a href="https://maps.google.co.jp/maps/search/<?php the_field('address'); ?>" class="btn btn-m-red" target="blank">Google Mapへ</a></div>
             </td>
           </tr>
-          <?php if(get_field('map_code')) : ?>
-          <tr>
-            <th>MAPコード<span class="small-text">（※カーナビに番号をいれると地図が表示されます）</span></th>
-            <td><?php the_field('map_code'); ?></td>
-          </tr>
+          <?php if (get_field('map_code')) : ?>
+            <tr>
+              <th>MAPコード<span class="small-text">（※カーナビに番号をいれると地図が表示されます）</span></th>
+              <td><?php the_field('map_code'); ?></td>
+            </tr>
           <?php endif; ?>
           <tr>
             <th>駐車場</th>
@@ -139,46 +140,46 @@
             <th>席数</th>
             <td><?php the_field('seats'); ?></td>
           </tr>
-          <?php if(get_field('takeout_message')) : ?>
-          <tr>
-            <th>テイクアウト時間・メニュー</th>
-            <td><?php the_field('takeout_message'); ?></td>
-          </tr>
+          <?php if (get_field('takeout_message')) : ?>
+            <tr>
+              <th>テイクアウト時間・メニュー</th>
+              <td><?php the_field('takeout_message'); ?></td>
+            </tr>
           <?php endif; ?>
-          <?php if(get_field('delivery_message')) : ?>
-          <tr>
-            <th>デリバリー対応地域・受付時間</th>
-            <td><?php the_field('delivery_message'); ?></td>
-          </tr>
+          <?php if (get_field('delivery_message')) : ?>
+            <tr>
+              <th>デリバリー対応地域・受付時間</th>
+              <td><?php the_field('delivery_message'); ?></td>
+            </tr>
           <?php endif; ?>
-          <?php if(get_field('url')) : ?>
-          <tr>
-            <th>公式HP</th>
-            <td><?php the_field('url'); ?></td>
-          </tr>
+          <?php if (get_field('url')) : ?>
+            <tr>
+              <th>公式HP</th>
+              <td><?php the_field('url'); ?></td>
+            </tr>
           <?php endif; ?>
-          <?php if((!empty(get_field('insta'))) || (!empty(get_field('fb'))) || (!empty(get_field('tw'))) || (!empty(get_field('line')))) : ?>
-          <tr>
-            <th>SNS</th>
-            <td class="sns-link">
-              <?php if(get_field('insta')) : ?><a href="<?php the_field('insta'); ?>" target="blank"><i class="fab fa-instagram"></i> <?php the_field('insta'); ?></a><?php endif; ?> 
-              <?php if(get_field('fb')) : ?><a href="<?php the_field('fb'); ?>" target="blank"><i class="fab fa-facebook"></i> <?php the_field('fb'); ?></a><?php endif; ?>
-              <?php if(get_field('tw')) : ?><a href="<?php the_field('tw'); ?>" target="blank"><i class="fab fa-twitter"></i> <?php the_field('tw'); ?></a><?php endif; ?>
-              <?php if(get_field('line')) : ?><a href="<?php the_field('line'); ?>" target="blank"><i class="fab fa-line"></i> <?php the_field('line'); ?></a><?php endif; ?>
-            </td>
-          </tr>
+          <?php if ((!empty(get_field('insta'))) || (!empty(get_field('fb'))) || (!empty(get_field('tw'))) || (!empty(get_field('line')))) : ?>
+            <tr>
+              <th>SNS</th>
+              <td class="sns-link">
+                <?php if (get_field('insta')) : ?><a href="<?php the_field('insta'); ?>" target="blank"><i class="fab fa-instagram"></i> Instagramはこちら</a><?php endif; ?>
+                <?php if (get_field('fb')) : ?><a href="<?php the_field('fb'); ?>" target="blank"><i class="fab fa-facebook"></i> facebookはこちら</a><?php endif; ?>
+                <?php if (get_field('tw')) : ?><a href="<?php the_field('tw'); ?>" target="blank"><i class="fab fa-twitter"></i> Twitterはこちら</a><?php endif; ?>
+                <?php if (get_field('line')) : ?><a href="<?php the_field('line'); ?>" target="blank"><i class="fab fa-line"></i> Lineはこちら</a><?php endif; ?>
+              </td>
+            </tr>
           <?php endif; ?>
-          <?php if(get_field('payments')) : ?>
-          <tr>
-            <th>現金以外のお支払い方法</th>
-            <td>
-              <?php $payments = get_field('payments'); ?>
-              <?php if ($payments) : foreach ($payments as $payment) : ?>
-                  <?php echo $payment['label'] . "/"; ?>
-              <?php endforeach;
-              endif; ?>
-            </td>
-          </tr>
+          <?php if (get_field('payments')) : ?>
+            <tr>
+              <th>現金以外のお支払い方法</th>
+              <td>
+                <?php $payments = get_field('payments'); ?>
+                <?php if ($payments) : foreach ($payments as $payment) : ?>
+                    <?php echo $payment['label'] . "/"; ?>
+                <?php endforeach;
+                endif; ?>
+              </td>
+            </tr>
           <?php endif; ?>
           <tr class="last">
             <th>こだわり</th>
