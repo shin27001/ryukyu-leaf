@@ -181,6 +181,14 @@
               </td>
             </tr>
           <?php endif; ?>
+          <?php if (get_field('payments_other')) : ?>
+            <tr>
+              <th>その他のお支払い方法</th>
+              <td>
+                <?php the_field('payments_other'); ?>
+              </td>
+            </tr>
+          <?php endif; ?>
           <tr class="last">
             <th>こだわり</th>
             <td>

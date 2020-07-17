@@ -29,8 +29,12 @@
           <td><?php stz(e('shop_name'), true); ?></td>
         </tr>
         <tr>
-          <th>電話番号<span class="small-text">（ご担当者の連絡先・半角数字ハイフンなし） </span></th>
+          <th>電話番号<span class="small-text">（ご連絡先・半角数字ハイフンなし） </span></th>
           <td><?php stz(e('tanto_tel'), true); ?></td>
+        </tr>
+        <tr>
+          <th>FAX番号<span class="small-text">（FAX番号・半角数字ハイフンなし） </span></th>
+          <td><?php stz(e('tanto_fax'), true); ?></td>
         </tr>
       </table>
 
@@ -132,6 +136,10 @@
             <?php endforeach;
             endif; ?>
           </td>
+        </tr>
+        <tr>
+          <th>現金以外のお支払い方法について<span class="small-text">（上記以外の電子マネーなど）</span></th>
+          <td><?php stz(e('payments_other'), true); ?></td>
         </tr>
         <tr>
           <th>コロナ対策について<span class="small-text">（複数選択可）</span></th>

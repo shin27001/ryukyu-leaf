@@ -21,7 +21,6 @@
 
 <body>
   <div class="l-wrap">
-<?php //pr($_SERVER); ?>
     <header id="top-header" class="l-header">
       <div class="l-header__inner">
         <div class="mobile__menu">
@@ -43,8 +42,6 @@
             <li class="l-header__nav-item"><a href="<?php echo esc_url(home_url('entry')); ?>"><i class="fas fa-edit"></i> 飲食店の皆様へ</a></li>
             <li class="l-header__nav-item"><a href="<?php echo esc_url(home_url('contact')); ?>"><i class="far fa-envelope"></i> お問い合わせ</a></li>
             <li class="l-header__nav-item"><?php echo (get_pref(false) == '沖縄') ? '<a href="https://gohan-tabi.com/kyoto"><i class="fas fa-external-link-alt"></i> 京都版</a></li>' : '<a href="https://gohan-tabi.com/okinawa"><i class="fas fa-external-link-alt"></i> 沖縄版</a></li>'; ?></li>
-            <!-- <li class="l-header__nav-item"><a href=""><i class="fas fa-external-link-alt"></i> 京都版</a></li>
-            <li class="l-header__nav-item"><a href="<?php echo esc_url(home_url('/okinawa')); ?>"><i class="fas fa-external-link-alt"></i> 沖縄版</a></li> -->
           </ul>
         </nav>
       </div>
