@@ -1648,6 +1648,31 @@ footer.l-footer {
   padding-left: 0;
 }
 
+.favorite-btn-wrap {
+  margin: 10px auto 0;
+}
+
+a.favorite-btn {
+  border: 1px solid #ccc;
+  padding: 8px 20px;
+  border-radius: 5px;
+  min-width: 180px;
+  display: inline-block;
+  text-align: center;
+  font-size: 14px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+a.favorite-btn .fab {
+  color: #d84315;
+}
+
+a.favorite-btn:hover {
+  background: #fdeeea;
+  border: 1px solid #d84315;
+}
+
 @media (min-width: 480px) {
   /******************************************************************
 

@@ -33,15 +33,20 @@
             <?php endforeach;
             endif; ?>
           </p>
+          <div class="favorite-btn-wrap">
+            <a href="#" class="favorite-btn"><i class="fab fa-gratipay"></i> お気に入り</a>
+          </div>
           <div class="l-tel-pc">
             <p class="l-tel-pc__title">お問い合わせはこちらから</p>
             <div class="btn-wrap">
               <a href="tel:<?php the_field('tel_no'); ?>" class="btn btn-m-red"><i class="fas fa-phone-alt"></i> <?php the_field('tel_no'); ?></a>
             </div>
-            <?php //pr(get_auth()); ?>
-            <?php //echo $_SERVER['HTTP_HOST']; echo get_auth(); ?>
+            <?php //pr(get_auth()); 
+            ?>
+            <?php //echo $_SERVER['HTTP_HOST']; echo get_auth(); 
+            ?>
             <?php $protocol = empty($_SERVER['HTTPS']) ? 'http://' : 'https://';
-              $url = $protocol.'mg.'.$_SERVER['HTTP_HOST'].'/favorite';
+            $url = $protocol . 'mg.' . $_SERVER['HTTP_HOST'] . '/favorite';
             ?>
             <a href="<?php echo $url; ?>/<?php echo (strpos(ABSPATH, 'okinawa')) ? "okinawa" : "kyoto"; ?>/<?php echo $post->ID; ?>/<?php echo $post->post_name; ?>" onClick="return false;">お気に入りに追加</a>
           </div>
@@ -112,9 +117,10 @@
           </tr>
           <tr>
             <th>店舗詳細</th>
-            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-              <td><?php the_content(); ?></td>
-            <?php endwhile; endif; ?>
+            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                <td><?php the_content(); ?></td>
+            <?php endwhile;
+            endif; ?>
           </tr>
           <tr>
             <th>住所</th>
