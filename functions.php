@@ -29,6 +29,14 @@ function pr($arg) {
   }
 }
 
+function get_auth() {
+  echo empty($_SERVER['HTTPS']) ? 'http://' : 'https://';
+  $protocol = empty($_SERVER['HTTPS']) ? 'http://' : 'https://';
+  echo $protocol.'mg.'.$_SERVER['HTTP_HOST'].'/favorite/auth/';
+  echo "xxx--".stz(file_get_contents($protocol.'mg.'.$_SERVER['HTTP_HOST'].'/favorite/auth/'));
+  return file_get_contents($protocol.'mg.'.$_SERVER['HTTP_HOST'].'/favorite/auth/');
+}
+
 // function sql_dump($query) {
 //     var_dump($query);
 //     return $query;

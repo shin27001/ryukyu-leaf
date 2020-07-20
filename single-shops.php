@@ -38,6 +38,8 @@
             <div class="btn-wrap">
               <a href="tel:<?php the_field('tel_no'); ?>" class="btn btn-m-red"><i class="fas fa-phone-alt"></i> <?php the_field('tel_no'); ?></a>
             </div>
+            <?php //echo $_SERVER['HTTP_HOST']; echo get_auth(); ?>
+            <!-- <a href="http://mg.rlf.local/favorite/<?php echo (strpos(ABSPATH, 'okinawa')) ? "okinawa" : "kyoto"; ?>/<?php echo $post->ID; ?>/<?php echo $post->post_name; ?>" onClick="return false;">お気に入りに追加</a> -->
           </div>
           <!-- /l-tel-pc -->
         </div>
