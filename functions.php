@@ -15,7 +15,7 @@ function get_pref($echo = true) {
 }
 
 function get_mail() {
-  return (strpos(ABSPATH, 'okinawa')) ? " info_okinawa@gohan-tabi.com" : "gohantabi_kyoto@leafkyoto.co.jp";
+  return (strpos(ABSPATH, 'okinawa')) ? "info_okinawa@gohan-tabi.com" : "gohantabi_kyoto@leafkyoto.co.jp";
 }
 
 // バリデーションエラーのグローバル変数
@@ -27,6 +27,50 @@ function pr($arg) {
     print_r($arg);
     echo "</pre>";
   }
+}
+
+function get_auth() {
+  echo "auth";
+  $protocol = empty($_SERVER['HTTPS']) ? 'http://' : 'https://';
+  $url = $protocol.'mg.'.$_SERVER['HTTP_HOST'].'/favorite/auth';
+  // $url = "https://www.yahoo.co.jp";
+  $url = "https://mg.rlf.local/api/data";
+  echo $url;
+  $option = [
+    CURLOPT_RETURNTRANSFER => true, //文字列として返す
+    CURLOPT_TIMEOUT        => 3, // タイムアウト時間
+  ];
+
+  $ch = curl_init($url);
+  curl_setopt_array($ch, $option);
+//pr($ch);
+
+  $json    = curl_exec($ch);
+  $info    = curl_getinfo($ch);
+  $errorNo = curl_errno($ch);
+  echo "json--";
+  pr($json);
+    // OK以外はエラーなので空白配列を返す
+  if ($errorNo !== CURLE_OK) {
+      // 詳しくエラーハンドリングしたい場合はerrorNoで確認
+      // タイムアウトの場合はCURLE_OPERATION_TIMEDOUT
+      return [];
+  }
+
+  // 200以外のステータスコードは失敗とみなし空配列を返す
+  if ($info['http_code'] !== 200) {
+      return [];
+  }
+    // 文字列から変換
+  $jsonArray = json_decode($json, true);
+
+  return $jsonArray;
+
+  echo empty($_SERVER['HTTPS']) ? 'http://' : 'https://';
+  $protocol = empty($_SERVER['HTTPS']) ? 'http://' : 'https://';
+  echo $protocol.'mg.'.$_SERVER['HTTP_HOST'].'/favorite/auth/';
+  echo "xxx--".stz(file_get_contents($protocol.'mg.'.$_SERVER['HTTP_HOST'].'/favorite/auth/'));
+  return file_get_contents($protocol.'mg.'.$_SERVER['HTTP_HOST'].'/favorite/auth/');
 }
 
 // function sql_dump($query) {
@@ -441,7 +485,7 @@ add_action('init', 'init_custom_post_shop_update');
 ##################################
 function shop_update($id, $post) {
     $exclude = array();
-
+    
     # 更新データ取得
     $update_fields = get_fields($id);
 
@@ -450,6 +494,14 @@ function shop_update($id, $post) {
     foreach (['del_flg', 'main_post_id'] as $value) {
         unset($update_fields[$value]);
     }
+
+    # 投稿を更新する
+    $my_post = array(
+      'ID'           => $main_post_id,
+      'post_title'   => $post->post_title,
+      'post_content' => $post->post_content,
+    );
+    wp_update_post( $my_post );
 
     $ar = array();
     foreach ($update_fields as $key => $value) {

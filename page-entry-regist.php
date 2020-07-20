@@ -12,7 +12,7 @@
 
   $my_post = array();
   $my_post['post_title'] = stz($_POST['shop_name']);
-  $my_post['post_content'] = stz($_POST['message']);
+  $my_post['post_content'] = stz($_POST['detail']);
   $my_post['post_author'] = 1;
   $my_post['post_status'] = 'pending';
   $my_post['post_type'] = e('update') ? 'shop_update' : 'shops';
@@ -25,6 +25,7 @@
   $post->insert_field('field_5efae5e7b749f', 'tanto_name');
   $post->insert_field('field_5efae60bb74a0', 'tanto_mail');
   $post->insert_field('field_5efae62cb74a1', 'tanto_tel');
+  $post->insert_field('field_5f110470c57f2', 'tanto_fax');
   $post->insert_field('field_5ef05d1488e54', 'zip_code');
   $post->insert_field('field_5ef05d7888e55', 'address');
   $post->insert_field('field_5ef5761903868', 'map_code'); #
@@ -41,6 +42,7 @@
   $post->insert_field('field_5ef6f7066bae0', 'insta');#
   $post->insert_field('field_5ef6f7486bae1', 'line');#
   $post->insert_field('field_5ef061b39599f', 'payments', false);#
+  $post->insert_field('field_5f110da91b5e0', 'payments_other');#
   $post->insert_field('field_5ef6f12febcb3', 'coronas', false);
   $post->insert_field('field_5ef57329b52a3', 'message');#
   $post->insert_field('field_5ef709a391a29', 'takeout_message');#

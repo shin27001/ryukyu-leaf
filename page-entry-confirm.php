@@ -29,8 +29,16 @@
           <td><?php stz(e('shop_name'), true); ?></td>
         </tr>
         <tr>
-          <th>電話番号<span class="small-text">（ご担当者の連絡先・半角数字ハイフンなし） </span></th>
+          <th>店舗詳細</th>
+          <td><?php stz(e('detail'), true); ?></td>
+        </tr>
+        <tr>
+          <th>電話番号<span class="small-text">（ご連絡先・半角数字ハイフンなし） </span></th>
           <td><?php stz(e('tanto_tel'), true); ?></td>
+        </tr>
+        <tr>
+          <th>FAX番号<span class="small-text">（FAX番号・半角数字ハイフンなし） </span></th>
+          <td><?php stz(e('tanto_fax'), true); ?></td>
         </tr>
       </table>
 
@@ -134,6 +142,10 @@
           </td>
         </tr>
         <tr>
+          <th>現金以外のお支払い方法について<span class="small-text">（上記以外の電子マネーなど）</span></th>
+          <td><?php stz(e('payments_other'), true); ?></td>
+        </tr>
+        <tr>
           <th>コロナ対策について<span class="small-text">（複数選択可）</span></th>
           <td>
             <?php $coronas = get_field_object('coronas', choices_id()); ?>
@@ -222,7 +234,10 @@
       <div class="submit__btn">
         <div class="submit__btnTop">
           <div class="l-form__button-back">
-            <form method="POST" id="registform" action="<?php echo esc_url(home_url('entry-form')); ?>" enctype="multipart/form-data">
+            <form method="POST" id="registform" action="<?php echo esc_url(home_url('entry-form/?update='.e('update', $_POST).'&main_post_id='.e('main_post_id', $_POST))); ?>" enctype="multipart/form-data">
+              <input type="hidden" name="request" value="<?php echo e('request', $_POST); ?>">
+              <input type="hidden" name="update" value="<?php echo e('update', $_POST); ?>">
+              <input type="hidden" name="main_post_id" value="<?php echo e('main_post_id', $_POST); ?>">
               <input type="hidden" name="post_all" value='<?php echo base64_encode(serialize($_POST)); ?>'>
               <input type="submit" name="submitBack" value="戻る" class="btn btn-m-gray">
             </form>

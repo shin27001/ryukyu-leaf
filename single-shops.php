@@ -34,10 +34,16 @@
             endif; ?>
           </p>
           <div class="l-tel-pc">
-            <p class="l-tel-pc__title">ご予約・ご注文はこちらから</p>
+            <p class="l-tel-pc__title">お問い合わせはこちらから</p>
             <div class="btn-wrap">
               <a href="tel:<?php the_field('tel_no'); ?>" class="btn btn-m-red"><i class="fas fa-phone-alt"></i> <?php the_field('tel_no'); ?></a>
             </div>
+            <?php //pr(get_auth()); ?>
+            <?php //echo $_SERVER['HTTP_HOST']; echo get_auth(); ?>
+            <?php $protocol = empty($_SERVER['HTTPS']) ? 'http://' : 'https://';
+              $url = $protocol.'mg.'.$_SERVER['HTTP_HOST'].'/favorite';
+            ?>
+            <a href="<?php echo $url; ?>/<?php echo (strpos(ABSPATH, 'okinawa')) ? "okinawa" : "kyoto"; ?>/<?php echo $post->ID; ?>/<?php echo $post->post_name; ?>" onClick="return false;">お気に入りに追加</a>
           </div>
           <!-- /l-tel-pc -->
         </div>
@@ -102,7 +108,13 @@
         <table class="l-info__table">
           <tr>
             <th>店名</th>
-            <td><?php the_title(); ?></td>
+            <td><?php echo get_the_title($post->ID); ?></td>
+          </tr>
+          <tr>
+            <th>店舗詳細</th>
+            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+              <td><?php the_content(); ?></td>
+            <?php endwhile; endif; ?>
           </tr>
           <tr>
             <th>住所</th>
@@ -178,6 +190,14 @@
                     <?php echo $payment['label'] . "/"; ?>
                 <?php endforeach;
                 endif; ?>
+              </td>
+            </tr>
+          <?php endif; ?>
+          <?php if (get_field('payments_other')) : ?>
+            <tr>
+              <th>その他のお支払い方法</th>
+              <td>
+                <?php the_field('payments_other'); ?>
               </td>
             </tr>
           <?php endif; ?>
