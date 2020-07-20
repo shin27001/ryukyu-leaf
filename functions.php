@@ -485,7 +485,7 @@ add_action('init', 'init_custom_post_shop_update');
 ##################################
 function shop_update($id, $post) {
     $exclude = array();
-
+    
     # 更新データ取得
     $update_fields = get_fields($id);
 
@@ -494,6 +494,14 @@ function shop_update($id, $post) {
     foreach (['del_flg', 'main_post_id'] as $value) {
         unset($update_fields[$value]);
     }
+
+    # 投稿を更新する
+    $my_post = array(
+      'ID'           => $main_post_id,
+      'post_title'   => $post->post_title,
+      'post_content' => $post->post_content,
+    );
+    wp_update_post( $my_post );
 
     $ar = array();
     foreach ($update_fields as $key => $value) {

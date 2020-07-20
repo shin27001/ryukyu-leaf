@@ -60,10 +60,12 @@ $("input[name='request']").click(function () {
     $('.searchOff').fadeIn(1000);
     $('#registform').fadeOut(1000);
     $("input[name='update']").val(true);
+    $("input[type='hidden'][name='request']").val('update');
   } else if($(this).val() == 'regist') {
     $('.searchOff').fadeOut(1000);
     $('#registform').fadeIn(1000);
     $("input[name='update']").val(false);
+    $("input[type='hidden'][name='request']").val('regist');
   }
 });
 
