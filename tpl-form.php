@@ -102,6 +102,16 @@ $error = $validate_errors;
         <input type="text" name="shop_name" id="shop_name" class="shop_name" size="60" maxlength="100" value="<?php echo e('shop_name', $data); ?>" />
         <?php if (e('shop_name', $error)) : ?><div class="validate-text"><?php echo err_disp(e('shop_name', $error)); ?></div><?php endif; ?>
       </dd>
+      <!-- 店舗詳細 -->
+      <dt>
+        <label class="l-form__label" for="menu">
+          店舗詳細（300文字以内） <?php if(!e('update')) : ?><span class="form-require js-require">必須</span><?php endif; ?>
+        </label>
+      </dt>
+      <dd class="l-form__action">
+        <textarea name="detail" id="detail" class="detail" cols="100" rows="5" placeholder="お店のPRポイントや雰囲気などお知らせしたい情報があれば入力してください。（300文字以内）"><?php echo e('detail', $data); ?></textarea>
+        <?php if (e('detail', $error)) : ?><div class="validate-text"><?php echo err_disp(e('detail', $error)); ?></div><?php endif; ?>
+      </dd>      
       <!-- 郵便番号 -->
       <dt>
         <label class="l-form__label" for="zip_code">

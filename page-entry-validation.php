@@ -16,6 +16,7 @@ if (e('update', $_GET)) {
   // $errors = array_merge($errors, validate_field('tanto_fax'));
 } else {
   $errors = array_merge($errors, validate_field('shop_name', array('acf-field'=>false)));
+  $errors = array_merge($errors, validate_field('detail', array('acf-field'=>false)));
   $errors = array_merge($errors, validate_field('tanto_name'));
   $errors = array_merge($errors, validate_field('tanto_tel'));
   // $errors = array_merge($errors, validate_field('tanto_mail'));

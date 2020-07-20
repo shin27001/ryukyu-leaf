@@ -12,7 +12,7 @@
 
   $my_post = array();
   $my_post['post_title'] = stz($_POST['shop_name']);
-  $my_post['post_content'] = stz($_POST['message']);
+  $my_post['post_content'] = stz($_POST['detail']);
   $my_post['post_author'] = 1;
   $my_post['post_status'] = 'pending';
   $my_post['post_type'] = e('update') ? 'shop_update' : 'shops';

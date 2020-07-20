@@ -29,6 +29,10 @@
           <td><?php stz(e('shop_name'), true); ?></td>
         </tr>
         <tr>
+          <th>店舗詳細</th>
+          <td><?php stz(e('detail'), true); ?></td>
+        </tr>
+        <tr>
           <th>電話番号<span class="small-text">（ご連絡先・半角数字ハイフンなし） </span></th>
           <td><?php stz(e('tanto_tel'), true); ?></td>
         </tr>
