@@ -11,7 +11,7 @@
       <table class="l-info__table">
         <tr>
           <th>掲載内容</th>
-          <td><?php echo e('update') ? '更新依頼' : '新規登録'; ?></td>
+          <td><?php echo e('request') == 'update' ? '更新依頼' : '新規登録'; ?></td>
         </tr>
       </table>
       <h2 class="l-fome__title">ご担当者様情報</h2>
@@ -234,10 +234,8 @@
       <div class="submit__btn">
         <div class="submit__btnTop">
           <div class="l-form__button-back">
-            <form method="POST" id="registform" action="<?php echo esc_url(home_url('entry-form/?update='.e('update', $_POST).'&main_post_id='.e('main_post_id', $_POST))); ?>" enctype="multipart/form-data">
+            <form method="POST" id="registform" action="<?php echo esc_url(home_url('entry-form')); ?>" enctype="multipart/form-data">
               <input type="hidden" name="request" value="<?php echo e('request', $_POST); ?>">
-              <input type="hidden" name="update" value="<?php echo e('update', $_POST); ?>">
-              <input type="hidden" name="main_post_id" value="<?php echo e('main_post_id', $_POST); ?>">
               <input type="hidden" name="post_all" value='<?php echo base64_encode(serialize($_POST)); ?>'>
               <input type="submit" name="submitBack" value="戻る" class="btn btn-m-gray">
             </form>

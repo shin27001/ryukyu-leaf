@@ -1,5 +1,4 @@
 <?php
-
 # アイキャッチ画像を有効にする。
 //add_theme_support('post-thumbnails');
 
@@ -34,7 +33,7 @@ function get_auth() {
   $protocol = empty($_SERVER['HTTPS']) ? 'http://' : 'https://';
   $url = $protocol.'mg.'.$_SERVER['HTTP_HOST'].'/favorite/auth';
   // $url = "https://www.yahoo.co.jp";
-  $url = "https://mg.rlf.local/api/data";
+  // $url = "https://mg.rlf.local/api/data";
   echo $url;
   $option = [
     CURLOPT_RETURNTRANSFER => true, //文字列として返す
@@ -485,7 +484,7 @@ add_action('init', 'init_custom_post_shop_update');
 ##################################
 function shop_update($id, $post) {
     $exclude = array();
-    
+
     # 更新データ取得
     $update_fields = get_fields($id);
 
@@ -503,6 +502,30 @@ function shop_update($id, $post) {
     );
     wp_update_post( $my_post );
 
+    # タクソノミーの更新
+    $areas = get_the_terms($id,'area');
+    if(!empty($areas)) {
+      foreach ($areas as $key => $area) {
+        $new_areas[] =$area->term_id;
+      }
+      wp_set_object_terms($main_post_id, $new_areas, 'area');
+    }
+    $dishes = get_the_terms($id,'dishes');
+    if(!empty($dishes)) {
+      foreach ($dishes as $key => $dishe) {
+        $new_dishes[] =$dishe->term_id;
+      }
+      wp_set_object_terms($main_post_id, $new_dishes, 'dishes');
+    }
+    $options = get_the_terms($id,'options');
+    if(!empty($options)) {
+      foreach ($options as $key => $option) {
+        $new_options[] =$option->term_id;
+      }
+      wp_set_object_terms($main_post_id, $new_options, 'options');
+    }
+    
+    # カスタムフィールドの更新
     $ar = array();
     foreach ($update_fields as $key => $value) {
       if(!empty($value)) {

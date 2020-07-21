@@ -8,7 +8,7 @@ $errors = array_merge($errors, validate_field('contact_policy', array('acf-field
 $errors = array_merge($errors, validate_field('written_oath', array('acf-field'=>false)));
 
 
-if (e('update', $_GET)) {
+if (e('request', $_POST) == 'update') {
   $errors = array_merge($errors, validate_field('shop_name', array('acf-field'=>false)));
   $errors = array_merge($errors, validate_field('tanto_name'));
   $errors = array_merge($errors, validate_field('tanto_tel'));

@@ -15,11 +15,11 @@
   $my_post['post_content'] = stz($_POST['detail']);
   $my_post['post_author'] = 1;
   $my_post['post_status'] = 'pending';
-  $my_post['post_type'] = e('update') ? 'shop_update' : 'shops';
+  $my_post['post_type'] = (e('request') == 'regist') ? 'shops' : 'shop_update';
 
   $post = new wp_post_helper($my_post);
 
-  if (!e('update')) {
+  if (e('request') == 'regist') {
     $post->add_field('field_5ef0603255a70', 1); //初期値は、1:掲載しない
   }
   $post->insert_field('field_5efae5e7b749f', 'tanto_name');
@@ -51,7 +51,7 @@
   $post->insert_field('field_5ef6f2eb9f16b', 'coronas_other'); #
 
   // $a = e('update') ? $post->insert_field('field_5f051683d37f5', 'main_post_id') : false;
-  if(!empty($_POST['update'])) { $post->insert_field('field_5f051683d37f5', 'main_post_id'); }
+  if(e('request') == 'update') { $post->insert_field('field_5f051683d37f5', 'main_post_id'); }
 
   #エリアの親ターム取得
   if(!empty($_POST['area'])) {
@@ -68,7 +68,7 @@
 
 
   // 投稿し、post_idを取得
-  $postid = e('update') ? $post->update() : $post->insert();
+  $postid = (e('request') == 'regist') ? $post->insert() : $post->update();
   // echo "post-id -- ".$postid;
 
 
@@ -100,7 +100,7 @@
     add_row('shop_images', $row, $postid );
   }
 
-  $subject = e('update') ? '[更新依頼]' : '[新規登録]';
+  $subject = (e('request') == 'regist') ? '[新規登録]' : '[更新依頼]';
   $subject .= stz($_POST['shop_name']);
   $message = get_bloginfo('title')."から下記依頼がありました。\n\n管理画面を確認して下さい。\n".$subject;
   wp_mail( get_mail(), $subject, $message);
