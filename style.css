@@ -3,3 +3,246 @@
 .searchOff {
   display: none;
 }
+
+.btn {
+	position: relative;
+	padding: 7px 35px;
+	font-size: 16px;
+	line-height: 24px;
+	border-radius: 3px;
+	line-height: 28px;
+	white-space: nowrap;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	border-width: 2px;
+	border-radius: 5px;
+	font-family: "Oswald", sans-serif;
+	font-weight: 400;
+	transition: .3s;
+	backface-visibility: hidden;
+}
+.btn-java, .btn-java:focus {
+	color: #fff;
+	background-color: #e9c7c1;
+	border-color: #e9c7c1;
+}
+
+.btn-java:focus {
+	box-shadow: none;
+}
+
+.btn-java:hover, .btn-java:active,
+.btn-java .active {
+	color: #fff;
+	background-color: #e2560f;
+	border-color: white;
+}
+
+.btn-java:not([disabled]):not(.disabled):active, .btn-java:not([disabled]):not(.disabled).active {
+	box-shadow: none;
+}
+
+.btn-java.button-ujarak::before {
+	background: #e2560f;
+}
+
+/** 2.36 Pagination Addons */
+.pagination-classic {
+	padding-left: 0;
+	list-style: none;
+	margin-left: -5px;
+	font-size: 0;
+}
+
+.pagination-classic > li {
+	display: inline-block;
+	margin-left: 9px;
+}
+
+.pagination-classic > li > a,
+.pagination-classic > li > span {
+	border-radius: 50%;
+	padding: 9px 0;
+	width: 50px;
+	height: 50px;
+	font-size: 15px;
+	min-width: 40px;
+}
+
+.pagination-classic > li:first-child > a,
+.pagination-classic > li:first-child > span {
+	padding-left: 0;
+}
+
+.pagination-classic > li:last-child > a,
+.pagination-classic > li:last-child > span {
+	padding-right: 0;
+}
+
+.pagination-classic > li.active > a,
+.pagination-classic > li.active > span {
+	color: #fff;
+	background: #e2560f;
+	border-color: #e2560f;
+	cursor: default;
+}
+
+.pagination .page-link {
+	padding: 7px 6px;
+	font-size: 14px;
+	line-height: 24px;
+}
+
+.pagination .page-item:first-child .page-link {
+	border-top-left-radius: 0.2rem;
+	border-bottom-left-radius: 0.2rem;
+}
+
+.pagination .page-item:last-child .page-link {
+	border-top-right-radius: 0.2rem;
+	border-bottom-right-radius: 0.2rem;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+	min-width: 40px;
+	font-weight: 900;
+	transition: .3s;
+	text-align: center;
+}
+
+.pagination > li:first-child a > .mdi,
+.pagination > li:last-child a > .mdi {
+	position: relative;
+	font-size: 16px;
+	line-height: 1;
+}
+
+.pagination > li:first-child a > .mdi-chevron-double-right,
+.pagination > li:first-child a > .mdi-chevron-double-left,
+.pagination > li:last-child a > .mdi-chevron-double-right,
+.pagination > li:last-child a > .mdi-chevron-double-left {
+	top: 2px;
+}
+
+.pagination-sm .page-link {
+	padding: 9px 8.5px;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.pagination-sm .page-item:first-child .page-link {
+	border-top-left-radius: 0.2rem;
+	border-bottom-left-radius: 0.2rem;
+}
+
+.pagination-sm .page-item:last-child .page-link {
+	border-top-right-radius: 0.2rem;
+	border-bottom-right-radius: 0.2rem;
+}
+
+.pagination-sm > li > a,
+.pagination-sm > li > span {
+	min-width: 40px;
+}
+
+.pagination-lg .page-link {
+	padding: 9px 8px;
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.pagination-lg .page-item:first-child .page-link {
+	border-top-left-radius: 0.2rem;
+	border-bottom-left-radius: 0.2rem;
+}
+
+.pagination-lg .page-item:last-child .page-link {
+	border-top-right-radius: 0.2rem;
+	border-bottom-right-radius: 0.2rem;
+}
+
+.pagination-lg > li > a,
+.pagination-lg > li > span {
+	min-width: 44px;
+}
+
+.pagination-lg > li:first-child > .mdi,
+.pagination-lg > li:first-child > a > .mdi,
+.pagination-lg > li:last-child > .mdi,
+.pagination-lg > li:last-child > a > .mdi {
+	font-size: 20px;
+}
+
+/** 2.37 Pager Addons */
+.pager li > a,
+.pager li > span {
+	transition: .3s;
+	padding: 7px 12px;
+	font-weight: 900;
+	font-size: 14px;
+	line-height: 24px;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+}
+
+.pager li > a:hover,
+.pager li > a:focus,
+.pager li > a:active,
+.pager li > a:active:focus {
+	color: #fff;
+	background-color: #212121;
+	border-color: #212121;
+}
+
+.pager .icon-left,
+.pager .icon-right {
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.pager .icon-left {
+	float: left;
+	padding-right: 10px;
+}
+
+.pager .icon-right {
+	float: right;
+	padding-left: 10px;
+}
+
+.pager .disabled > a,
+.pager .disabled > a:hover,
+.pager .disabled > a:focus,
+.pager .disabled > span {
+	color: #bdbdbd;
+	background-color: transparent;
+	border-color: #bdbdbd;
+}
+
+.pager-sm li > a,
+.pager-sm li > span {
+	padding: 9px 8.5px;
+	font-weight: 900;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.pager-sm .icon-left,
+.pager-sm .icon-right {
+	line-height: 20px;
+}
+
+.pager-lg li > a,
+.pager-lg li > span {
+	padding: 9px 16px;
+	font-weight: 900;
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.pager-lg .icon-left,
+.pager-lg .icon-right {
+	font-size: 16px;
+	line-height: 24px;
+}
