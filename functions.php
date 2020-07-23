@@ -130,7 +130,7 @@ function get_og($field) {
   return $og[$field];
 }
 
-function pagination($pages = '', $range = 2, $show_only = true)
+function pagination($pages = '', $range = 2, $show_only = false)
 {
      $showitems = ($range * 2)+1;//表示するページ数（５ページを表示）
 
