@@ -15,7 +15,7 @@
     <?php
     $args = array(
       'post_type' => 'shops',
-      'posts_per_page' => 12,
+      // 'posts_per_page' => 12,
       // 's' => 'コザ',
       // 'tax_query' => array(
       //         array(
@@ -69,6 +69,13 @@
         <?php endif;
         wp_reset_postdata(); ?>
       </ul>
+      <!-- Pagination -->
+      <?php //if ( function_exists( 'pagination' ) ) :
+          // $GLOBALS['wp_query']->max_num_pages = $query->max_num_pages;
+          // $max_num_pages = $query->max_num_pages;
+          // pagination( $max_num_pages );
+          // wp_reset_postdata();
+      //endif; ?>
     </div>
     <!-- /l-shop -->
   </div>
