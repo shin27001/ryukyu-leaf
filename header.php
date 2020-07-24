@@ -27,7 +27,7 @@
   <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" />
   <script src="https://kit.fontawesome.com/cd70ed3316.js" crossorigin="anonymous"></script>
 </head>
-
+<?php set_cookie(); //pr($_SERVER); ?>
 <body>
   <div class="l-wrap">
     <header id="top-header" class="l-header">

@@ -72,6 +72,15 @@ function get_auth() {
   return file_get_contents($protocol.'mg.'.$_SERVER['HTTP_HOST'].'/favorite/auth/');
 }
 
+function get_protocol() {
+  return empty($_SERVER['HTTPS']) ? 'http://' : 'https://';
+}
+function set_cookie() {
+  echo $_SERVER['HTTP_HOST'];
+  $url = get_protocol().$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+  setcookie('redirect_url', $url,time()+60*60*24*7, "/", '.'.$_SERVER['HTTP_HOST']);
+}
+
 // function sql_dump($query) {
 //     var_dump($query);
 //     return $query;
@@ -247,7 +256,7 @@ function stz($str, $echo = false) {
 
 // バリデーション
 function validate_field($field_name, $args = array()) {
-  $args = array_merge(array('empty'=>false, 'word'=>false, 'sanitize'=>true, 'acf-field'=>true), $args);
+  $args = array_merge(array('empty'=>false, 'word'=>false, 'word_count'=>300, 'sanitize'=>true, 'acf-field'=>true), $args);
   $errors = array();#初期化
 
   if (!is_array($args)) { return false; }
@@ -263,6 +272,9 @@ function validate_field($field_name, $args = array()) {
         switch ($field_name) {
           case 'shop_name':
             $errors[$field_name][] = "「店名」が入力されていません。";
+            break;
+          case 'detail':
+            $errors[$field_name][] = "「店名詳細」が入力されていません。";
             break;
           case 'area':
             $errors[$field_name][] = "「エリア」が選択されていません。";
@@ -295,9 +307,9 @@ function validate_field($field_name, $args = array()) {
   //文字数チェック
   if ($args['word']) {
   // if (is_numeric($args['word_count'])) {
-    if(!$value) {
+    if($value) {
       if($args['word_count'] < mb_strlen($value, 'UTF-8')) {
-        $errors[$field_name][] ="文字数が制限を超えています。(文字数：".mb_strlen($value, 'UTF-8')."文字)";
+        $errors[$field_name][] ="文字数が制限(".$args['word_count']."文字)を超えています。(文字数：".mb_strlen($value, 'UTF-8')."文字)";
       }
     }
   }
