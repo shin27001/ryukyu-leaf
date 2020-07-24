@@ -1,18 +1,13 @@
 <?php get_header(); ?>
-    <div class="index">
-      <?php
-      if ( have_posts() ) {
-      	while ( have_posts() ) {
-      		the_post();
-
-          //the_content();
-          the_title();
-          echo "<br>";
-      		//
-      		// 投稿がここに表示される
-      		//
-      	} // end while
-      } // end if
-      ?>
+    <?php
+        $args = array(
+          'post_type' => 'shops',
+        );
+        query_posts($args);
+    ?>
+    <div class="content-wrap">
+      <div class="content-inner">
+        <?php get_template_part('tpl', 'shoplist'); ?>
+      </div>
     </div>
 <?php get_footer(); ?>
