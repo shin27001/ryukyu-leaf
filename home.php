@@ -58,7 +58,7 @@
                   <p class="l-shop__infoArea">
                     <?php $areas = get_the_terms(get_the_ID(), 'area'); ?>
                     <?php if ($areas) : foreach ($areas as $key => $area) : ?>
-                      <?php echo ($area->parent) ? '<i class="fas fa-map-marker-alt"></i>'.$area->name : ""; ?>
+                        <?php echo ($area->parent) ? '<i class="fas fa-map-marker-alt"></i>' . $area->name : ""; ?>
                     <?php endforeach;
                     endif; ?>
                   </p>
@@ -71,11 +71,12 @@
       </ul>
       <!-- Pagination -->
       <?php //if ( function_exists( 'pagination' ) ) :
-          // $GLOBALS['wp_query']->max_num_pages = $query->max_num_pages;
-          // $max_num_pages = $query->max_num_pages;
-          // pagination( $max_num_pages );
-          // wp_reset_postdata();
-      //endif; ?>
+      // $GLOBALS['wp_query']->max_num_pages = $query->max_num_pages;
+      // $max_num_pages = $query->max_num_pages;
+      // pagination( $max_num_pages );
+      // wp_reset_postdata();
+      //endif; 
+      ?>
     </div>
     <!-- /l-shop -->
   </div>
@@ -86,9 +87,9 @@
       <h2 class="l-insta__title"><i class="fab fa-instagram symbol"></i><br>INSTAGRAMに投稿して<br class="br-sp">お気に入りのお店を応援しよう！</h2>
       <p class="l-insta__read">美味しかったお店や<br class="br-sp">
         応援したいお店をシェアして広めよう！<br>
-        <span>#<?php get_pref(); ?>GO!HAN旅 </span>をつけて<br>
+        <span>#<?php get_pref(); ?>GOHAN旅 </span>をつけて<br>
         INSTAGRAMに投稿してくださいね！</p>
-      <p class="btn-wrap"><a href="#" class="btn btn-m-blue"><span class="bold-text">#<?php get_pref(); ?>GO!HAN旅
+      <p class="btn-wrap"><a href="#" class="btn btn-m-blue"><span class="bold-text">#<?php get_pref(); ?>GOHAN旅
           </span>の投稿をみる</a>
       </p>
     </div>
