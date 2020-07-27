@@ -281,7 +281,7 @@
 }
 
 .l-searchBox {
-  margin: 2em 0 3em;
+  margin: 0.5em 0 2em;
 }
 
 .l-searchBox__title {
@@ -732,10 +732,6 @@ li {
 /**----------------
  mainここから
 ----------------**/
-.main-container {
-  margin-top: 56px;
-}
-
 .content-inner, .l-insta__cont, .l-special, .mod_share, .owner__inner {
   padding: 6% 2%;
   width: 96%;
@@ -1105,7 +1101,7 @@ li {
 }
 
 .l-mainvisual {
-  height: 200px;
+  height: 130px;
   position: relative;
 }
 
@@ -1113,13 +1109,13 @@ li {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  height: 200px;
+  height: 130px;
 }
 
 .l-mainvisual__title {
   position: absolute;
   width: 80%;
-  max-width: 380px;
+  max-width: 300px;
   top: 50%;
   left: 50%;
   -webkit-transform: translateY(-50%) translateX(-50%);
@@ -1156,6 +1152,7 @@ footer.l-footer {
   color: #fff;
   padding: 2px 5px;
   margin-right: 4px;
+  margin-bottom: 4px;
 }
 
 .l-info__name {
