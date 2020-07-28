@@ -79,10 +79,11 @@
       ?>
     </div>
     <!-- /l-shop -->
+    <div class="btn-wrap"><a href="<?php echo esc_url(home_url('shops')); ?>" class="btn btn-m-red"><i class="fas fa-list-ul"></i>
+        飲食店一覧</a></div>
   </div>
 </div>
-<div class="btn-wrap"><a href="<?php echo esc_url(home_url('shops')); ?>" class="btn btn-m-red"><i class="fas fa-list-ul"></i>
-    飲食店一覧</a></div>
+
 <div class="l-insta">
   <div class="l-insta__inner">
     <div class="l-insta__cont">
