@@ -724,6 +724,18 @@ li {
   background: #dd2c00;
 }
 
+.cat__cafe {
+  background: #8d6e63;
+}
+
+.cat__men {
+  background: #ff7043;
+}
+
+.cat__bread {
+  background: #ff4081;
+}
+
 /**----------------
  mainここから
 ----------------**/
