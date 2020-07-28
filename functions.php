@@ -76,7 +76,7 @@ function get_protocol() {
   return empty($_SERVER['HTTPS']) ? 'http://' : 'https://';
 }
 function set_cookie() {
-  echo $_SERVER['HTTP_HOST'];
+  // echo $_SERVER['HTTP_HOST'];
   $url = get_protocol().$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
   setcookie('redirect_url', $url,time()+60*60*24*7, "/", '.'.$_SERVER['HTTP_HOST']);
 }

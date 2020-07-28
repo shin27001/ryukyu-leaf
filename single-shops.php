@@ -169,7 +169,7 @@
           <?php if (get_field('url')) : ?>
             <tr>
               <th>公式HP</th>
-              <td><?php the_field('url'); ?></td>
+              <td><a href="<?php the_field('url'); ?>"><?php the_field('url'); ?> <i class="fas fa-external-link-alt"></i></a></td>
             </tr>
           <?php endif; ?>
           <?php if ((!empty(get_field('insta'))) || (!empty(get_field('fb'))) || (!empty(get_field('tw'))) || (!empty(get_field('line')))) : ?>
