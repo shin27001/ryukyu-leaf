@@ -90,9 +90,9 @@
       <h2 class="l-insta__title"><i class="fab fa-instagram symbol"></i><br>INSTAGRAMに投稿して<br class="br-sp">お気に入りのお店を応援しよう！</h2>
       <p class="l-insta__read">美味しかったお店や<br class="br-sp">
         応援したいお店をシェアして広めよう！<br>
-        <span>#<?php get_pref(); ?>GOHAN旅 </span>をつけて<br>
+        <span>#<?php get_pref(); ?>gohan旅 </span>をつけて<br>
         INSTAGRAMに投稿してくださいね！</p>
-      <p class="btn-wrap"><a href="#" class="btn btn-m-blue"><span class="bold-text">#<?php get_pref(); ?>GOHAN旅
+      <p class="btn-wrap"><a href="https://www.instagram.com/explore/tags/gohan旅/?hl=ja" class="btn btn-m-blue"><span class="bold-text"><?php get_pref(); ?>GOHAN旅
           </span>の投稿をみる</a>
       </p>
     </div>
