@@ -81,7 +81,7 @@ $error = $validate_errors;
       <!-- 担当tel -->
       <dt>
         <label class="l-form__label" for="tanto_tel">
-          電話番号（ご担当者の連絡先・半角数字ハイフンなし）<span class="form-require">必須</span>
+          電話番号（ご担当者の連絡先・半角数字ハイフンあり）<span class="form-require">必須</span>
         </label>
       </dt>
       <dd class="l-form__action">
@@ -91,7 +91,7 @@ $error = $validate_errors;
     </dl>
     <dt>
       <label class="l-form__label" for="tanto_tel">
-        FAX番号（ご担当者の連絡先・半角数字ハイフンなし）
+        FAX番号（ご担当者の連絡先・半角数字ハイフンあり）
       </label>
     </dt>
     <dd class="l-form__action">
@@ -163,7 +163,7 @@ $error = $validate_errors;
       <!-- ジャンル -->
       <dt>
         <label class="l-form__label" for="genre">
-          ジャンルを選択（複数選択可） <?php if (e('request', $data) == 'regist') : ?><<span class="form-require js-require">必須</span><?php endif; ?>
+          ジャンルを選択（複数選択可） <?php if (e('request', $data) == 'regist') : ?><span class="form-require js-require">必須</span><?php endif; ?>
         </label>
       </dt>
       <dd class="l-form__action">
@@ -195,7 +195,7 @@ $error = $validate_errors;
       <!-- 主なメニュー -->
       <dt>
         <label class="l-form__label" for="menu">
-          主なメニュー（300文字以内） <?php if (e('request', $data) == 'regist') : ?><<span class="form-require js-require">必須</span><?php endif; ?>
+          主なメニュー（300文字以内） <?php if (e('request', $data) == 'regist') : ?><span class="form-require js-require">必須</span><?php endif; ?>
         </label>
       </dt>
       <dd class="l-form__action">
@@ -206,7 +206,7 @@ $error = $validate_errors;
       <!-- お店の電話番号 -->
       <dt>
         <label class="l-form__label" for="tel_no">
-          電話番号（半角数字ハイフンなし）<?php if (e('request', $data) == 'regist') : ?><<span class="form-require js-require">必須</span><?php endif; ?>
+          電話番号（半角数字ハイフンあり）<?php if (e('request', $data) == 'regist') : ?><span class="form-require js-require">必須</span><?php endif; ?>
         </label>
       </dt>
       <dd class="l-form__action">
