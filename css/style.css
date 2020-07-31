@@ -1007,11 +1007,14 @@ li {
 }
 
 .mod_share {
-  margin: 6% 2%;
+  width: 96%;
+  margin: 6% auto;
   font-size: 0.7rem;
   line-height: 1.3;
   text-align: center;
   max-width: 800px !important;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
 }
 
 .mod_share .symbol {
@@ -1976,7 +1979,7 @@ Stylesheet: 960px以上のモニタで適用
 ******************************************************************/
   .content-inner, .l-insta__cont, .l-special, .owner__inner {
     width: 90%;
-    padding: 2% 2% 7%;
+    padding: 2% 2% 4%;
   }
   .l-shop__item {
     margin: 0 16px 16px 0;
