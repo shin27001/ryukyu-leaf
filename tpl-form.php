@@ -163,7 +163,7 @@ $error = $validate_errors;
       <!-- ジャンル -->
       <dt>
         <label class="l-form__label" for="genre">
-          ジャンルを選択（複数選択可） <?php if (e('request', $data) == 'regist') : ?><<span class="form-require js-require">必須</span><?php endif; ?>
+          ジャンルを選択（複数選択可） <?php if (e('request', $data) == 'regist') : ?><span class="form-require js-require">必須</span><?php endif; ?>
         </label>
       </dt>
       <dd class="l-form__action">
@@ -195,7 +195,7 @@ $error = $validate_errors;
       <!-- 主なメニュー -->
       <dt>
         <label class="l-form__label" for="menu">
-          主なメニュー（300文字以内） <?php if (e('request', $data) == 'regist') : ?><<span class="form-require js-require">必須</span><?php endif; ?>
+          主なメニュー（300文字以内） <?php if (e('request', $data) == 'regist') : ?><span class="form-require js-require">必須</span><?php endif; ?>
         </label>
       </dt>
       <dd class="l-form__action">
@@ -206,7 +206,7 @@ $error = $validate_errors;
       <!-- お店の電話番号 -->
       <dt>
         <label class="l-form__label" for="tel_no">
-          電話番号（半角数字ハイフンあり）<?php if (e('request', $data) == 'regist') : ?><<span class="form-require js-require">必須</span><?php endif; ?>
+          電話番号（半角数字ハイフンあり）<?php if (e('request', $data) == 'regist') : ?><span class="form-require js-require">必須</span><?php endif; ?>
         </label>
       </dt>
       <dd class="l-form__action">
