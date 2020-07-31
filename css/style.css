@@ -1686,6 +1686,55 @@ a.favorite-btn:hover {
   border: 1px solid #d84315;
 }
 
+/* コメントを残す */
+#comments {
+  background: #f1f1f1;
+  margin-top: 40px;
+  padding: 1% 4% 6%;
+}
+
+#comments textarea,
+#comments input {
+  background: #fff;
+  width: 100%;
+  padding: 8px;
+}
+
+#comments .comment-notes {
+  margin: 1em 0;
+  font-size: 13px;
+  color: #565656;
+}
+
+#comments .comment-form-author,
+#comments .comment-form-email,
+#comments .comment-form-url {
+  margin-top: 1em;
+}
+
+#comments .comment-form-cookies-consent {
+  margin: 1em;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+#comments .form-submit {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#comments input#submit {
+  background: #333;
+  color: #fff;
+  width: 100%;
+  padding: 10px;
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+}
+
 @media (min-width: 480px) {
   /******************************************************************
 
