@@ -449,7 +449,7 @@
   color: #fff;
 }
 
-.complete .content-inner, .complete .l-insta__cont, .complete .l-special, .complete .mod_share, .complete .owner__inner {
+.complete .content-inner, .complete .l-insta__cont, .complete .l-special, .complete .owner__inner {
   text-align: center;
   height: 100vh;
 }
@@ -743,7 +743,7 @@ li {
   margin-top: 56px;
 }
 
-.content-inner, .l-insta__cont, .l-special, .mod_share, .owner__inner {
+.content-inner, .l-insta__cont, .l-special, .owner__inner {
   padding: 6% 2%;
   width: 96%;
   margin: 0 auto;
@@ -1920,7 +1920,7 @@ Stylesheet: 600px以上のタブレットやモニタで適用
 Stylesheet: 960px以上のモニタで適用
 
 ******************************************************************/
-  .content-inner, .l-insta__cont, .l-special, .mod_share, .owner__inner {
+  .content-inner, .l-insta__cont, .l-special, .owner__inner {
     width: 90%;
     padding: 2% 2% 7%;
   }
@@ -2055,7 +2055,7 @@ Stylesheet: 960px以上のモニタで適用
   .page-anchor__list a:hover {
     background: #f3f3f3;
   }
-  .go-read .content-inner, .go-read .l-insta__cont, .go-read .l-special, .go-read .mod_share, .go-read .owner__inner {
+  .go-read .content-inner, .go-read .l-insta__cont, .go-read .l-special, .go-read .owner__inner {
     padding-bottom: 2%;
   }
   .go-feature {
@@ -2106,7 +2106,7 @@ Stylesheet: 1280px以上のモニタで適用
     -webkit-box-shadow: 0 8px 40px -10px rgba(0, 0, 0, 0.8);
             box-shadow: 0 8px 40px -10px rgba(0, 0, 0, 0.8);
   }
-  .content-inner, .l-insta__cont, .l-special, .mod_share, .owner__inner {
+  .content-inner, .l-insta__cont, .l-special, .owner__inner {
     max-width: 1160px;
   }
   .btn-wrap {
