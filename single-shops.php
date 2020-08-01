@@ -227,7 +227,7 @@
       </div>
     </div>
     <!-- /l-tel -->
-    <!-- <?php comments_template(); ?> -->
+    <!-- comments_template(); -->
   </div>
 </div>
 <?php get_footer('sns'); ?>
