@@ -34,9 +34,9 @@
             endif; ?>
           </p>
           <div class="favorite-btn-wrap">
-            <?php 
-              $protocol = empty($_SERVER['HTTPS']) ? 'http://' : 'https://';
-              $url = $protocol . 'mg.' . $_SERVER['HTTP_HOST'] . '/favorite';
+            <?php
+            $protocol = empty($_SERVER['HTTPS']) ? 'http://' : 'https://';
+            $url = $protocol . 'mg.' . $_SERVER['HTTP_HOST'] . '/favorite';
             ?>
             <a href="<?php echo $url; ?>/<?php echo (strpos(ABSPATH, 'okinawa')) ? "okinawa" : "kyoto"; ?>/<?php echo $post->ID; ?>/<?php echo $post->post_name; ?>" class="favorite-btn"><i class="fab fa-gratipay"></i> お気に入り</a>
           </div>
@@ -227,7 +227,7 @@
       </div>
     </div>
     <!-- /l-tel -->
-    <?php comments_template(); ?>
+    <!-- <?php comments_template(); ?> -->
   </div>
 </div>
 <?php get_footer('sns'); ?>
