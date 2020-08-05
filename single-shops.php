@@ -38,7 +38,7 @@
             $protocol = empty($_SERVER['HTTPS']) ? 'http://' : 'https://';
             $url = $protocol . 'mg.' . $_SERVER['HTTP_HOST'] . '/favorite';
             ?>
-            <a href="<?php echo $url; ?>/<?php echo (strpos(ABSPATH, 'okinawa')) ? "okinawa" : "kyoto"; ?>/<?php echo $post->ID; ?>/<?php echo $post->post_name; ?>" class="favorite-btn"><i class="fab fa-gratipay"></i> お気に入り</a>
+            <!-- <a href="<?php echo $url; ?>/<?php echo (strpos(ABSPATH, 'okinawa')) ? "okinawa" : "kyoto"; ?>/<?php echo $post->ID; ?>/<?php echo $post->post_name; ?>" class="favorite-btn"><i class="fab fa-gratipay"></i> お気に入り</a> -->
           </div>
           <div class="l-tel-pc">
             <p class="l-tel-pc__title">お問い合わせはこちらから</p>
