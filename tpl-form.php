@@ -557,7 +557,7 @@ $error = $validate_errors;
       <?php if (e('written_oath', $error)) : ?><div class="validate-text"><?php echo err_disp(e('written_oath', $error)); ?></div><?php endif; ?>
     </div>
     <div class="btn-wrap">
-      <button class="btn btn-m-red" type="submit"><span><i class="fas fa-search"></i> 入力内容を確認する</span></button>
+      <button class="btn btn-m-red" type="button" id="entry-submit"><span><i class="fas fa-search"></i> 入力内容を確認する</span></button>
     </div>
   </div><!-- /l-form -->
 </form>

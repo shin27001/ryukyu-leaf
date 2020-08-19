@@ -74,3 +74,7 @@ $("#clipboard").click(function () {
   $("#copyTarget").select();
   document.execCommand('copy');
 });
+
+$('#entry-submit').click(function(){
+  $('form').submit();
+});
