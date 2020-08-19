@@ -12,7 +12,7 @@
 
   $my_post = array();
   $my_post['post_title'] = stz($_POST['shop_name']);
-  $my_post['post_content'] = stz($_POST['detail']);
+  $my_post['post_content'] = $_POST['detail'];
   $my_post['post_author'] = 1;
   $my_post['post_status'] = 'pending';
   $my_post['post_type'] = (e('request') == 'regist') ? 'shops' : 'shop_update';
@@ -29,7 +29,7 @@
   $post->insert_field('field_5ef05d1488e54', 'zip_code');
   $post->insert_field('field_5ef05d7888e55', 'address');
   $post->insert_field('field_5ef5761903868', 'map_code'); #
-  $post->insert_field('field_5ef5780ad9565', 'menu');
+  $post->insert_field('field_5ef5780ad9565', 'menu', false);
   $post->insert_field('field_5ef05def55a69', 'tel_no');
   $post->insert_field('field_5ef05e1a55a6a', 'hours');
   $post->insert_field('field_5ef5754418b7b', 'parking');
@@ -42,13 +42,13 @@
   $post->insert_field('field_5ef6f7066bae0', 'insta');#
   $post->insert_field('field_5ef6f7486bae1', 'line');#
   $post->insert_field('field_5ef061b39599f', 'payments', false);#
-  $post->insert_field('field_5f110da91b5e0', 'payments_other');#
+  $post->insert_field('field_5f110da91b5e0', 'payments_other', false);#
   $post->insert_field('field_5ef6f12febcb3', 'coronas', false);
-  $post->insert_field('field_5ef57329b52a3', 'message');#
-  $post->insert_field('field_5ef709a391a29', 'takeout_message');#
-  $post->insert_field('field_5ef709d891a2a', 'delivery_message');#
-  $post->insert_field('field_5efad0d2748b7', 'request_message');#
-  $post->insert_field('field_5ef6f2eb9f16b', 'coronas_other'); #
+  $post->insert_field('field_5ef57329b52a3', 'message', false);#
+  $post->insert_field('field_5ef709a391a29', 'takeout_message', false);#
+  $post->insert_field('field_5ef709d891a2a', 'delivery_message',false);#
+  $post->insert_field('field_5efad0d2748b7', 'request_message',false);#
+  $post->insert_field('field_5ef6f2eb9f16b', 'coronas_other', false); #
 
   // $a = e('update') ? $post->insert_field('field_5f051683d37f5', 'main_post_id') : false;
   if(e('request') == 'update') { $post->insert_field('field_5f051683d37f5', 'main_post_id'); }
