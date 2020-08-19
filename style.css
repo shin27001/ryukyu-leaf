@@ -4,6 +4,14 @@
   display: none;
 }
 
+.mt-20 {
+	margin-top: 20px;
+}
+.mapcode-img {
+	width: 50px;
+	vertical-align: middle;
+}
+
 .btn {
 	position: relative;
 	padding: 7px 35px;

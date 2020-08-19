@@ -255,10 +255,10 @@ $error = $validate_errors;
         <input type="text" name="seats" id="seats" class="seats" size="60" maxlength="500" value="<?php echo e('seats', $data); ?>" placeholder="100席、テーブル席、カウンター" />
         <?php if (e('seats', $error)) : ?><div class="validate-text"><?php echo err_disp(e('seats', $error)); ?></div><?php endif; ?>
       </dd>
-      <!-- MAPコード -->
+      <!-- マップコード -->
       <dt>
         <label class="l-form__label" for="map_code">
-          MAPコード
+        <img src="<?php echo get_template_directory_uri(); ?>/images/mc_long.gif" width="50px" style="vertical-align: middle;">マップコード
         </label>
       </dt>
       <dd class="l-form__action">

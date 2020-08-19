@@ -126,8 +126,13 @@
           </tr>
           <?php if (get_field('map_code')) : ?>
             <tr>
-              <th>MAPコード<span class="small-text">（※カーナビに番号をいれると地図が表示されます）</span></th>
-              <td><?php the_field('map_code'); ?></td>
+              <th>マップコード<span class="small-text">（※カーナビに番号をいれると地図が表示されます）</span></th>
+              <td>
+                <img src="<?php echo get_template_directory_uri(); ?>/images/mc_long.gif" class="mapcode-img">
+                &nbsp;&nbsp;
+                <?php the_field('map_code'); ?>
+                <p class="font-sm mt-20">「マップコード」および「MAPCODE」は(株)デンソーの登録商標です。</p>
+              </td>
             </tr>
           <?php endif; ?>
           <tr>
