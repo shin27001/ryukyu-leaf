@@ -12,6 +12,12 @@
 	vertical-align: middle;
 }
 
+.btn-wrap-insta {
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
 .btn {
 	position: relative;
 	padding: 7px 35px;
