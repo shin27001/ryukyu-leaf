@@ -43,6 +43,9 @@
             $pref = (strpos(ABSPATH, 'okinawa')) ? "okinawa" : "kyoto";
             $shop_key = $pref.$post->ID;
             $user_info = get_userinfo();
+            if (empty($user_info['favorites'])) {
+              $user_info['favorites'] = array();
+            }
             ?>
             <a href="<?php echo $url; ?>/<?php echo (strpos(ABSPATH, 'okinawa')) ? "okinawa" : "kyoto"; ?>/<?php echo $post->ID; ?>/<?php echo $post->post_name; ?>" class="favorite-btn">
               <i class="fab fa-gratipay"></i> <?php echo (in_array($shop_key, $user_info['favorites'])) ? '登録済み' : 'お気に入り'; ?>
