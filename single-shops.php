@@ -35,10 +35,18 @@
           </p>
           <div class="favorite-btn-wrap">
             <?php
-            $protocol = empty($_SERVER['HTTPS']) ? 'http://' : 'https://';
-            $url = $protocol . 'mg.' . $_SERVER['HTTP_HOST'] . '/favorite';
+            // $protocol = empty($_SERVER['HTTPS']) ? 'http://' : 'https://';
+            // $url = $protocol . 'mg.' . $_SERVER['HTTP_HOST'] . '/favorite';
+            $url = 'https://mg.' . $_SERVER['HTTP_HOST'] . '/favorite';
+
+            # お気に入りが登録済みかチェック
+            $pref = (strpos(ABSPATH, 'okinawa')) ? "okinawa" : "kyoto";
+            $shop_key = $pref.$post->ID;
+            $user_info = get_userinfo();
             ?>
-            <a href="<?php echo $url; ?>/<?php echo (strpos(ABSPATH, 'okinawa')) ? "okinawa" : "kyoto"; ?>/<?php echo $post->ID; ?>/<?php echo $post->post_name; ?>" class="favorite-btn"><i class="fab fa-gratipay"></i> お気に入り</a>
+            <a href="<?php echo $url; ?>/<?php echo (strpos(ABSPATH, 'okinawa')) ? "okinawa" : "kyoto"; ?>/<?php echo $post->ID; ?>/<?php echo $post->post_name; ?>" class="favorite-btn">
+              <i class="fab fa-gratipay"></i> <?php echo (in_array($shop_key, $user_info['favorites'])) ? '登録済み' : 'お気に入り'; ?>
+            </a>
           </div>
           <div class="l-tel-pc">
             <p class="l-tel-pc__title">お問い合わせはこちらから</p>

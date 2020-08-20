@@ -17,6 +17,10 @@ function get_mail() {
   return (strpos(ABSPATH, 'okinawa')) ? "info_okinawa@gohan-tabi.com" : "gohantabi_kyoto@leafkyoto.co.jp";
 }
 
+function get_userinfo() {
+  return json_decode(stripcslashes($_COOKIE['user_info']), true);
+}
+
 // バリデーションエラーのグローバル変数
 $validate_errors = array();
 
