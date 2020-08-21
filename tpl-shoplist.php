@@ -12,9 +12,9 @@
             <img class="ofi" src="<?php echo $main_img['sizes']['medium']; ?>" alt="<?php echo $main_img['title']; ?>">
           </div>
           <div class="l-shop__info">
-            <?php $dishes = get_the_terms(get_the_ID(), 'dishes'); ?>
-            <?php if ($dishes) : ?>
-              <span class="l-shop__infoCat <?php the_field('class', "dishes_" . $dishes[0]->term_id); ?>"><?php echo $dishes[0]->name; ?></span>
+            <?php $dish = get_dish(get_the_ID()); ?>
+            <?php if ($dish) : ?>
+              <span class="l-shop__infoCat <?php the_field('class', "dishes_" . $dish->term_id); ?>"><?php echo $dish->name; ?></span>
             <?php endif; ?>
             <h3 class="l-shop__infoTitle"><?php the_title(); ?></h3>
             <p class="l-shop__infoArea">

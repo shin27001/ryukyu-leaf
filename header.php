@@ -46,6 +46,7 @@
         <?php
           # ユーザ情報をクッキーから取得
           $user_info = get_userinfo();
+          // pr($user_info);
         ?>
         <nav class="l-header__nav">
           <ul class="l-header__nav-list">
@@ -53,7 +54,7 @@
             <li class="l-header__nav-item"><a href="<?php echo esc_url(home_url('shops')); ?>"><i class="fas fa-list-ul"></i> 飲食店一覧</a></li>
             <li class="l-header__nav-item"><a href="<?php echo esc_url(home_url('entry')); ?>"><i class="fas fa-edit"></i> 飲食店の皆様へ</a></li>
             <li class="l-header__nav-item"><a href="<?php echo esc_url(home_url('contact')); ?>"><i class="far fa-envelope"></i> お問い合わせ</a></li>
-            <li class="l-header__nav-item"><?php echo (get_pref(false) == '沖縄') ? '<a href="https://gohan-tabi.com/kyoto"><i class="fas fa-external-link-alt"></i> 京都版</a></li>' : '<a href="https://gohan-tabi.com/okinawa"><i class="fas fa-external-link-alt"></i> 沖縄版</a></li>'; ?></li>
+            <li class="l-header__nav-item"><?php echo (get_pref(false) == '沖縄') ? '<a href="https://'.$_SERVER['HTTP_HOST'].'/kyoto"><i class="fas fa-external-link-alt"></i> 京都版</a></li>' : '<a href="https://'.$_SERVER['HTTP_HOST'].'/okinawa"><i class="fas fa-external-link-alt"></i> 沖縄版</a></li>'; ?></li>
             <li class="l-header__nav-item"><a href="https://mg.<?php echo $_SERVER['HTTP_HOST']; ?>/login?page=mypage"><i class="fas fa-user"> <?php echo (!empty($user_info['nickname'])) ? $user_info['nickname'] : 'ログイン'; ?></i></a></li>
           </ul>
         </nav>

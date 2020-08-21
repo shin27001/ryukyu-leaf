@@ -76,6 +76,15 @@ function get_auth() {
   return file_get_contents($protocol.'mg.'.$_SERVER['HTTP_HOST'].'/favorite/auth/');
 }
 
+function get_dish($postid) {
+  if (class_exists('WPSEO_Primary_Term')) {
+    $wpseo_primary_term = new WPSEO_Primary_Term('dishes', $postid);
+    $wpseo_primary_term = $wpseo_primary_term->get_primary_term();
+    $term = get_term($wpseo_primary_term);
+    return (is_wp_error( $term )) ? get_the_terms($postid, 'dishes')[0] : $term;
+  }
+}
+
 function get_protocol() {
   return empty($_SERVER['HTTPS']) ? 'http://' : 'https://';
 }

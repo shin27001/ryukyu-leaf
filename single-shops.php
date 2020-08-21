@@ -35,19 +35,20 @@
           </p>
           <div class="favorite-btn-wrap">
             <?php
-            // $protocol = empty($_SERVER['HTTPS']) ? 'http://' : 'https://';
-            // $url = $protocol . 'mg.' . $_SERVER['HTTP_HOST'] . '/favorite';
-            $url = 'https://mg.' . $_SERVER['HTTP_HOST'] . '/favorite';
+              $url  = 'https://mg.' . $_SERVER['HTTP_HOST'] . '/favorite/';
+              $url .= (strpos(ABSPATH, 'okinawa')) ? "okinawa" : "kyoto";
+              $url .= '/'.$post->ID;
+              $url .= '/'.$post->post_name;
 
-            # お気に入りが登録済みかチェック
-            $pref = (strpos(ABSPATH, 'okinawa')) ? "okinawa" : "kyoto";
-            $shop_key = $pref.$post->ID;
-            $user_info = get_userinfo();
-            if (empty($user_info['favorites'])) {
-              $user_info['favorites'] = array();
-            }
+              # お気に入りが登録済みかチェック
+              $pref = (strpos(ABSPATH, 'okinawa')) ? "okinawa" : "kyoto";
+              $shop_key = $pref.$post->ID;
+              $user_info = get_userinfo();
+              if (empty($user_info['favorites'])) {
+                $user_info['favorites'] = array();
+              }
             ?>
-            <a href="<?php echo $url; ?>/<?php echo (strpos(ABSPATH, 'okinawa')) ? "okinawa" : "kyoto"; ?>/<?php echo $post->ID; ?>/<?php echo $post->post_name; ?>" class="favorite-btn">
+            <a href="<?php echo $url; ?>" class="favorite-btn">
               <i class="fab fa-gratipay"></i> <?php echo (in_array($shop_key, $user_info['favorites'])) ? '登録済み' : 'お気に入り'; ?>
             </a>
           </div>
