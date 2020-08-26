@@ -50,6 +50,10 @@
           <td><?php stz(e('shop_name'), true); ?></td>
         </tr>
         <tr>
+          <th>郵便番号</th>
+          <td><?php stz(e('zip_code'), true); ?></td>
+        </tr>
+        <tr>
           <th>住所</th>
           <td><?php stz(e('address'), true); ?></td>
         </tr>

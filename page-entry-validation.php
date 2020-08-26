@@ -42,11 +42,12 @@ if (e('request', $_POST) == 'update') {
   $errors = array_merge($errors, validate_field('payments', array('empty'=>true, 'sanitize'=>false)));#
   $errors = array_merge($errors, validate_field('payments_other', array('empty'=>true, 'word'=>true, 'word_count'=>300)));#
   $errors = array_merge($errors, validate_field('coronas', array('sanitize'=>false)));
-  $errors = array_merge($errors, validate_field('message', array('empty'=>true)));#
-  $errors = array_merge($errors, validate_field('takeout_message', array('empty'=>true)));#
-  $errors = array_merge($errors, validate_field('delivery_message', array('empty'=>true)));#
-  $errors = array_merge($errors, validate_field('request_message', array('empty'=>true)));#
-  // $errors = array_merge($errors, validate_field('coronas_other'));#
+  $errors = array_merge($errors, validate_field('coronas_other', array('empty'=>true, 'word'=>true, 'word_count'=>300)));#
+
+  $errors = array_merge($errors, validate_field('message', array('empty'=>true, 'word'=>true, 'word_count'=>300)));#
+  $errors = array_merge($errors, validate_field('takeout_message', array('empty'=>true, 'word'=>true, 'word_count'=>300)));#
+  $errors = array_merge($errors, validate_field('delivery_message', array('empty'=>true, 'word'=>true, 'word_count'=>300)));#
+  $errors = array_merge($errors, validate_field('request_message', array('empty'=>true, 'word'=>true, 'word_count'=>1000)));#
 }
 
 

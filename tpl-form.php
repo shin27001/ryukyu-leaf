@@ -1,12 +1,14 @@
 <?php
 if (e('post_all')) {
+  # 修正
   $data = unserialize(base64_decode(e('post_all')));
   // pr($data);
 } elseif ($_POST) {
+  # 更新依頼
   $data = $_POST;
 } else {
-  // $p = '';
 
+  # 新規登録
   // $p = 'YTozMDp7czoxMDoidGFudG9fbmFtZSI7czoxMzoi55Sw5LitIOWkqumDjiI7czoxMDoidGFudG9fbWFpbCI7czoxNjoibWFpbEBleGFtcGxlLmNvbSI7czo5OiJ0YW50b190ZWwiO3M6MTA6IjA5ODAwMDExMTEiO3M6OToic2hvcF9uYW1lIjtzOjI3OiLjgaHjgovjgZDjgo7jg7zjgIDljJfosLflupciO3M6ODoiemlwX2NvZGUiO3M6ODoiOTA0LTAwMDEiO3M6NzoiYWRkcmVzcyI7czoyOToi5rKW57iE55yM5YyX6LC355S65qGR5rGfMS0xLTEiO3M6NDoiYXJlYSI7czo2OiJrZW5jaG8iO3M6NjoiZGlzaGVzIjthOjI6e2k6MDtzOjI6IndhIjtpOjE7czozOiJ5b3UiO31zOjQ6Im1lbnUiO3M6NjU6IuODn+ODg+OCr+OCueOBneOBsA0K77yI5aSn77yJODMw5YaG77yI5Lit77yJNzMw5YaG77yI5bCP77yJNTMw5YaGIjtzOjY6InRlbF9ubyI7czoxMDoiMDk4MDAwMTExMSI7czo1OiJob3VycyI7czo0Nzoi5pyI772e6YeRIDEy77yaMDDvvZ4xNO+8mjAw44CBMTjvvJowMO+9njI077yaMDAiO3M6NzoicGFya2luZyI7czo2OiIxMDDlj7AiO3M6NzoiaG9saWRheSI7czo5OiLmnKjmm5zml6UiO3M6NToic2VhdHMiO3M6NDI6IjEwMOW4reOAgeODhuODvOODluODq+W4reOAgeOCq+OCpuODs+OCv+ODvCI7czo4OiJtYXBfY29kZSI7czoxMzoiMzMgNTkyIDM1MCo2NCI7czozOiJ1cmwiO3M6MjA6Imh0dHBzOi8vd3d3Lnh4eHh4LmpwIjtzOjI6ImZiIjtzOjI2OiJodHRwczovL2ZhY2Vib29rLmNvbS94eHh4eCI7czoyOiJ0dyI7czoyNToiaHR0cHM6Ly90d2l0dGVyLmNvbS94eHh4eCI7czo1OiJpbnN0YSI7czoyNzoiaHR0cHM6Ly9pbnN0YWdyYW0uY29tL3h4eHh4IjtzOjQ6ImxpbmUiO3M6MjI6Imh0dHBzOi8vbGluZS5jb20veHh4eHgiO3M6NzoibWVzc2FnZSI7czo4Mzoi55CJ55CDTEVBRuOCkuOBv+OBpuadpeW6l+OBl+OBpuOBj+OCjOOBn+aWueOBq+OBr+ODieODquODs+OCrzHmna/jg5fjg6zjgrzjg7Pjg4jvvIEiO3M6Nzoib3B0aW9ucyI7YToyOntpOjA7czo3OiJ0YWtlb3V0IjtpOjE7czo4OiJkZWxpdmVyeSI7fXM6MTU6InRha2VvdXRfbWVzc2FnZSI7czoxMDA6IiAgICAgICAgICAgICAgICAgIOS6iOe0hOWPl+S7mO+8mjE1OjAw44CcMTg6MDANCuWPl+OBkea4oeOBl+aZgumWk++8mjE1OjAw44CcMTk6MDANCiAgICAgICAgICAgICAgICAiO3M6MTY6ImRlbGl2ZXJ5X21lc3NhZ2UiO3M6MTkyOiIgICAgICAgICAgICAgICAgICDlr77lv5zlnLDln5/vvJrlrpzph47mub7luILlhoXjga7jgb/vvIgxNDowMOOBvuOBp+OBruazqOaWh+OBq+mZkOOCiuOBvuOBme+8iQ0K5LqI57SE5Y+X5LuY77yaMTU6MDDjgJwxNzowMO+8iDHmmYLjgbvjganjgYrmmYLplpPjgpLjgYTjgZ/jgaDjgY3jgb7jgZnjgILvvIkNCiAgICAgICAgICAgICAgICAiO3M6NzoiY29yb25hcyI7YToyOntpOjA7czoxOiIwIjtpOjE7czoxOiIxIjt9czoxMzoiY29yb25hc19vdGhlciI7czo4Nzoi44Gd44Gu5LuW44Kz44Ot44OK5a++562W44Gr5Y+W44KK57WE44KT44Gn44GE44KL44GT44Go44GM44GC44KM44Gw44GU5YWl5Yqb44GP44Gg44GV44GEIjtzOjc6InlvdXR1YmUiO3M6MDoiIjtzOjE1OiJyZXF1ZXN0X21lc3NhZ2UiO3M6MTQ0OiLlvZPjgrXjgqTjg4jjgbjjga7jgZ3jga7ku5bjga7jgZTopoHmnJvjgoTkvp3poLzlvZPjgrXjgqTjg4jjgbjjga7jgZ3jga7ku5bjga7jgZTopoHmnJvjgoTkvp3poLzlvZPjgrXjgqTjg4jjgbjjga7jgZ3jga7ku5bjga7jgZTopoHmnJvjgoTkvp3poLwiO3M6MTQ6ImNvbnRhY3RfcG9saWN5IjtzOjQ6InRydWUiO3M6MTI6IndyaXR0ZW5fb2F0aCI7czo0OiJ0cnVlIjt9';
   // $data = unserialize(base64_decode($p));
   // $data = array_merge(array('request' => 'regist'), $data);
@@ -46,20 +48,7 @@ $error = $validate_errors;
 <form method="POST" id="registform" action="<?php echo esc_url(home_url('entry-validation')); ?>" enctype="multipart/form-data">
   <input type="hidden" name="request" value="<?php echo (e('request', $_POST) != 'update') ? 'regist' : 'update'; ?>">
   <?php $slug = get_post_field('post_name', get_post()); ?>
-  <?php
-  echo (e('main_post_id', $_POST)) ? '<input type="hidden" name="main_post_id" value="' . e('main_post_id', $_POST) . '">' : '';
-  // if (e('update', $_POST)) {
-  //   echo '<input type="hidden" name="update" value="' . e('update', $_POST) . '">';
-  //   echo '<input type="hidden" name="main_post_id" value="' . e('main_post_id', $_POST) . '">';
-  // }
-  // if (e('update', $_GET) || ($slug == 'entry-form')) {
-  //   echo '<input type="hidden" name="update" value="' . e('update', $_GET) . '">';
-  //   echo '<input type="hidden" name="main_post_id" value="' . e('main_post_id', $_GET) . '">';
-  // }
-  // echo '<input type="hidden" name="update" value="' . e('update') . '">';
-  // echo '<input type="hidden" name="main_post_id" value="' . e('main_post_id') . '">';
-
-  ?>
+  <?php echo (e('main_post_id', $_POST)) ? '<input type="hidden" name="main_post_id" value="' . e('main_post_id', $_POST) . '">' : ''; ?>
   <div class="l-form">
     <h2 class="l-form__title">ご担当者様情報</h2>
     <!-- 担当者名 -->
@@ -110,7 +99,14 @@ $error = $validate_errors;
         </label>
       </dt>
       <dd class="l-form__action">
-        <input type="text" name="shop_name" id="shop_name" class="shop_name" size="60" maxlength="100" value="<?php echo e('shop_name', $data); ?>" />
+        <?php if(e('request', $data) == 'update') :
+          # 更新する店舗名を取得
+          $update_post = get_post(e('main_post_id', $data));
+        ?>
+          <input type="text" name="shop_name" id="shop_name" class="shop_name input-disabled-gray" size="60" maxlength="100" value="<?php echo (!empty($update_post)) ? $update_post->post_title : ''; ?>" <?php echo (!empty($update_post)) ? 'readonly' : ''; ?> />
+        <?php else : ?>
+          <input type="text" name="shop_name" id="shop_name" class="shop_name" size="60" maxlength="100" value="<?php echo e('shop_name', $data); ?>" />
+        <?php endif; ?>
         <?php if (e('shop_name', $error)) : ?><div class="validate-text"><?php echo err_disp(e('shop_name', $error)); ?></div><?php endif; ?>
       </dd>
       <!-- 店舗詳細 -->
@@ -183,8 +179,7 @@ $error = $validate_errors;
                   } else {
                     $checked = "";
                   }; ?>
-              <?php endforeach;
-              endif; ?>
+              <?php endforeach; endif; ?>
               <li>
                 <input class="form-checkbox__button-input" type="checkbox" name="dishes[]" id="<?php echo $dish->slug; ?>" value="<?php echo $dish->slug; ?>" <?php echo $checked; ?>>
                 <label class="form-checkbox__button" for="<?php echo $dish->slug; ?>"><?php echo $dish->name; ?></label>
@@ -318,6 +313,7 @@ $error = $validate_errors;
       <dd class="l-form__action">
         <textarea name="message" id="message" class="message" cols="100" rows="5" placeholder="その他、キャンペーンやおすすめなどお知らせしたい情報があれば入力してください。例：GO!HAN旅をみて来店してくれた方にはドリンク1杯プレゼント！（300文字以内）"><?php echo e('message', $data); ?></textarea>
       </dd>
+      <?php if (e('message', $error)) : ?><div class="validate-text"><?php echo err_disp(e('message', $error)); ?></div><?php endif; ?>
       <!-- こだわり -->
       <dt>
         <label class="l-form__label" for="genre">
@@ -360,6 +356,7 @@ $error = $validate_errors;
       <dd class="l-form__action">
         <textarea name="takeout_message" id="takeout_message" class="takeout_message" cols="100" rows="4" placeholder="予約受付：15:00〜18:00&#013;&#010;受け渡し時間：15:00〜19:00"><?php echo e('takeout_message', $data); ?></textarea>
       </dd>
+      <?php if (e('takeout_message', $error)) : ?><div class="validate-text"><?php echo err_disp(e('takeout_message', $error)); ?></div><?php endif; ?>
       <!-- デリバリー対応地域・受付時間 -->
       <dt>
         <label class="l-form__label" for="delivery_message">
@@ -370,6 +367,7 @@ $error = $validate_errors;
       <dd class="l-form__action">
         <textarea name="delivery_message" id="delivery_message" class="delivery_message" cols="100" rows="4" placeholder="対応地域：宜野湾市内のみ（14:00までの注文に限ります）&#013;&#010;予約受付：10:00〜17:00"><?php echo e('delivery_message', $data); ?></textarea>
       </dd>
+      <?php if (e('delivery_message', $error)) : ?><div class="validate-text"><?php echo err_disp(e('delivery_message', $error)); ?></div><?php endif; ?>
       <dt>
         <label class="l-form__label" for="credit">
           対応カードの種類について
@@ -525,6 +523,7 @@ $error = $validate_errors;
       <dd class="l-form__action">
         <textarea name="request_message" id="request_message" class="request_message" cols="60" rows="10" placeholder="1,000文字以内で入力してください。"><?php echo e('request_message', $data); ?></textarea>
       </dd>
+      <?php if (e('request_message', $error)) : ?><div class="validate-text"><?php echo err_disp(e('request_message', $error)); ?></div><?php endif; ?>
     </dl>
 
     <div class="l-form__option">

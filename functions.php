@@ -18,6 +18,7 @@ function get_mail() {
 }
 
 function get_userinfo() {
+  if(empty($_COOKIE['user_info'])) return;
   return json_decode(stripcslashes($_COOKIE['user_info']), true);
 }
 
@@ -508,7 +509,28 @@ add_action('init', 'init_custom_post_shop_update');
 #
 ##################################
 function shop_update($id, $post) {
-    $exclude = array();
+    // error_log(date('Y/m/d H:i:s'));
+    // error_log( print_r( $post, true ) );
+    // echo '<script>console.log("remove_action -- '.__LINE__.'")</script>';
+
+    #############################
+    #
+    # 更新依頼以外の処理は、停止する。
+    # ユーザ新規店舗登録も停止。
+    #############################
+    if ($post->post_type != 'shop_update') {
+      # 更新依頼じゃない場合、終了
+      return;
+    }
+    if (($post->post_type == 'shop_update') && $post->post_status == 'pending') {
+      # 更新依頼でも、外部店舗登録フォームの場合、終了
+      return;
+    }
+
+    # 無限ループを回避する為、フックを一度外す
+    if ($post->post_type == 'shop_update' && $post->post_status == 'publish') {
+      remove_action( 'save_post', 'shop_update' );
+    }
 
     # 更新データ取得
     $update_fields = get_fields($id);
@@ -525,7 +547,7 @@ function shop_update($id, $post) {
       'post_title'   => $post->post_title,
       'post_content' => $post->post_content,
     );
-    wp_update_post( $my_post );
+    wp_update_post($my_post);
 
     # タクソノミーの更新
     $areas = get_the_terms($id,'area');
@@ -567,7 +589,9 @@ function shop_update($id, $post) {
 // exit;
     return;
 }
-add_action('publish_shop_update', 'shop_update', 10, 3 );
+add_action('save_post', 'shop_update', 10, 3 );
+// add_action('publish_shop_update', 'shop_update', 10, 3 );
+
 
 function my_acf_google_map_api( $api ){
   $api['key'] = 'AIzaSyChamewuHdX5HFMSEPcxIyBF1bE2N0GHV8';

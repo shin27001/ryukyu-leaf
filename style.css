@@ -18,6 +18,10 @@
   margin: 0 auto;
 }
 
+.input-disabled-gray {
+	background-color: #d8d8d8;
+}
+
 .btn {
 	position: relative;
 	padding: 7px 35px;
