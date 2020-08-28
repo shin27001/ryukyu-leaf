@@ -103,7 +103,7 @@ $error = $validate_errors;
           # 更新する店舗名を取得
           $update_post = get_post(e('main_post_id', $data));
         ?>
-          <input type="text" name="shop_name" id="shop_name" class="shop_name input-disabled-gray" size="60" maxlength="100" value="<?php echo (!empty($update_post)) ? $update_post->post_title : ''; ?>" />
+          <input type="text" name="shop_name" id="shop_name" class="shop_name" size="60" maxlength="100" value="<?php echo (!empty($update_post)) ? $update_post->post_title : ''; ?>" />
         <?php else : ?>
           <input type="text" name="shop_name" id="shop_name" class="shop_name" size="60" maxlength="100" value="<?php echo e('shop_name', $data); ?>" />
         <?php endif; ?>
