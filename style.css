@@ -18,6 +18,11 @@
   margin: 0 auto;
 }
 
+.entry-form-font-md {
+	font-size: 1.4rem;
+	color: #ff3e00;
+}
+
 .btn {
 	position: relative;
 	padding: 7px 35px;

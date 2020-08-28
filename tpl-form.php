@@ -39,7 +39,7 @@ $error = $validate_errors;
       </label>
     </span>
   </div>
-  <p class="sub-text">内容更新の場合は [更新] をお選びください。変更の必要のない項目は空のままでご入力ください。<br>その場合でも、ご担当者様情報、店名は必ず入力をお願いします。</p>
+  <p class="sub-text">内容更新の場合は [更新] をお選びください。変更の必要のない項目は空のままでご入力ください。<br>その場合でも、ご担当者様情報は必ず入力をお願いします。</p>
 <?php endif; ?>
 <!-- Search Form -->
 <div class="searchOff">
@@ -50,6 +50,7 @@ $error = $validate_errors;
   <?php $slug = get_post_field('post_name', get_post()); ?>
   <?php echo (e('main_post_id', $_POST)) ? '<input type="hidden" name="main_post_id" value="' . e('main_post_id', $_POST) . '">' : ''; ?>
   <div class="l-form">
+    <?php if(e('request', $data) == 'update') : ?><p class="sub-text entry-form-font-md">変更したい箇所のみご入力ください。</p><?php endif; ?>
     <h2 class="l-form__title">ご担当者様情報</h2>
     <!-- 担当者名 -->
     <dl>
@@ -163,6 +164,7 @@ $error = $validate_errors;
         <label class="l-form__label" for="genre">
           ジャンルを選択（複数選択可） <?php if (e('request', $data) == 'regist') : ?><span class="form-require js-require">必須</span><?php endif; ?>
         </label>
+        <?php if(e('request', $data) == 'update') : ?><p class="sub-text">※こちらの項目を変更する場合、該当項目すべてを、改めてご選択下さい。</p><?php endif; ?>
       </dt>
       <dd class="l-form__action">
         <div class="form-checkbox l-form__genre">
@@ -319,6 +321,7 @@ $error = $validate_errors;
         <label class="l-form__label" for="genre">
           こだわり（複数選択可） <?php if (e('request', $data) == 'regist') : ?><span class="form-require js-require">必須</span><?php endif; ?>
         </label>
+        <?php if(e('request', $data) == 'update') : ?><p class="sub-text">※こちらの項目を変更する場合、該当項目すべてを、改めてご選択下さい。</p><?php endif; ?>
       </dt>
       <dd class="l-form__action">
         <div class="form-checkbox">
@@ -407,6 +410,7 @@ $error = $validate_errors;
         <label class="l-form__label" for="genre">
           コロナ対策について（複数選択可） <?php if (e('request', $data) == 'regist') : ?><span class="form-require js-require">必須</span><?php endif; ?>
         </label>
+        <?php if(e('request', $data) == 'update') : ?><p class="sub-text">※こちらの項目を変更する場合、該当項目すべてを、改めてご選択下さい。</p><?php endif; ?>
       </dt>
       <dd class="l-form__action">
         <div class="form-checkbox">
