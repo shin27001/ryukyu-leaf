@@ -7,6 +7,10 @@
 .mt-20 {
 	margin-top: 20px;
 }
+.mb-20 {
+	margin-bottom: 20px;
+}
+
 .mapcode-img {
 	width: 50px;
 	vertical-align: middle;

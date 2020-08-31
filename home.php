@@ -12,65 +12,9 @@
     <!-- Search Form -->
     <?php get_template_part('tpl', 'search'); ?>
 
-    <?php
-    $args = array(
-      'post_type' => 'shops',
-      // 'posts_per_page' => 12,
-      // 's' => 'コザ',
-      // 'tax_query' => array(
-      //         array(
-      //             'taxonomy' => 'area',
-      //             'field' => 'slug',
-      //             'terms' => array( 'naha', 'shuri' ),
-      //         ),
-      //         array(
-      //             'taxonomy' => 'dishes',
-      //             'field' => 'slug',
-      //             'terms' => 'japanese',
-      //         ),
-      //     ),
-    );
+    <!-- ShopList New -->
+    <?php get_template_part('tpl', 'shoplistnew'); ?>
 
-    $query = new WP_Query($args);
-    ?>
-
-
-    <div class="l-shop">
-      <h2 class="main-title">
-        <i class="fas fa-bullhorn c-red"></i> 新着店舗
-      </h2>
-
-      <ul class="l-shop__list">
-        <?php if ($query->have_posts()) : ?>
-          <?php while ($query->have_posts()) : $query->the_post(); ?>
-            <li class="l-shop__item">
-              <a class="l-shop__link" href="<?php the_permalink(); ?>">
-                <div class="l-shop__img">
-                  <?php $main_img = get_field('shop_main_image'); ?>
-                  <img class="ofi" src="<?php echo $main_img['sizes']['medium']; ?>" alt="<?php echo $main_img['title']; ?>">
-                </div>
-                <div class="l-shop__info">
-                  <?php $dish = get_dish(get_the_ID()); ?>
-                  <?php if ($dish) : ?>
-                    <span class="l-shop__infoCat <?php the_field('class', "dishes_" . $dish->term_id); ?>"><?php echo $dish->name; ?></span>
-                  <?php endif; ?>
-                  <h3 class="l-shop__infoTitle"><?php the_title(); ?></h3>
-                  <p class="l-shop__infoArea">
-                    <?php $areas = get_the_terms(get_the_ID(), 'area'); ?>
-                    <?php if ($areas) : foreach ($areas as $key => $area) : ?>
-                        <?php echo ($area->parent) ? '<i class="fas fa-map-marker-alt"></i>' . $area->name : ""; ?>
-                    <?php endforeach;
-                    endif; ?>
-                  </p>
-                </div>
-              </a>
-            </li>
-          <?php endwhile; ?>
-        <?php endif;
-        wp_reset_postdata(); ?>
-      </ul>
-    </div>
-    <!-- /l-shop -->
     <div class="btn-wrap"><a href="<?php echo esc_url(home_url('shops')); ?>" class="btn btn-m-red"><i class="fas fa-list-ul"></i>
         飲食店一覧</a></div>
   </div>

@@ -105,6 +105,7 @@ function get_protocol() {
 function esd_title($args=array()) {
   $args = array_merge(['echo'=>true, 'site_title'=>true], $args);
 
+  $title = ""; #初期化
   if (is_home()) {
     $title = "";
   } elseif(is_search()) {
@@ -132,7 +133,11 @@ function esd_title($args=array()) {
     $title = the_title_attribute(array('echo'=>false));
   }
 
-  $title .= ($args['site_title']) ? " | ".get_bloginfo('name') : "";
+  if ($title) {
+    $title .= ($args['site_title']) ? " | ".get_bloginfo('name') : "";
+  } else {
+    $title .= ($args['site_title']) ? get_bloginfo('name') : "";
+  }
 
   if ($args['echo']) {
     echo $title;

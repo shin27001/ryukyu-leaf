@@ -47,7 +47,11 @@ $error = $validate_errors;
 </div>
 <form method="POST" id="registform" action="<?php echo esc_url(home_url('entry-validation')); ?>" enctype="multipart/form-data">
   <input type="hidden" name="request" value="<?php echo (e('request', $_POST) != 'update') ? 'regist' : 'update'; ?>">
-  <?php $slug = get_post_field('post_name', get_post()); ?>
+  <?php
+    $gohan_token = (e('gohan_token', $data)) ? e('gohan_token', $data) : base64_encode(openssl_random_pseudo_bytes(32));
+    $_SESSION['gohan_token'] = $gohan_token;
+  ?>
+  <input type="hidden" name="gohan_token" value="<?php echo $gohan_token; ?>">
   <?php echo (e('main_post_id', $_POST)) ? '<input type="hidden" name="main_post_id" value="' . e('main_post_id', $_POST) . '">' : ''; ?>
   <div class="l-form">
     <?php if(e('request', $data) == 'update') : ?><p class="sub-text entry-form-font-md">変更したい箇所のみご入力ください。</p><?php endif; ?>

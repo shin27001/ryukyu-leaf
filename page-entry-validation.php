@@ -1,6 +1,14 @@
 <?php
+session_start();
 // pr($_POST);
 // return;
+
+# CSRF対策 & 二重送信対策
+if (e('gohan_token', $_POST) != $_SESSION['gohan_token']) {
+  header('HTTP/1.0 404 Not Found');
+  include(TEMPLATEPATH.'/404.php');
+  exit;
+}
 
 $errors = array();
 

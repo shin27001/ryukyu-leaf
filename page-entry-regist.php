@@ -1,4 +1,5 @@
 <?php
+  session_start();
   require_once(ABSPATH . 'wp-load.php');
   require_once('class/class-wp_post_helper.php');
 
@@ -6,8 +7,16 @@
     $_POST  = unserialize(base64_decode(e('post_all')));
   }
 
+  # CSRF対策 & 二重送信対策
+  if (e('gohan_token', $_POST) != $_SESSION['gohan_token']) {
+    header('HTTP/1.0 404 Not Found');
+    include(TEMPLATEPATH.'/404.php');
+    session_destroy();
+    exit;
+  }
+  session_destroy();
 
-//   pr($_POST);
+// pr($_POST);
 // exit;
 
   $my_post = array();
