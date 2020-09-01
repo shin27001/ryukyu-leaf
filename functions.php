@@ -150,7 +150,7 @@ function get_og($field) {
   $og = ['image'=>'', 'description'=>''];
   if (is_single()) {
     $og['image'] = get_field('shop_main_image')['url'];
-    $og['description'] = preg_replace('/\n|\r|\r\n/', '', get_post()->post_content );
+    $og['description'] = preg_replace('/\n|\r|\r\n/', '', (get_post()->post_content) ? get_post()->post_content : get_field('messages'));
     // $og['description'] = get_field('messages');
   } else {
     $og['image'] = get_template_directory_uri()."/images/ogp.jpg";
