@@ -19,7 +19,7 @@
   <meta property='og:url' content='<?php echo esc_url(home_url() . $_SERVER['REQUEST_URI']); ?>'>
   <meta property='og:description' content='<?php echo get_og('description'); ?>'>
   <meta property="og:image" content="<?php echo get_og('image'); ?>">
-  <meta name="description" content="<?php bloginfo('description'); ?>" />
+  <meta name="description" content="<?php echo get_og('description'); ?>" />
   <title><?php esd_title(); ?></title>
   <link href="<?php echo get_template_directory_uri(); ?>/css/vendors/slick.css" media="all" rel="stylesheet" type="text/css" />
   <link href="<?php echo get_template_directory_uri(); ?>/css/destyle.css?<?php echo date('Ymd-Hi'); ?>" media="all" rel="stylesheet" type="text/css" />
