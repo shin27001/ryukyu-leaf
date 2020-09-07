@@ -116,7 +116,14 @@
       <div class="l-info__basic">
         <h2 class="l-info__h2title"><i class="fas fa-store c-red"></i> 店舗基本情報</h2>
         <?php if (get_field('youtube')) : ?>
-          <div class="l-info__video"><?php echo wp_oembed_get(get_field('youtube')); ?></div>
+          <?php //echo wp_oembed_get(get_field('youtube')); ?>
+          <?php
+            $iframe_attributes = [];
+            preg_match_all('/(title|src)=("[^"]*")/i', wp_oembed_get(get_field('youtube')), $iframe_attributes);
+            $src = substr($iframe_attributes[0][1], 0, -1).'&loop=1&playlist='.get_youtube_id(get_field('youtube')).'"';
+            $youtube = '<iframe '.$iframe_attributes[0][0].' width="500" height="281" '.$src.' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+          ?>
+          <div class="l-info__video"><?php echo $youtube; ?></div>
         <?php endif; ?>
         <table class="l-info__table">
           <tr>

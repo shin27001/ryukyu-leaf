@@ -399,10 +399,28 @@ function createvideotag($param)
             }
         }
         // 埋め込みコードを返す
-        return '<iframe width="600" height="338" src="https://www.youtube.com/embed/' . $video_id . $v_param . '" frameborder="0" allowfullscreen></iframe>';
+        // (関連動画を非表示)
+        return '<iframe src="https://www.youtube.com/embed/' . $video_id . $v_param . '?loop=1&playlist='.$video_id.'" frameborder="0" allowfullscreen></iframe>';
+        // return '<iframe width="600" height="338" src="https://www.youtube.com/embed/' . $video_id . $v_param . '" frameborder="0" allowfullscreen></iframe>';
     }
     // パラメータが不正(youtubeのURLではない)ときは埋め込みコードを生成しない。
     return false;
+}
+
+function get_youtube_id($param) {
+  if(!preg_match('#https?://www.youtube.com/.*#i',$param,$matches)){
+    return false;
+  }
+
+  //parse_urlでhttps://www.youtube.com/watch以下のパラメータを取得
+  $parse_url = parse_url($param);
+  // 動画IDを取得
+  if (preg_match('#v=([-\w]{11})#i', $parse_url['query'], $v_matches)) {
+    return $v_matches[1];
+  }
+  // 万が一動画のIDの存在しないURLだった場合は埋め込みコードを生成しない。
+  return false;
+
 }
 
 
