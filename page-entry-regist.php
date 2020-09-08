@@ -16,9 +16,6 @@
   }
   session_destroy();
 
-// pr($_POST);
-// exit;
-
   $my_post = array();
   $my_post['post_title'] = stz($_POST['shop_name']);
   $my_post['post_content'] = $_POST['detail'];

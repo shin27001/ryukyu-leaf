@@ -1,7 +1,5 @@
 <?php
 session_start();
-// pr($_POST);
-// return;
 
 # CSRF対策 & 二重送信対策
 if (e('gohan_token', $_POST) != $_SESSION['gohan_token']) {
@@ -11,10 +9,8 @@ if (e('gohan_token', $_POST) != $_SESSION['gohan_token']) {
 }
 
 $errors = array();
-
 $errors = array_merge($errors, validate_field('contact_policy', array('acf-field'=>false)));
 $errors = array_merge($errors, validate_field('written_oath', array('acf-field'=>false)));
-
 
 if (e('request', $_POST) == 'update') {
   $errors = array_merge($errors, validate_field('shop_name', array('acf-field'=>false)));

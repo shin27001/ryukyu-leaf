@@ -46,13 +46,13 @@ $error = $validate_errors;
   <?php get_template_part('tpl', 'search'); ?>
 </div>
 <form method="POST" id="registform" action="<?php echo esc_url(home_url('entry-validation')); ?>" enctype="multipart/form-data">
-  <input type="hidden" name="request" value="<?php echo (e('request', $_POST) != 'update') ? 'regist' : 'update'; ?>">
+  <input type="hidden" name="request" value="<?php echo (e('request', $data) != 'update') ? 'regist' : 'update'; ?>">
   <?php
-    $gohan_token = (e('gohan_token', $data)) ? e('gohan_token', $data) : base64_encode(openssl_random_pseudo_bytes(32));
+    $gohan_token = base64_encode(openssl_random_pseudo_bytes(32));
     $_SESSION['gohan_token'] = $gohan_token;
   ?>
   <input type="hidden" name="gohan_token" value="<?php echo $gohan_token; ?>">
-  <?php echo (e('main_post_id', $_POST)) ? '<input type="hidden" name="main_post_id" value="' . e('main_post_id', $_POST) . '">' : ''; ?>
+  <?php echo (e('main_post_id', $data)) ? '<input type="hidden" name="main_post_id" value="' . e('main_post_id', $data) . '">' : ''; ?>
   <div class="l-form">
     <?php if(e('request', $data) == 'update') : ?><p class="sub-text entry-form-font-md">変更したい箇所のみご入力ください。</p><?php endif; ?>
     <h2 class="l-form__title">ご担当者様情報</h2>
@@ -108,7 +108,7 @@ $error = $validate_errors;
           # 更新する店舗名を取得
           $update_post = get_post(e('main_post_id', $data));
         ?>
-          <input type="text" name="shop_name" id="shop_name" class="shop_name" size="60" maxlength="100" value="<?php echo (!empty($update_post)) ? $update_post->post_title : ''; ?>" />
+          <input type="text" name="shop_name" id="shop_name" class="shop_name" size="60" maxlength="100" value="<?php echo (e('shop_name', $data)) ? e('shop_name', $data) : $update_post->post_title; ?>" />
         <?php else : ?>
           <input type="text" name="shop_name" id="shop_name" class="shop_name" size="60" maxlength="100" value="<?php echo e('shop_name', $data); ?>" />
         <?php endif; ?>
