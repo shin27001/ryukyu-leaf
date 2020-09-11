@@ -60,7 +60,7 @@
         ?>
         <nav class="l-header__nav">
           <ul class="l-header__nav-list">
-            <li class="l-header__nav-item"><a href="<?php echo esc_url(home_url('feature')); ?>"><i class="fas fa-star"></i> GO!HAN旅の特徴</a></a></li>
+            <li class="l-header__nav-item"><a href="https://<?php echo $_SERVER['HTTP_HOST']; ?>"><i class="fas fa-star"></i> GO!HAN旅の特徴</a></a></li>
             <li class="l-header__nav-item"><a href="<?php echo esc_url(home_url('shops')); ?>"><i class="fas fa-list-ul"></i> 飲食店一覧</a></li>
             <li class="l-header__nav-item"><a href="<?php echo esc_url(home_url('entry')); ?>"><i class="fas fa-edit"></i> 飲食店の皆様へ</a></li>
             <li class="l-header__nav-item"><a href="<?php echo esc_url(home_url('contact')); ?>"><i class="far fa-envelope"></i> お問い合わせ</a></li>
