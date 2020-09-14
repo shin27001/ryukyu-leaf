@@ -38,17 +38,16 @@
                   <img class="ofi" src="<?php echo $main_img['sizes']['medium']; ?>" alt="<?php echo $main_img['title']; ?>">
                 </div>
                 <div class="l-shop__info">
-                  <?php $dish = get_dish(get_the_ID()); ?>
+                  <?php $dish = gt_get_main_term(get_the_ID(), 'dishes'); ?>
                   <?php if ($dish) : ?>
                     <span class="l-shop__infoCat <?php the_field('class', "dishes_" . $dish->term_id); ?>"><?php echo $dish->name; ?></span>
                   <?php endif; ?>
                   <h3 class="l-shop__infoTitle"><?php the_title(); ?></h3>
                   <p class="l-shop__infoArea">
-                    <?php $areas = get_the_terms(get_the_ID(), 'area'); ?>
-                    <?php if ($areas) : foreach ($areas as $key => $area) : ?>
-                        <?php echo ($area->parent) ? '<i class="fas fa-map-marker-alt"></i>' . $area->name : ""; ?>
-                    <?php endforeach;
-                    endif; ?>
+                    <?php $area = gt_get_main_term(get_the_ID(), 'area'); ?>
+                    <?php if ($area) : ?>
+                      <i class="fas fa-map-marker-alt"></i><?php echo $area->name; ?>
+                    <?php endif; ?>
                   </p>
                 </div>
               </a>

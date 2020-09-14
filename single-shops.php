@@ -18,20 +18,17 @@
           </ul>
           <h1 class="l-info__name"><?php echo $post->post_title; ?></h1>
           <p class="l-info__area">
-            <?php $areas = get_the_terms($post->ID, 'area'); ?>
-            <?php if ($areas) : foreach ($areas as $area) : ?>
-                <?php echo ($area->parent) ? '<i class="fas fa-map-marker-alt"></i> ' . $area->name : ""; ?>
-                <!-- <i class="fas fa-map-marker-alt"></i><?php echo $area->name; ?> -->
-            <?php endforeach;
-            endif; ?>
+            <?php $area = gt_get_main_term($post->ID, 'area'); ?>
+            <?php if ($area) : ?>
+              <i class="fas fa-map-marker-alt"></i> <?php echo $area->name; ?>
+            <?php endif; ?>
           </p>
           <p class="l-info__kodawari">
             <i class="far fa-check-circle"></i>
             <?php $options = get_the_terms($post->ID, 'options'); ?>
             <?php if ($options) : foreach ($options as $option) : ?>
-                <?php echo $option->name . "/"; ?>
-            <?php endforeach;
-            endif; ?>
+                <?php echo $option->name . " /"; ?>
+            <?php endforeach; endif; ?>
           </p>
           <div class="favorite-btn-wrap">
             <?php
@@ -213,7 +210,7 @@
               <td>
                 <?php $payments = get_field('payments'); ?>
                 <?php if ($payments) : foreach ($payments as $payment) : ?>
-                    <?php echo $payment['label'] . "/"; ?>
+                    <?php echo $payment['label'] . " /"; ?>
                 <?php endforeach;
                 endif; ?>
               </td>
@@ -232,7 +229,7 @@
             <td>
               <?php $options = get_the_terms($post->ID, 'options'); ?>
               <?php if ($options) : foreach ($options as $key => $option) : ?>
-                  <?php echo $option->name . "/"; ?>
+                  <?php echo $option->name . " /"; ?>
               <?php endforeach;
               endif; ?>
             </td>
