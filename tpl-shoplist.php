@@ -20,7 +20,7 @@
             <p class="l-shop__infoArea">
               <?php //$area = gt_get_main_term(get_the_ID(), 'area'); ?>
               <?php $areas = get_the_terms(get_the_ID(), 'area'); ?>
-              <?php if ($areas) : foreach($areas as $$area) : ?>
+              <?php if ($areas) : foreach($areas as $area) : ?>
                 <?php echo ($area->parent) ? '<i class="fas fa-map-marker-alt"></i>'.$area->name : ""; ?>
               <?php endforeach; endif; ?>
             </p>
