@@ -19,7 +19,7 @@
             <h3 class="l-shop__infoTitle"><?php the_title(); ?></h3>
             <p class="l-shop__infoArea">
               <?php $area = gt_get_main_term(get_the_ID(), 'area'); ?>
-              <?php if ($area) : ?>
+              <?php if ($area->parent != 0) : ?>
                 <i class="fas fa-map-marker-alt"></i><?php echo $area->name; ?>
               <?php endif; ?>
             </p>

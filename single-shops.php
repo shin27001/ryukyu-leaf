@@ -13,13 +13,12 @@
             <?php $dishes = get_the_terms(get_the_ID(), 'dishes'); ?>
             <?php if ($dishes) : foreach ($dishes as $dish) : ?>
                 <li class="l-info__cate-list <?php the_field('class', "dishes_" . $dish->term_id); ?>"><?php echo $dish->name; ?></li>
-            <?php endforeach;
-            endif; ?>
+            <?php endforeach; endif; ?>
           </ul>
           <h1 class="l-info__name"><?php echo $post->post_title; ?></h1>
           <p class="l-info__area">
             <?php $area = gt_get_main_term($post->ID, 'area'); ?>
-            <?php if ($area) : ?>
+            <?php if ($area->parent != 0) : ?>
               <i class="fas fa-map-marker-alt"></i> <?php echo $area->name; ?>
             <?php endif; ?>
           </p>
