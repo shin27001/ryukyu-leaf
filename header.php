@@ -28,7 +28,7 @@
   <meta property='og:url' content='<?php echo esc_url('https://'.$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']); ?>'>
   <meta property='og:description' content='<?php echo get_og('description'); ?>'>
   <meta property="og:image" content="<?php echo get_og('image'); ?>">
-  <meta name="description" content="<?php echo get_og('description'); ?>" />
+  <meta name="description" content='<?php echo get_og('description'); ?>' />
   <?php if(strpos($_SERVER['REQUEST_URI'], 'entry')) : ?>
       <meta name="robots" content="noindex" />
   <?php endif; ?>
