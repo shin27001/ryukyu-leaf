@@ -130,9 +130,8 @@
           <tr>
             <th>店舗詳細</th>
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                <td><?php the_content(); ?></td>
-            <?php endwhile;
-            endif; ?>
+                <td><?php echo nl2br(wp_strip_all_tags(get_the_content())); ?></td>
+            <?php endwhile; endif; ?>
           </tr>
           <tr>
             <th>住所</th>
