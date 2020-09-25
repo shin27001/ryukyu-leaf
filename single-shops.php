@@ -17,7 +17,6 @@
           </ul>
           <h1 class="l-info__name"><?php echo $post->post_title; ?></h1>
           <p class="l-info__area">
-            <?php //$area = gt_get_main_term($post->ID, 'area'); ?>
             <?php $areas = get_the_terms(get_the_ID(), 'area'); ?>
               <?php if ($areas) : foreach($areas as $area) : ?>
                 <?php echo ($area->parent) ? '<i class="fas fa-map-marker-alt"></i>'.$area->name : ""; ?>
@@ -189,7 +188,7 @@
           <?php if (get_field('url')) : ?>
             <tr>
               <th>公式HP</th>
-              <td><a href="<?php the_field('url'); ?>"><?php the_field('url'); ?> <i class="fas fa-external-link-alt"></i></a></td>
+              <td><a href="<?php the_field('url'); ?>" target="_blank"><?php the_field('url'); ?> <i class="fas fa-external-link-alt"></i></a></td>
             </tr>
           <?php endif; ?>
           <?php if ((!empty(get_field('insta'))) || (!empty(get_field('fb'))) || (!empty(get_field('tw'))) || (!empty(get_field('line')))) : ?>
