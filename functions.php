@@ -77,13 +77,33 @@ function get_auth() {
   return file_get_contents($protocol.'mg.'.$_SERVER['HTTP_HOST'].'/favorite/auth/');
 }
 
+// function gt_get_main_term($postid, $taxonomy) {
+//   if (class_exists('WPSEO_Primary_Term')) {
+//     $wpseo_primary_term = new WPSEO_Primary_Term($taxonomy, $postid);
+//     $wpseo_primary_term = $wpseo_primary_term->get_primary_term();
+//     $term = get_term($wpseo_primary_term);
+//     return (is_wp_error( $term )) ? get_the_terms($postid, $taxonomy)[0] : $term;
+//   }
+// }
 function gt_get_main_term($postid, $taxonomy) {
+  $term = [];
   if (class_exists('WPSEO_Primary_Term')) {
     $wpseo_primary_term = new WPSEO_Primary_Term($taxonomy, $postid);
     $wpseo_primary_term = $wpseo_primary_term->get_primary_term();
     $term = get_term($wpseo_primary_term);
-    return (is_wp_error( $term )) ? get_the_terms($postid, $taxonomy)[0] : $term;
+    //メインのタクソノミーが無い場合
+    if(is_wp_error($term)) {
+      $terms = get_the_terms($postid, $taxonomy);
+      foreach ($terms as $key => $trm) {
+        if($trm->parent) {
+          $other_term = $trm;
+          break;
+        }
+      }
+      return (!empty($other_term)) ? $other_term : get_the_terms($postid, $taxonomy)[0]; 
+    }
   }
+  return $term;
 }
 
 function get_protocol() {
