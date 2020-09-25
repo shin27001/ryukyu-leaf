@@ -35,6 +35,7 @@
               $url .= (strpos(ABSPATH, 'okinawa')) ? "okinawa" : "kyoto";
               $url .= '/'.$post->ID;
               $url .= '/'.$post->post_name;
+              $url .= '?page='.'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
               # お気に入りが登録済みかチェック
               $pref = (strpos(ABSPATH, 'okinawa')) ? "okinawa" : "kyoto";
