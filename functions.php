@@ -86,8 +86,7 @@ function get_auth() {
 //   }
 // }
 function gt_get_main_term($postid, $taxonomy) {
-  $term = [];
-  
+  // タクソノミーが未登録の場合は終了
   $terms = get_the_terms($postid, $taxonomy);
   if (empty($terms)) { return; }
 
@@ -99,15 +98,15 @@ function gt_get_main_term($postid, $taxonomy) {
     if(!is_wp_error($term)) {
       return $term; 
     } else {
-      foreach ($terms as $key => $trm) {
-        if($trm->parent) {
-          return $trm;
+      foreach ($terms as $key => $term) {
+        if($term->parent) {
+          return $term;
         }
       }
       return $terms[0]; 
     }
   }
-  return $term;
+  return;
 }
 
 function get_protocol() {
