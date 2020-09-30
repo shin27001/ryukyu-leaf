@@ -2,6 +2,12 @@
 <?php get_header('home'); ?>
 <div class="content-wrap">
   <div class="content-inner">
+    <?php if(file_exists(get_theme_file_path('/images/shop/kocotoro_leaf.png'))) : ?>
+      <!-- banner -->
+      <div class="l-banner mb-20">
+        <a href="https://www.pref.kyoto.jp/kikikanri/coronakinkyurenraku.html" target="blank"><img src="<?php echo get_template_directory_uri(); ?>/images/shop/kocotoro_leaf.png" alt="京都府新型コロナウィルス緊急連絡サービス"></a>
+      </div>
+    <?php endif; ?>   
     <div class="l-alert">
       <h2><i class="fas fa-exclamation-triangle symbol"></i><br>新型コロナウイルス<br>感染症対策に<span class="d-inline">関するお願い</span></h2>
       <p class="font-sm">
