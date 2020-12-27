@@ -86,24 +86,27 @@ function get_auth() {
 //   }
 // }
 function gt_get_main_term($postid, $taxonomy) {
-  $term = [];
+  // タクソノミーが未登録の場合は終了
+  $terms = get_the_terms($postid, $taxonomy);
+  if (empty($terms)) { return; }
+
   if (class_exists('WPSEO_Primary_Term')) {
     $wpseo_primary_term = new WPSEO_Primary_Term($taxonomy, $postid);
     $wpseo_primary_term = $wpseo_primary_term->get_primary_term();
     $term = get_term($wpseo_primary_term);
     //メインのタクソノミーが無い場合
-    if(is_wp_error($term)) {
-      $terms = get_the_terms($postid, $taxonomy);
-      foreach ($terms as $key => $trm) {
-        if($trm->parent) {
-          $other_term = $trm;
-          break;
+    if(!is_wp_error($term)) {
+      return $term; 
+    } else {
+      foreach ($terms as $key => $term) {
+        if($term->parent) {
+          return $term;
         }
       }
-      return (!empty($other_term)) ? $other_term : get_the_terms($postid, $taxonomy)[0]; 
+      return $terms[0]; 
     }
   }
-  return $term;
+  return;
 }
 
 function get_protocol() {
