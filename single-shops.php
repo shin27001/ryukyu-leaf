@@ -35,6 +35,7 @@
               $url .= (strpos(ABSPATH, 'okinawa')) ? "okinawa" : "kyoto";
               $url .= '/'.$post->ID;
               $url .= '/'.$post->post_name;
+              $url .= '?page='.'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
               # お気に入りが登録済みかチェック
               $pref = (strpos(ABSPATH, 'okinawa')) ? "okinawa" : "kyoto";
@@ -118,6 +119,7 @@
             preg_match_all('/(title|src)=("[^"]*")/i', wp_oembed_get(get_field('youtube')), $iframe_attributes);
             $src = substr($iframe_attributes[0][1], 0, -1).'&loop=1&playlist='.get_youtube_id(get_field('youtube')).'"';
             $youtube = '<iframe '.$iframe_attributes[0][0].' width="500" height="281" '.$src.' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+            //$youtube = '<iframe width="500" height="281" frameborder="0" src="https://www.youtube.com/embed/ONdMcd-Hl2g?autoplay=1&loop=1&playlist='.get_youtube_id(get_field('youtube')).'&showinfo=0&controls=0&fs=0&iv_load_policy=3&modestbranding=1"></iframe>';
           ?>
           <div class="l-info__video"><?php echo $youtube; ?></div>
         <?php endif; ?>

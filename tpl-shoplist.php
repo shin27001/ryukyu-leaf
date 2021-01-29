@@ -20,6 +20,12 @@
             <p class="l-shop__infoArea">
               <?php $area = gt_get_main_term(get_the_ID(), 'area'); ?>
               <i class="fas fa-map-marker-alt"></i> <?php echo $area->name; ?>
+              <?php 
+                # コロナ対策検索（カスタムフィールド、シリアライズ検索）のテスト構文
+                // foreach (get_field('coronas') as $key => $value) {
+                //   echo $value['value'].'-'.$value['label']."<br>";
+                // }
+              ?>
             </p>
           </div>
           <?php if(e('search_update', $_GET) == true) : ?>

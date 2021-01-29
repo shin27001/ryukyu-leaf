@@ -32,6 +32,15 @@ function pr($arg) {
     echo "</pre>";
   }
 }
+function clg($prm="") {
+  echo "<script>console.log('".$prm."');</script>";
+}
+function sql_dump($query)
+{
+    var_dump($query);
+    return $query;
+}
+// add_filter('query', 'sql_dump');
 
 function get_auth() {
   echo "auth";
@@ -86,24 +95,27 @@ function get_auth() {
 //   }
 // }
 function gt_get_main_term($postid, $taxonomy) {
-  $term = [];
+  // タクソノミーが未登録の場合は終了
+  $terms = get_the_terms($postid, $taxonomy);
+  if (empty($terms)) { return; }
+
   if (class_exists('WPSEO_Primary_Term')) {
     $wpseo_primary_term = new WPSEO_Primary_Term($taxonomy, $postid);
     $wpseo_primary_term = $wpseo_primary_term->get_primary_term();
     $term = get_term($wpseo_primary_term);
     //メインのタクソノミーが無い場合
-    if(is_wp_error($term)) {
-      $terms = get_the_terms($postid, $taxonomy);
-      foreach ($terms as $key => $trm) {
-        if($trm->parent) {
-          $other_term = $trm;
-          break;
+    if(!is_wp_error($term)) {
+      return $term; 
+    } else {
+      foreach ($terms as $key => $term) {
+        if($term->parent) {
+          return $term;
         }
       }
-      return (!empty($other_term)) ? $other_term : get_the_terms($postid, $taxonomy)[0]; 
+      return $terms[0]; 
     }
   }
-  return $term;
+  return;
 }
 
 function get_protocol() {
@@ -129,7 +141,6 @@ function esd_title($args=array()) {
   if (is_home()) {
     $title = "";
   } elseif(is_search()) {
-    // pr($_GET);
     // $title = get_search_query()."の検索結果";
     $keyword = (!empty($_GET['s'])) ? "(キーワード)".$_GET['s'] : "";
     $area = get_term_by('slug', $_GET['area'], 'area');
@@ -143,8 +154,21 @@ function esd_title($args=array()) {
         $options .= get_term_by('slug', $slug, 'options')->name.",";
       }
       $options = substr($options, 0, -1);
+    } elseif (isset($_GET['coronas'])) {
+      $args = array(
+        's' => 'coronas',
+        'name'    => 'field_5ef6f12febcb3',   //あまり無いとは思うが、同じ名前のフィールドを複数使っている場合はフィールドキーで取得するほうが良い
+        //'parent'  => ***,                     もしくは、フィールドグループが親投稿として指定されているのでそれと組み合わせる
+        'post_type' => 'acf-field', 
+      );
+      $coronas = get_posts( $args )[0];
+      $coronas = unserialize($coronas->post_content);
+      $coronas = $coronas['choices'][$_GET['coronas']];
     }
-    $title = $keyword." ".$area." ".$dish." ".$options;
+    $title = trim($keyword." ".$area." ".$dish." ".$options." ".$coronas);
+
+    // echoフラグがfalseになってしまうバグ対応
+    $args['echo'] = true;
   } elseif(is_category()) {
     $title = get_cat_name( get_query_var('cat') );
   } elseif(is_archive()) {
@@ -238,6 +262,26 @@ function disable_visual_editor_filter(){
 }
 add_action( 'load-post.php', 'disable_visual_editor_in_page' );
 add_action( 'load-post-new.php', 'disable_visual_editor_in_page' );
+
+##################################
+#                                #
+# コロナ対策の検索を追加   #
+#                                #
+##################################
+function filter_search( $query ) {
+  if ( !$query->is_main_query() || is_admin() ) { return; }
+
+  if (is_post_type_archive('shops')) {
+    $query->set('meta_query',
+      [[
+        'key' => 'coronas',
+        'value' => '(?i)"'.stz($_GET['coronas']).'"',
+        'compare' => 'REGEXP',
+      ]]
+    );
+  }
+}
+add_filter( 'pre_get_posts', 'filter_search' );
 
 
 # カスタムタクソノミーの階層構造を維持する

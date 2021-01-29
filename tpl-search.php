@@ -53,6 +53,30 @@
             </dl>
           </div>
           <dl class="searchBody__dl">
+            <dt class="searchBody__dt"><i class="far fa-check-circle"></i> コロナ対策<span class="small-text">（複数選択可）</span></dt>
+            <dd class="searchBody__dd">
+            <div class="selectWrap">
+                  <select class="searchBody__select" name="coronas">
+                    <option value="">未選択</option>
+                    <?php
+                      $args = array(
+                        's' => 'coronas',
+                        'name'    => 'field_5ef6f12febcb3',   //あまり無いとは思うが、同じ名前のフィールドを複数使っている場合はフィールドキーで取得するほうが良い
+                        //'parent'  => ***,                     もしくは、フィールドグループが親投稿として指定されているのでそれと組み合わせる
+                        'post_type' => 'acf-field', 
+                      );
+                      $coronas = get_posts( $args )[0];
+                      $coronas->post_content = unserialize($coronas->post_content);
+                    ?>
+                    <?php foreach($coronas->post_content['choices'] as $key => $label) : ?>
+                      <?php $checked = (e('coronas') == $key) ? ' selected' : null; ?>
+                      <option value="<?php echo $key; ?>"<?php echo $checked; ?>><?php echo $label; ?></option>
+                    <?php endforeach; ?>
+                  </select>
+                </div>
+            </dd>
+          </dl>          
+          <dl class="searchBody__dl">
             <dt class="searchBody__dt"><i class="far fa-check-circle"></i> こだわり<span class="small-text">（複数選択可）</span></dt>
             <dd class="searchBody__dd">
               <div class="form-checkbox">
