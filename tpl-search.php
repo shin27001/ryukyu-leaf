@@ -53,7 +53,7 @@
             </dl>
           </div>
           <dl class="searchBody__dl">
-            <dt class="searchBody__dt"><i class="far fa-check-circle"></i> コロナ対策<span class="small-text">（複数選択可）</span></dt>
+            <dt class="searchBody__dt"><i class="far fa-check-circle"></i> コロナ対策</dt>
             <dd class="searchBody__dd">
             <div class="selectWrap">
                   <select class="searchBody__select" name="coronas">
