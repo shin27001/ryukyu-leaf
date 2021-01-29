@@ -69,7 +69,7 @@
                       $coronas->post_content = unserialize($coronas->post_content);
                     ?>
                     <?php foreach($coronas->post_content['choices'] as $key => $label) : ?>
-                      <?php $checked = (e('coronas') == $key) ? ' selected' : null; ?>
+                      <?php $checked = (e('coronas') === $key) ? ' selected' : null; ?>
                       <option value="<?php echo $key; ?>"<?php echo $checked; ?>><?php echo $label; ?></option>
                     <?php endforeach; ?>
                   </select>
