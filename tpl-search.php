@@ -55,25 +55,37 @@
           <dl class="searchBody__dl">
             <dt class="searchBody__dt"><i class="far fa-check-circle"></i> コロナ対策</dt>
             <dd class="searchBody__dd">
-            <div class="selectWrap">
-                  <select class="searchBody__select" name="coronas">
-                    <option value="">未選択</option>
-                    <?php
-                      $args = array(
-                        's' => 'coronas',
-                        'name'    => 'field_5ef6f12febcb3',   //あまり無いとは思うが、同じ名前のフィールドを複数使っている場合はフィールドキーで取得するほうが良い
-                        //'parent'  => ***,                     もしくは、フィールドグループが親投稿として指定されているのでそれと組み合わせる
-                        'post_type' => 'acf-field', 
-                      );
-                      $coronas = get_posts( $args )[0];
-                      $coronas->post_content = unserialize($coronas->post_content);
-                    ?>
-                    <?php foreach($coronas->post_content['choices'] as $key => $label) : ?>
+              <div class="form-checkbox">
+                <ul class="form-checkbox__list">
+                  <!-- <div class="selectWrap">
+                        <select class="searchBody__select" name="coronas">
+                          <option value="">未選択</option>
+                        </select>
+                  </div> -->
+
+                  <?php
+                    $args = array(
+                      's' => 'coronas',
+                      'name'    => 'field_5ef6f12febcb3',   //あまり無いとは思うが、同じ名前のフィールドを複数使っている場合はフィールドキーで取得するほうが良い
+                      //'parent'  => ***,                     もしくは、フィールドグループが親投稿として指定されているのでそれと組み合わせる
+                      'post_type' => 'acf-field', 
+                    );
+                    $coronas = get_posts( $args )[0];
+                    $coronas->post_content = unserialize($coronas->post_content);
+                  ?>
+                  <?php foreach($coronas->post_content['choices'] as $key => $label) : ?>
+                    <li>
                       <?php $checked = (e('coronas') === $key) ? ' selected' : null; ?>
-                      <option value="<?php echo $key; ?>"<?php echo $checked; ?>><?php echo $label; ?></option>
-                    <?php endforeach; ?>
-                  </select>
-                </div>
+                      <input class="form-checkbox__button-input" type="checkbox" name="coronas[]" id="coronas-<?php echo $key; ?>" value="<?php echo $key; ?>"<?php echo $checked; ?>>
+                      <label class="form-checkbox__button" for="coronas-<?php echo $key; ?>"><?php echo $label; ?></label>
+                    </li>
+
+                    <?php //$checked = (e('coronas') === $key) ? ' selected' : null; ?>
+                    <!-- <option value="<?php echo $key; ?>"<?php echo $checked; ?>><?php echo $label; ?></option> -->
+                  <?php endforeach; ?>
+
+                </ul>
+              </div>
             </dd>
           </dl>          
           <dl class="searchBody__dl">

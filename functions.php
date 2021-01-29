@@ -163,9 +163,13 @@ function esd_title($args=array()) {
       );
       $coronas = get_posts( $args )[0];
       $coronas = unserialize($coronas->post_content);
-      $coronas = $coronas['choices'][$_GET['coronas']];
+
+      $coronas_title = "";
+      foreach ($_GET['coronas'] as $key => $value) {
+        $coronas_title .= $coronas['choices'][$value].',<br>';
+      }
     }
-    $title = trim($keyword." ".$area." ".$dish." ".$options." ".$coronas);
+    $title = trim($keyword." ".$area." ".$dish." ".$options." ".$coronas_title);
 
     // echoフラグがfalseになってしまうバグ対応
     $args['echo'] = true;
@@ -272,13 +276,16 @@ function filter_search( $query ) {
   if ( !$query->is_main_query() || is_admin() ) { return; }
 
   if (is_post_type_archive('shops')) {
-    $query->set('meta_query',
-      [[
+    if (!isset($_GET['coronas'])) { return; }
+
+    foreach ($_GET['coronas'] as $key => $value) {
+      $search_value[] = [
         'key' => 'coronas',
-        'value' => '(?i)"'.stz($_GET['coronas']).'"',
+        'value' => '(?i)i:'.stz($value),
         'compare' => 'REGEXP',
-      ]]
-    );
+      ];
+    }
+    $query->set('meta_query', $search_value);    
   }
 }
 add_filter( 'pre_get_posts', 'filter_search' );
