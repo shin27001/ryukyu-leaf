@@ -27,6 +27,36 @@
 </div>
 
 <div class="l-insta">
+    <div class="l-insta__inner">
+        <div class="l-insta__cont">
+            <h2 class="l-insta__title"><i class="fab fa-instagram symbol"></i><br>INSTAGRAMに投稿して<br class="br-sp">お気に入りのお店を応援しよう！</h2>
+            <p class="l-insta__read">美味しかったお店や<br class="br-sp">
+                応援したいお店をシェアして広めよう！<br>
+                <span>#<?php get_pref(); ?>gohan旅 </span>をつけて<br>
+                INSTAGRAMに投稿してくださいね！
+            </p>
+            <p class="btn-wrap-insta">
+                <a href="https://www.instagram.com/explore/tags/gohan旅/?hl=ja" target="blank" class="btn btn-m-blue">
+                    <span class="bold-text"><?php get_pref(); ?>GOHAN旅</span>の投稿をみる
+                </a>
+            </p>
+            <h2 class="l-insta__title">京都の宇治や美山への<span class="d-inline">おでかけ動画を観て楽しもう！</span></h2>
+            <div class="douga">
+                <div class="douga__box">
+                    <div class="douga__inner">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/ZfVoPwWZfF8?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="douga__box">
+                    <div class="douga__inner">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/ZfVoPwWZfF8?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="l-insta">
   <div class="l-insta__inner">
     <div class="l-insta__cont">
       <h2 class="l-insta__title"><i class="fab fa-instagram symbol"></i><br>INSTAGRAMに投稿して<br class="br-sp">お気に入りのお店を応援しよう！</h2>
@@ -41,7 +71,7 @@
       </p>
     </div>
   </div>
-</div>
+</div> -->
 <!-- /l-insta -->
 <!-- <div class="l-special">
   <h2 class="main-title"><span class="c-red"><i class="fas fa-bookmark"></i></span> おすすめ特集</h2>
