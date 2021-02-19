@@ -44,12 +44,12 @@
             <div class="douga">
                 <div class="douga__box">
                     <div class="douga__inner">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/ZfVoPwWZfF8?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/WtNTuV6MQwQ?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
                 <div class="douga__box">
                     <div class="douga__inner">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/ZfVoPwWZfF8?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/bSRu94Kag8M?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
