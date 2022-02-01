@@ -690,7 +690,7 @@ add_action('save_post', 'shop_update', 10, 3 );
 
 
 function my_acf_google_map_api( $api ){
-  $api['key'] = 'AIzaSyChamewuHdX5HFMSEPcxIyBF1bE2N0GHV8';
+  $api['key'] = 'aaaaaaaaaaaaa';
   return $api;
 }
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
